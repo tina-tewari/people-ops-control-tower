@@ -1,41 +1,29 @@
-// Scheduled reconciliation run. Triggered by Vercel Cron (see vercel.json) or by
-// an agent such as Devin on a daily/weekly schedule. Returns the run report:
-// what was auto-resolved and the per-owner queue of items needing a human.
+// Scheduled entry point (Vercel Cron, see vercel.json). Runs the reconciliation
+// job, persists status history, and posts the Slack digest if a webhook is set.
+// Protected by CRON_SECRET when that env var is set.
 
 import { getControlTower } from "@/lib/controlTower";
-import { ROUTING } from "@/config/routing";
+import { unauthorized } from "@/lib/reconciliation/auth";
+import { postSlackDigest, slackDigest } from "@/lib/reconciliation/digest";
+import { runReconciliation } from "@/lib/reconciliation/job";
+import { HUMAN_STATUSES } from "@/lib/reconciliation/store";
 
-export const dynamic = "force-dynamic";
+async function handle(request: Request) {
+  const denied = unauthorized(request);
+  if (denied) return denied;
 
-export function GET(request: Request) {
-  // When CRON_SECRET is set, Vercel Cron sends it as a bearer token.
-  const secret = process.env.CRON_SECRET;
-  if (secret && request.headers.get("authorization") !== `Bearer ${secret}`) {
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  const { dataset, discrepancies, actionQueue } = getControlTower();
-  const autoResolved = discrepancies.filter((d) => d.status === "Auto-resolved");
+  const run = runReconciliation({ persist: true });
+  const slackPosted = await postSlackDigest(slackDigest(run));
+  const { actionQueue } = getControlTower();
+  const handled = new Set(run.results.filter((r) => HUMAN_STATUSES.has(r.status)).map((r) => r.id));
+  const openQueues = actionQueue
+    .map((q) => ({ ...q, items: q.items.filter((i) => !handled.has(i.id)) }))
+    .filter((q) => q.items.length > 0);
 
   return Response.json({
-    ranAt: new Date().toISOString(),
-    schedule: ROUTING.schedule,
-    dataset: dataset.meta,
-    summary: {
-      discrepancies: discrepancies.length,
-      autoResolved: autoResolved.length,
-      needsReview: discrepancies.length - autoResolved.length,
-      actionItems: actionQueue.reduce((n, q) => n + q.items.length, 0),
-    },
-    autoResolved: autoResolved.map((d) => ({
-      rule: d.rule,
-      subject: d.subjectId,
-      field: d.field,
-      from: d.sourceA,
-      to: d.recommended,
-      basis: d.basis,
-    })),
-    notifications: actionQueue.map((q) => ({
+    ...run,
+    slack_posted: slackPosted,
+    notifications: openQueues.map((q) => ({
       owner: q.owner,
       channel: q.channel,
       count: q.items.length,
@@ -43,3 +31,6 @@ export function GET(request: Request) {
     })),
   });
 }
+
+export const GET = handle;
+export const POST = handle;
