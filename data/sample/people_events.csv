@@ -1,0 +1,10 @@
+employee_id,employee_name,event_type,event_date,department,to_department,role,level,base_salary_usd,termination_reason,tenure_months,manager,location
+E001,Olive Grant,Hire,2025-03-17,Engineering,,Senior Software Engineer,L4,150000,,0,Morgan Hale,New York
+E002,Rowan Pike,Hire,2025-05-05,Product,,Product Manager,L3,120000,,0,Riley Moss,Remote
+E003,Candidate_S204,Hire,2025-03-10,Customer Success,,CSM,L2,78000,,0,Blake Ward,Chicago
+E004,Employee_004,Termination,2025-04-11,Engineering,,Software Engineer,L3,118000,Voluntary,14,Taylor Reed,Austin
+E005,Employee_005,Termination,2025-05-02,Sales,,Account Executive,L2,88000,,9,Casey Lin,Chicago
+E006,Employee_006,Transfer,2025-05-20,Marketing,Marketing,Marketing Manager,L4,112000,,22,Sam Ortiz,Remote
+E007,Employee_007,Promotion,2025-04-01,Product,,Product Manager,L3,125000,,30,Riley Moss,New York
+E008,Sage Holloway,Hire,2025-05-12,Customer Success,,CSM,L2,80000,,0,Blake Ward,Chicago
+E009,Tatum Cole,Hire,2025-05-19,Sales,,Senior AE,L3,105000,,0,Casey Lin,San Francisco

@@ -1,0 +1,302 @@
+employee_id,employee_name,event_type,event_date,department,to_department,role,level,base_salary_usd,termination_reason,tenure_months,manager,location
+E2000,Employee_2000,Termination,2025-01-06,Sales,,Account Executive,L5,121233,Voluntary,6,Casey Turner,New York
+E2001,Employee_2001,Transfer,2024-06-08,Engineering,Product,Principal Engineer,L2,164201,,68,Jordan Kim,New York
+E2002,Employee_2002,Transfer,2024-11-24,Engineering,People Ops,Senior Software Engineer,L2,81899,,14,Alex Rivera,Chicago
+E2003,Employee_2003,Promotion,2024-10-31,People Ops,,Recruiter,L1,103119,,59,Riley Johnson,Remote
+E2004,Employee_2004,Hire,2024-09-05,Marketing,,Marketing Manager,L4,86611,,0,Sam Chen,New York
+E2005,Employee_2005,Hire,2024-06-12,Finance,,Senior Analyst,L2,142292,,0,Dana White,New York
+E2006,Employee_2006,Promotion,2024-10-09,Product,,Associate PM,L4,166089,,69,Jamie Park,Chicago
+E2007,Employee_2007,Hire,2024-07-30,Engineering,,Software Engineer,L1,119627,,0,Alex Rivera,Remote
+E2008,Employee_2008,Termination,2024-08-18,Sales,,VP of Sales,L3,156120,Voluntary,2,Casey Turner,Remote
+E2009,Employee_2009,Transfer,2025-05-25,Sales,Marketing,VP of Sales,L3,119896,,14,Morgan Lee,Austin
+E2010,Employee_2010,Hire,2024-09-11,Sales,,SDR,L4,166968,,0,Casey Turner,Chicago
+E2011,Employee_2011,Hire,2024-06-21,Finance,,Finance Manager,L4,136845,,0,Dana White,San Francisco
+E2012,Employee_2012,Hire,2025-05-10,Customer Success,,CS Team Lead,L2,76665,,0,Blake Nguyen,Chicago
+E2013,Employee_2013,Promotion,2024-07-09,Customer Success,,Senior CSM,L1,159838,,13,Blake Nguyen,San Francisco
+E2014,Employee_2014,Termination,2024-07-22,Customer Success,,CS Team Lead,L3,179575,Involuntary,6,Blake Nguyen,Austin
+E2015,Employee_2015,Hire,2024-06-24,Product,,Director of Product,L1,66267,,0,Jamie Park,San Francisco
+E2016,Employee_2016,Leave of Absence,2024-10-16,Product,,Senior PM,L4,180143,,0,Jamie Park,Austin
+E2017,Employee_2017,Termination,2025-01-20,Product,,Product Manager,L1,174537,Voluntary,4,Drew Davis,Remote
+E2018,Employee_2018,Transfer,2024-07-01,Marketing,Marketing,Marketing Coordinator,L2,78593,,54,Sam Chen,Chicago
+E2019,Employee_2019,Hire,2024-12-01,Customer Success,,Senior CSM,L5,145131,,0,Blake Nguyen,San Francisco
+E2020,Employee_2020,Promotion,2025-01-12,Customer Success,,Director of CS,L1,71025,,9,Blake Nguyen,Austin
+E2021,Employee_2021,Transfer,2024-09-23,Engineering,Product,Principal Engineer,L5,133039,,67,Taylor Brooks,Chicago
+E2022,Employee_2022,Termination,2025-05-06,Sales,,Sales Manager,L2,84484,Voluntary,11,Morgan Lee,New York
+E2023,Employee_2023,Promotion,2024-08-24,Marketing,,CMO,L4,74812,,63,Sam Chen,San Francisco
+E2024,Employee_2024,Termination,2025-03-09,Product,,Senior PM,L1,117858,Voluntary,18,Jamie Park,Remote
+E2025,Employee_2025,Hire,2025-02-11,Customer Success,,VP Customer Success,L4,123598,,0,Blake Nguyen,New York
+E2026,Employee_2026,Termination,2024-06-19,Customer Success,,CSM,L1,136971,Voluntary,1,Blake Nguyen,Chicago
+E2027,Employee_2027,Hire,2025-05-10,People Ops,,VP People,L5,124796,,0,Riley Johnson,Austin
+E2028,Employee_2028,Hire,2025-04-14,Engineering,,Senior Software Engineer,L4,143636,,0,Alex Rivera,Austin
+E2029,Employee_2029,Promotion,2024-09-22,Customer Success,,CSM,L1,65287,,44,Blake Nguyen,Austin
+E2030,Employee_2030,Promotion,2025-02-08,Product,,Associate PM,L1,83408,,53,Jamie Park,Austin
+E2031,Employee_2031,Leave of Absence,2024-12-19,Finance,,Senior Analyst,L1,93257,,0,Dana White,Chicago
+E2032,Employee_2032,Hire,2025-04-21,Product,,Associate PM,L4,174768,,0,Jamie Park,Remote
+E2033,Employee_2033,Hire,2025-02-11,Customer Success,,VP Customer Success,L5,65568,,0,Blake Nguyen,Chicago
+E2034,Employee_2034,Leave of Absence,2024-08-30,Design,,Head of Design,L4,155677,,0,Quinn Reyes,Chicago
+E2035,Employee_2035,Transfer,2024-11-12,Sales,Design,Sales Manager,L5,119875,,32,Casey Turner,Remote
+E2036,Employee_2036,Promotion,2024-08-10,Product,,Senior PM,L4,119099,,66,Drew Davis,Chicago
+E2038,Employee_2038,Termination,2025-04-23,Marketing,,Content Marketer,L5,158107,,15,Sam Chen,Chicago
+E2039,Employee_2039,Leave of Absence,2025-05-30,Customer Success,,VP Customer Success,L5,119719,,0,Blake Nguyen,Remote
+E2040,Employee_2040,Hire,2024-08-14,Engineering,,Principal Engineer,L1,71955,,0,Taylor Brooks,New York
+E2041,Employee_2041,Leave of Absence,2025-05-16,Finance,,Finance Manager,L2,97841,,0,Dana White,New York
+E2043,Employee_2043,Promotion,2025-05-23,Design,,Product Designer,L5,102701,,7,Quinn Reyes,Remote
+E2044,Employee_2044,Hire,2024-10-07,Design,,Senior Designer,L5,91619,,0,Quinn Reyes,San Francisco
+E2045,Employee_2045,Transfer,2024-09-09,Product,Finance,VP Product,L5,103558,,58,Jamie Park,New York
+E2046,Employee_2046,Hire,2024-06-21,Marketing,,Content Marketer,L5,121165,,0,Sam Chen,Chicago
+E2047,Employee_2047,Termination,2024-10-09,People Ops,,Recruiter,L2,108327,Involuntary,7,Riley Johnson,New York
+E2049,Employee_2049,Termination,2024-09-03,Product,,Associate PM,L3,73936,Voluntary,18,Jamie Park,Remote
+E2050,Employee_2050,Hire,2024-09-18,Design,,UX Designer,L3,151944,,0,Quinn Reyes,Austin
+E2051,Employee_2051,Leave of Absence,2025-04-13,Product,,Senior PM,L2,134533,,0,Drew Davis,Chicago
+E2052,Employee_2052,Termination,2025-04-25,Engineering,,Software Engineer,L3,146412,Voluntary,5,Jordan Kim,Austin
+E2053,Employee_2053,Hire,2024-10-23,Design,,UX Designer,L4,68238,,0,Quinn Reyes,Chicago
+E2055,Employee_2055,Leave of Absence,2025-03-03,Sales,,SDR,L2,134888,,0,Morgan Lee,New York
+E2056,Employee_2056,Promotion,2024-09-14,Finance,,Senior Analyst,L4,135484,,56,Dana White,San Francisco
+E2057,Employee_2057,Hire,2024-07-08,Engineering,,Engineering Manager,L3,72113,,0,Jordan Kim,Austin
+E2058,Employee_2058,Leave of Absence,2024-12-26,Sales,,VP of Sales,L2,115860,,0,Casey Turner,Remote
+E2059,Employee_2059,Hire,2024-07-31,Design,,Senior Designer,L1,135101,,0,Quinn Reyes,Chicago
+E2060,Employee_2060,Transfer,2024-07-08,Sales,Product,VP of Sales,L1,130907,,14,Casey Turner,Austin
+E2061,Employee_2061,Hire,2025-05-05,Sales,,Senior AE,L4,69039,,0,Casey Turner,San Francisco
+E2062,Employee_2062,Promotion,2025-03-07,Finance,,Senior Analyst,L4,103663,,19,Dana White,Austin
+E2063,Employee_2063,Hire,2024-06-22,Engineering,,Principal Engineer,L5,65659,,0,Taylor Brooks,Chicago
+E2064,Employee_2064,Leave of Absence,2024-11-04,Design,,Head of Design,L5,92532,,0,Quinn Reyes,San Francisco
+E2065,Employee_2065,Hire,2024-09-22,Design,,Head of Design,L2,145856,,0,Quinn Reyes,San Francisco
+E2066,Employee_2066,Promotion,2025-03-09,Sales,,Account Executive,L5,125458,,71,Morgan Lee,Austin
+E2068,Employee_2068,Hire,2024-07-06,Marketing,,Content Marketer,L1,182980,,0,Sam Chen,Austin
+E2069,Employee_2069,Transfer,2024-11-04,Customer Success,Marketing,Director of CS,L3,139128,,47,Blake Nguyen,Remote
+E2070,Employee_2070,Hire,2024-09-22,Marketing,,Marketing Coordinator,L3,158349,,0,Sam Chen,Austin
+E2071,Employee_2071,Promotion,2025-01-23,Product,,Product Manager,L3,123373,,46,Drew Davis,Remote
+E2072,Employee_2072,Hire,2024-10-22,Sales,,Account Executive,L5,177553,,0,Morgan Lee,Chicago
+E2073,Employee_2073,Transfer,2024-06-10,Finance,Engineering,Finance Manager,L1,171514,,52,Dana White,New York
+E2074,Employee_2074,Termination,2024-08-16,People Ops,,VP People,L5,116445,Voluntary,29,Riley Johnson,San Francisco
+E2075,Employee_2075,Hire,2024-12-04,Customer Success,,VP Customer Success,L5,130820,,0,Blake Nguyen,San Francisco
+E2076,Employee_2076,Termination,2024-08-31,Marketing,,CMO,L2,139162,Voluntary,5,Sam Chen,Austin
+E2077,Employee_2077,Hire,2024-10-14,Engineering,,Senior Software Engineer,L4,113422,,0,Jordan Kim,New York
+E2078,Employee_2078,Hire,2025-01-19,Finance,,CFO,L3,180546,,0,Dana White,New York
+E2079,Employee_2079,Transfer,2024-10-19,Product,People Ops,Associate PM,L5,140842,,70,Jamie Park,Remote
+E2080,Employee_2080,Transfer,2024-07-10,Design,People Ops,Senior Designer,L5,114326,,29,Quinn Reyes,Austin
+E2081,Employee_2081,Promotion,2024-06-04,Product,,Director of Product,L4,130776,,18,Drew Davis,San Francisco
+E2082,Employee_2082,Transfer,2024-09-17,Finance,Marketing,Financial Analyst,L5,89498,,21,Dana White,Chicago
+E2083,Employee_2083,Promotion,2024-07-29,Sales,,Account Executive,L4,128113,,62,Casey Turner,San Francisco
+E2084,Employee_2084,Hire,2024-08-05,Marketing,,Demand Gen Manager,L1,140168,,0,Sam Chen,San Francisco
+E2085,Employee_2085,Hire,2024-10-11,Engineering,,Principal Engineer,L2,88597,,0,Taylor Brooks,Remote
+E2086,Employee_2086,Termination,2025-04-07,Engineering,,Staff Engineer,L1,126789,,46,Alex Rivera,San Francisco
+E2087,Employee_2087,Hire,2025-03-26,Finance,,Controller,L5,172538,,0,Dana White,Chicago
+E2088,Employee_2088,Leave of Absence,2025-04-02,People Ops,,Recruiter,L3,142410,,0,Riley Johnson,Chicago
+E2089,Employee_2089,Hire,2024-09-12,Design,,Design Lead,L2,133512,,0,Quinn Reyes,San Francisco
+E2090,Employee_2090,Leave of Absence,2025-04-04,Sales,,Account Executive,L4,70116,,0,Morgan Lee,New York
+E2091,Employee_2091,Termination,2024-06-01,Customer Success,,Senior CSM,L5,133425,Involuntary,6,Blake Nguyen,New York
+E2092,Employee_2092,Promotion,2024-12-13,Design,,Product Designer,L4,110943,,13,Quinn Reyes,San Francisco
+E2093,Employee_2093,Leave of Absence,2024-07-13,People Ops,,HRBP,L2,102128,,0,Riley Johnson,Austin
+E2094,Employee_2094,Termination,2024-07-31,Finance,,Financial Analyst,L1,65942,Voluntary,12,Dana White,Austin
+E2095,Employee_2095,Hire,2025-04-30,Design,,Senior Designer,L1,141725,,0,Quinn Reyes,Austin
+E2096,Employee_2096,Transfer,2025-05-15,Design,Design,Head of Design,L3,163955,,27,Quinn Reyes,Chicago
+E2097,Employee_2097,Termination,2025-02-03,Customer Success,,Senior CSM,L3,105193,Voluntary,45,Blake Nguyen,San Francisco
+E2098,Employee_2098,Promotion,2024-08-22,Sales,,Account Executive,L4,78143,,28,Casey Turner,Austin
+E2099,Employee_2099,Leave of Absence,2024-06-03,Engineering,,Senior Software Engineer,L4,170430,,0,Jordan Kim,Chicago
+E2100,Employee_2100,Hire,2024-10-13,Customer Success,,VP Customer Success,L4,94067,,0,Blake Nguyen,New York
+E2101,Employee_2101,Transfer,2025-02-22,Engineering,People Ops,Engineering Manager,L4,158271,,8,Jordan Kim,Remote
+E2102,Employee_2102,Promotion,2025-02-21,Customer Success,,CSM,L2,102487,,25,Blake Nguyen,Chicago
+E2103,Employee_2103,Transfer,2024-12-02,Finance,Finance,CFO,L2,150854,,1,Dana White,New York
+E2104,Employee_2104,Transfer,2024-12-25,People Ops,Finance,HRBP,L3,132861,,2,Riley Johnson,New York
+E2105,Employee_2105,Hire,2024-10-20,People Ops,,VP People,L5,94661,,0,Riley Johnson,Remote
+E2106,Employee_2106,Hire,2024-12-26,Design,,Head of Design,L1,131353,,0,Quinn Reyes,Chicago
+E2107,Employee_2107,Hire,2024-07-30,Sales,,VP of Sales,L3,170243,,0,Casey Turner,Chicago
+E2108,Employee_2108,Termination,2024-10-03,People Ops,,HRBP,L4,166659,Voluntary,13,Riley Johnson,Chicago
+E2109,Employee_2109,Hire,2024-12-13,Engineering,,Engineering Manager,L1,148055,,0,Jordan Kim,San Francisco
+E2110,Employee_2110,Termination,2024-06-05,Product,,Director of Product,L3,97539,Voluntary,7,Jamie Park,Remote
+E2111,Employee_2111,Leave of Absence,2025-01-30,Product,,Associate PM,L5,106139,,0,Drew Davis,Austin
+E2112,Employee_2112,Termination,2024-09-11,People Ops,,Recruiter,L2,161394,,31,Riley Johnson,San Francisco
+E2113,Employee_2113,Promotion,2024-11-30,Finance,,Senior Analyst,L2,85446,,14,Dana White,New York
+E2114,Employee_2114,Promotion,2025-03-05,Customer Success,,VP Customer Success,L1,70539,,62,Blake Nguyen,Chicago
+E2115,Employee_2115,Promotion,2025-02-07,Product,,Director of Product,L5,88969,,66,Drew Davis,Remote
+E2116,Employee_2116,Hire,2025-01-03,Finance,,CFO,L2,127694,,0,Dana White,Chicago
+E2117,Employee_2117,Termination,2024-08-01,Product,,Director of Product,L2,125302,Involuntary,15,Jamie Park,New York
+E2118,Employee_2118,Hire,2024-12-03,Finance,,Controller,L5,145318,,0,Dana White,San Francisco
+E2119,Employee_2119,Termination,2025-04-10,People Ops,,Recruiter,L3,112962,Voluntary,8,Riley Johnson,Remote
+E2120,Employee_2120,Hire,2024-12-23,Finance,,Controller,L3,101651,,0,Dana White,San Francisco
+E2121,Employee_2121,Promotion,2024-10-17,Marketing,,CMO,L2,170393,,31,Sam Chen,Remote
+E2122,Employee_2122,Termination,2024-06-05,Finance,,Senior Analyst,L2,120249,Voluntary,14,Dana White,Chicago
+E2123,Employee_2123,Hire,2025-03-18,Product,,Director of Product,L3,71253,,0,Drew Davis,New York
+E2124,Employee_2124,Promotion,2025-01-30,Marketing,,Marketing Coordinator,L2,174965,,13,Sam Chen,Austin
+E2125,Employee_2125,Termination,2024-10-10,People Ops,,Senior Recruiter,L3,67599,Voluntary,11,Riley Johnson,Austin
+E2126,Employee_2126,Transfer,2025-03-03,Finance,Marketing,CFO,L5,167276,,37,Dana White,Austin
+E2127,Employee_2127,Hire,2024-10-25,Customer Success,,Director of CS,L1,125784,,0,Blake Nguyen,San Francisco
+E2128,Employee_2128,Termination,2024-07-07,Product,,Director of Product,L5,86233,Layoff,11,Jamie Park,Austin
+E2129,Employee_2129,Transfer,2024-12-20,Product,People Ops,Senior PM,L3,181351,,57,Drew Davis,Chicago
+E2130,Employee_2130,Hire,2024-06-12,Customer Success,,Director of CS,L2,81389,,0,Blake Nguyen,Austin
+E2131,Employee_2131,Hire,2024-07-19,Sales,,Account Executive,L2,73361,,0,Casey Turner,Chicago
+E2132,Employee_2132,Termination,2024-07-13,Engineering,,Software Engineer,L4,99400,Voluntary,7,Jordan Kim,Remote
+E2133,Employee_2133,Transfer,2025-01-13,People Ops,Marketing,Recruiter,L2,82206,,68,Riley Johnson,New York
+E2134,Employee_2134,Promotion,2025-01-26,Engineering,,Staff Engineer,L3,179150,,70,Alex Rivera,Chicago
+E2136,Employee_2136,Termination,2024-07-16,People Ops,,Senior Recruiter,L4,105352,Voluntary,4,Riley Johnson,Austin
+E2137,Employee_2137,Hire,2024-08-09,Marketing,,Marketing Manager,L1,110073,,0,Sam Chen,Remote
+E2138,Employee_2138,Termination,2025-01-07,Engineering,,Engineering Manager,L4,169590,Voluntary,3,Alex Rivera,Chicago
+E2139,Employee_2139,Hire,2024-12-28,Finance,,Financial Analyst,L5,180626,,0,Dana White,Remote
+E2140,Employee_2140,Promotion,2024-09-21,Finance,,Senior Analyst,L4,99469,,11,Dana White,San Francisco
+E2141,Employee_2141,Promotion,2024-12-29,People Ops,,Senior Recruiter,L5,89641,,9,Riley Johnson,San Francisco
+E2142,Employee_2142,Transfer,2024-10-18,People Ops,Customer Success,HR Coordinator,L4,89613,,42,Riley Johnson,San Francisco
+E2143,Employee_2143,Hire,2024-07-23,Engineering,,Principal Engineer,L1,101977,,0,Alex Rivera,San Francisco
+E2144,Employee_2144,Hire,2024-06-08,Customer Success,,CSM,L2,129694,,0,Blake Nguyen,Austin
+E2145,Employee_2145,Leave of Absence,2025-01-24,Design,,Senior Designer,L4,156348,,0,Quinn Reyes,Austin
+E2146,Employee_2146,Hire,2024-12-18,Sales,,Account Executive,L1,74356,,0,Casey Turner,San Francisco
+E2147,Employee_2147,Promotion,2024-08-02,Finance,,Finance Manager,L4,165682,,32,Dana White,Remote
+E2148,Employee_2148,Termination,2024-07-19,Finance,,Financial Analyst,L2,152294,Voluntary,7,Dana White,Remote
+E2149,Employee_2149,Transfer,2024-06-22,People Ops,Sales,Senior Recruiter,L2,98202,,62,Riley Johnson,San Francisco
+E2150,Employee_2150,Leave of Absence,2024-09-29,Product,,Associate PM,L2,147956,,0,Drew Davis,Austin
+E2151,Employee_2151,Termination,2024-12-20,Engineering,,Senior Software Engineer,L3,66170,Voluntary,6,Taylor Brooks,Remote
+E2152,Employee_2152,Hire,2025-02-11,Marketing,,Marketing Manager,L1,76980,,0,Sam Chen,New York
+E2153,Employee_2153,Transfer,2024-07-25,Engineering,Marketing,Staff Engineer,L2,128942,,30,Alex Rivera,Chicago
+E2154,Employee_2154,Hire,2024-12-11,Product,,Director of Product,L2,111945,,0,Jamie Park,Austin
+E2155,Employee_2155,Termination,2025-03-05,Engineering,,Engineering Manager,L4,89874,Voluntary,4,Taylor Brooks,Austin
+E2156,Employee_2156,Promotion,2025-04-03,Product,,Director of Product,L3,184861,,71,Jamie Park,New York
+E2157,Employee_2157,Promotion,2025-03-05,Marketing,,Demand Gen Manager,L3,113118,,59,Sam Chen,Chicago
+E2158,Employee_2158,Transfer,2024-12-04,Design,Finance,Product Designer,L1,107034,,9,Quinn Reyes,San Francisco
+E2159,Employee_2159,Transfer,2024-11-13,Customer Success,Design,VP Customer Success,L2,149004,,42,Blake Nguyen,New York
+E2160,Employee_2160,Hire,2024-06-17,Sales,,SDR,L2,91486,,0,Morgan Lee,Remote
+E2161,Employee_2161,Termination,2024-12-16,Finance,,Financial Analyst,L1,133920,Voluntary,18,Dana White,Austin
+E2162,Employee_2162,Hire,2024-09-15,Finance,,CFO,L1,150950,,0,Dana White,New York
+E2163,Employee_2163,Termination,2024-12-30,Customer Success,,CSM,L3,169103,Voluntary,8,Blake Nguyen,Chicago
+E2164,Employee_2164,Hire,2024-09-19,Engineering,,Software Engineer,L3,133089,,0,Jordan Kim,New York
+E2165,Employee_2165,Hire,2025-02-25,Finance,,CFO,L4,151098,,0,Dana White,Chicago
+E2166,Employee_2166,Termination,2024-07-25,Marketing,,CMO,L5,111918,Voluntary,12,Sam Chen,New York
+E2167,Employee_2167,Termination,2024-11-20,Marketing,,Content Marketer,L5,134979,Voluntary,14,Sam Chen,Austin
+E2168,Employee_2168,Promotion,2025-01-07,Product,,Senior PM,L4,173285,,42,Jamie Park,Chicago
+E2169,Employee_2169,Leave of Absence,2024-10-09,Finance,,Controller,L5,112187,,0,Dana White,Remote
+E2170,Employee_2170,Leave of Absence,2025-04-02,Design,,UX Designer,L1,67136,,0,Quinn Reyes,Austin
+E2171,Employee_2171,Hire,2024-11-09,Engineering,,Staff Engineer,L2,67844,,0,Taylor Brooks,Austin
+E2172,Employee_2172,Termination,2024-08-19,Marketing,,Marketing Coordinator,L1,99732,Involuntary,47,Sam Chen,San Francisco
+E2173,Employee_2173,Termination,2025-03-19,People Ops,,Senior Recruiter,L1,161241,Voluntary,10,Riley Johnson,Remote
+E2174,Employee_2174,Promotion,2024-07-19,Marketing,,Demand Gen Manager,L5,143018,,39,Sam Chen,Chicago
+E2175,Employee_2175,Leave of Absence,2024-11-19,Design,,UX Designer,L1,110603,,0,Quinn Reyes,Remote
+E2176,Employee_2176,Leave of Absence,2025-04-21,Sales,,Account Executive,L5,166897,,0,Casey Turner,New York
+E2178,Employee_2178,Transfer,2024-12-19,Finance,Customer Success,Senior Analyst,L1,163676,,65,Dana White,San Francisco
+E2179,Employee_2179,Hire,2024-11-20,Design,,Senior Designer,L4,75819,,0,Quinn Reyes,Chicago
+E2180,Employee_2180,Hire,2024-12-22,Engineering,,Principal Engineer,L4,130774,,0,Alex Rivera,San Francisco
+E2181,Employee_2181,Hire,2024-12-20,Marketing,,Demand Gen Manager,L5,150491,,0,Sam Chen,Chicago
+E2182,Employee_2182,Hire,2025-01-07,Finance,,Senior Analyst,L1,107390,,0,Dana White,New York
+E2183,Employee_2183,Hire,2024-11-12,Design,,Design Lead,L3,110157,,0,Quinn Reyes,Austin
+E2184,Employee_2184,Promotion,2025-01-13,Marketing,,Marketing Manager,L5,146681,,19,Sam Chen,New York
+E2185,Employee_2185,Hire,2024-07-14,Finance,,Senior Analyst,L3,79728,,0,Dana White,San Francisco
+E2186,Employee_2186,Hire,2024-07-27,Marketing,,Marketing Manager,L1,104992,,0,Sam Chen,Remote
+E2187,Employee_2187,Transfer,2024-09-17,Engineering,Finance,Staff Engineer,L2,136620,,67,Alex Rivera,Chicago
+E2188,Employee_2188,Transfer,2025-05-09,Customer Success,Engineering,VP Customer Success,L2,114362,,68,Blake Nguyen,Austin
+E2190,Employee_2190,Hire,2024-10-17,Customer Success,,CSM,L1,151898,,0,Blake Nguyen,New York
+E2191,Employee_2191,Hire,2024-12-12,Engineering,,Staff Engineer,L4,131655,,0,Taylor Brooks,New York
+E2192,Employee_2192,Termination,2024-09-04,Product,,Director of Product,L5,130621,Voluntary,18,Jamie Park,New York
+E2193,Employee_2193,Hire,2024-12-19,Finance,,CFO,L3,162568,,0,Dana White,New York
+E2194,Employee_2194,Transfer,2024-09-29,Product,People Ops,Senior PM,L3,171416,,8,Drew Davis,Remote
+E2195,Employee_2195,Hire,2024-11-22,Engineering,,Principal Engineer,L3,182594,,0,Alex Rivera,San Francisco
+E2196,Employee_2196,Leave of Absence,2025-04-10,Sales,,Sales Manager,L5,179386,,0,Morgan Lee,Remote
+E2197,Employee_2197,Termination,2024-11-07,Finance,,CFO,L2,108160,Layoff,58,Dana White,San Francisco
+E2198,Employee_2198,Transfer,2024-09-12,Marketing,Marketing,CMO,L5,105501,,68,Sam Chen,Remote
+E2199,Employee_2199,Hire,2025-03-13,Marketing,,CMO,L2,134856,,0,Sam Chen,San Francisco
+E2200,Employee_2200,Promotion,2024-12-29,Product,,Product Manager,L1,118903,,39,Drew Davis,Austin
+E2201,Employee_2201,Hire,2024-06-14,Marketing,,Content Marketer,L1,164935,,0,Sam Chen,Chicago
+E2202,Employee_2202,Hire,2024-06-14,Finance,,CFO,L2,112089,,0,Dana White,Remote
+E2203,Employee_2203,Termination,2025-04-29,Marketing,,CMO,L5,89114,Voluntary,16,Sam Chen,Remote
+E2204,Employee_2204,Hire,2024-12-27,Marketing,,Content Marketer,L2,165209,,0,Sam Chen,Austin
+E2205,Employee_2205,Promotion,2024-07-04,Design,,Product Designer,L2,88209,,57,Quinn Reyes,Austin
+E2206,Employee_2206,Termination,2024-06-22,Customer Success,,Senior CSM,L4,161381,Voluntary,10,Blake Nguyen,Remote
+E2207,Employee_2207,Termination,2024-06-22,Engineering,,Principal Engineer,L1,132987,Voluntary,5,Alex Rivera,New York
+E2209,Employee_2209,Hire,2024-06-28,Customer Success,,Senior CSM,L4,155433,,0,Blake Nguyen,Remote
+E2210,Employee_2210,Hire,2025-03-27,Customer Success,,CSM,L5,182221,,0,Blake Nguyen,Remote
+E2211,Employee_2211,Hire,2025-01-19,Design,,Senior Designer,L4,142373,,0,Quinn Reyes,Remote
+E2212,Employee_2212,Transfer,2025-05-31,Sales,Marketing,Senior AE,L3,159158,,16,Morgan Lee,New York
+E2213,Employee_2213,Termination,2024-12-14,Customer Success,,CS Team Lead,L1,145225,Voluntary,9,Blake Nguyen,Chicago
+E2214,Employee_2214,Leave of Absence,2025-03-17,Design,,UX Designer,L2,179203,,0,Quinn Reyes,Austin
+E2215,Employee_2215,Termination,2024-11-06,Marketing,,Content Marketer,L1,102851,Involuntary,24,Sam Chen,San Francisco
+E2216,Employee_2216,Promotion,2024-06-07,Finance,,Financial Analyst,L5,125115,,64,Dana White,Chicago
+E2217,Employee_2217,Termination,2025-03-29,Engineering,,Principal Engineer,L4,151438,Voluntary,6,Alex Rivera,Remote
+E2218,Employee_2218,Transfer,2024-06-04,Design,Finance,Design Lead,L1,180627,,71,Quinn Reyes,Chicago
+E2219,Employee_2219,Hire,2025-05-01,Finance,,Financial Analyst,L2,110746,,0,Dana White,San Francisco
+E2220,Employee_2220,Hire,2024-07-15,Engineering,,Principal Engineer,L5,71426,,0,Jordan Kim,Remote
+E2221,Employee_2221,Transfer,2025-05-21,Marketing,Marketing,Content Marketer,L3,124682,,47,Sam Chen,New York
+E2222,Employee_2222,Promotion,2024-07-05,People Ops,,Senior Recruiter,L3,164410,,55,Riley Johnson,Austin
+E2223,Employee_2223,Transfer,2024-10-19,Customer Success,Product,Senior CSM,L1,134081,,53,Blake Nguyen,San Francisco
+E2224,Employee_2224,Transfer,2025-04-19,Engineering,Sales,Software Engineer,L5,128394,,37,Alex Rivera,Chicago
+E2225,Employee_2225,Termination,2025-04-16,Product,,Senior PM,L5,82001,Voluntary,14,Drew Davis,Remote
+E2226,Employee_2226,Transfer,2024-09-08,Marketing,Engineering,CMO,L2,80493,,4,Sam Chen,New York
+E2227,Employee_2227,Termination,2024-11-18,Finance,,CFO,L4,138454,Layoff,28,Dana White,San Francisco
+E2228,Employee_2228,Hire,2025-02-15,People Ops,,Senior Recruiter,L1,137088,,0,Riley Johnson,New York
+E2229,Employee_2229,Hire,2025-03-19,Sales,,Senior AE,L3,145739,,0,Morgan Lee,San Francisco
+E2230,Employee_2230,Leave of Absence,2025-02-01,Finance,,Finance Manager,L3,127193,,0,Dana White,San Francisco
+E2231,Employee_2231,Promotion,2025-03-02,Customer Success,,Senior CSM,L4,182431,,43,Blake Nguyen,Remote
+E2232,Employee_2232,Termination,2025-05-14,Engineering,,Principal Engineer,L3,137768,Layoff,69,Jordan Kim,San Francisco
+E2233,Employee_2233,Leave of Absence,2024-10-22,Product,,Senior PM,L1,175197,,0,Jamie Park,Austin
+E2234,Employee_2234,Termination,2024-12-17,Design,,Head of Design,L2,143012,Voluntary,15,Quinn Reyes,Austin
+E2235,Employee_2235,Hire,2024-09-30,Engineering,,Staff Engineer,L4,113704,,0,Alex Rivera,Austin
+E2236,Employee_2236,Hire,2024-12-09,Finance,,CFO,L3,167884,,0,Dana White,San Francisco
+E2237,Employee_2237,Hire,2025-02-03,Sales,,Sales Manager,L5,183614,,0,Morgan Lee,San Francisco
+E2238,Employee_2238,Hire,2024-11-15,Product,,Director of Product,L5,83781,,0,Jamie Park,Chicago
+E2239,Employee_2239,Termination,2025-02-23,Marketing,,Content Marketer,L1,65538,Voluntary,16,Sam Chen,Chicago
+E2240,Employee_2240,Promotion,2024-07-23,Sales,,Senior AE,L4,133233,,40,Morgan Lee,Chicago
+E2241,Employee_2241,Hire,2024-10-25,People Ops,,Recruiter,L3,101261,,0,Riley Johnson,Remote
+E2242,Employee_2242,Hire,2024-07-29,Sales,,Senior AE,L2,66999,,0,Morgan Lee,San Francisco
+E2243,Employee_2243,Hire,2025-05-27,Product,,VP Product,L3,170382,,0,Drew Davis,Chicago
+E2244,Employee_2244,Hire,2024-11-21,Finance,,Senior Analyst,L1,135854,,0,Dana White,New York
+E2245,Employee_2245,Leave of Absence,2024-06-26,Marketing,,Marketing Coordinator,L4,78884,,0,Sam Chen,New York
+E2247,Employee_2247,Promotion,2025-05-10,Product,,Senior PM,L3,171076,,69,Jamie Park,Remote
+E2248,Employee_2248,Hire,2024-11-06,Marketing,,Marketing Coordinator,L4,154715,,0,Sam Chen,Remote
+E2249,Employee_2249,Promotion,2025-04-12,Finance,,Senior Analyst,L2,98823,,47,Dana White,San Francisco
+E2250,Employee_2250,Termination,2024-07-04,Product,,Senior PM,L4,79796,Layoff,7,Drew Davis,Remote
+E2251,Employee_2251,Transfer,2024-08-05,Marketing,Sales,Marketing Manager,L3,118174,,14,Sam Chen,Chicago
+E2252,Employee_2252,Termination,2025-03-30,Sales,,Senior AE,L5,96270,Voluntary,12,Morgan Lee,Remote
+E2253,Employee_2253,Hire,2025-05-22,Design,,UX Designer,L3,142459,,0,Quinn Reyes,Remote
+E2254,Employee_2254,Hire,2025-05-09,Product,,VP Product,L2,75209,,0,Drew Davis,New York
+E2255,Employee_2255,Hire,2025-01-14,Customer Success,,CS Team Lead,L5,88091,,0,Blake Nguyen,Remote
+E2256,Employee_2256,Transfer,2025-04-02,Sales,Design,VP of Sales,L1,107914,,64,Morgan Lee,New York
+E2257,Employee_2257,Leave of Absence,2025-04-22,Finance,,Senior Analyst,L5,171147,,0,Dana White,San Francisco
+E2258,Employee_2258,Hire,2025-04-12,Marketing,,Demand Gen Manager,L5,140750,,0,Sam Chen,San Francisco
+E2259,Employee_2259,Termination,2025-05-14,Finance,,Finance Manager,L3,121980,Voluntary,10,Dana White,Chicago
+E2260,Employee_2260,Termination,2024-08-05,Engineering,,Principal Engineer,L5,73180,Voluntary,11,Taylor Brooks,New York
+E2261,Employee_2261,Hire,2024-10-23,Engineering,,Principal Engineer,L3,178466,,0,Jordan Kim,San Francisco
+E2262,Employee_2262,Transfer,2025-05-31,Design,Design,Head of Design,L4,118219,,49,Quinn Reyes,Chicago
+E2264,Employee_2264,Hire,2024-07-07,Marketing,,Marketing Manager,L2,149985,,0,Sam Chen,San Francisco
+E2266,Employee_2266,Termination,2025-01-04,Design,,Head of Design,L2,172488,Voluntary,18,Quinn Reyes,Austin
+E2267,Employee_2267,Transfer,2025-03-23,Finance,Customer Success,Senior Analyst,L4,175992,,31,Dana White,Remote
+E2268,Employee_2268,Termination,2025-05-27,Product,,Associate PM,L1,79832,Voluntary,62,Jamie Park,San Francisco
+E2269,Employee_2269,Hire,2025-04-09,People Ops,,HRBP,L5,76592,,0,Riley Johnson,Remote
+E2270,Employee_2270,Hire,2024-06-28,Sales,,VP of Sales,L5,183434,,0,Casey Turner,Chicago
+E2271,Employee_2271,Termination,2025-01-27,Engineering,,Engineering Manager,L4,161182,Involuntary,17,Alex Rivera,Austin
+E2272,Employee_2272,Hire,2025-04-02,People Ops,,Senior Recruiter,L2,163228,,0,Riley Johnson,Chicago
+E2273,Employee_2273,Termination,2025-03-21,People Ops,,HR Coordinator,L4,151025,Voluntary,4,Riley Johnson,Austin
+E2274,Employee_2274,Termination,2024-10-21,Customer Success,,CSM,L2,82372,Voluntary,12,Blake Nguyen,Austin
+E2275,Employee_2275,Termination,2025-03-30,Engineering,,Software Engineer,L5,161857,Involuntary,5,Jordan Kim,Remote
+E2276,Employee_2276,Promotion,2024-09-29,Product,,Product Manager,L3,128559,,24,Jamie Park,Austin
+E2277,Employee_2277,Leave of Absence,2024-08-18,Sales,,Account Executive,L5,174787,,0,Casey Turner,Remote
+E2278,Employee_2278,Transfer,2024-08-25,Design,Finance,Product Designer,L4,140727,,45,Quinn Reyes,Austin
+E2279,Employee_2279,Termination,2025-01-30,Sales,,SDR,L2,127425,,18,Morgan Lee,Remote
+E2280,Employee_2280,Termination,2025-04-12,Engineering,,Software Engineer,L3,130016,Involuntary,5,Taylor Brooks,Chicago
+E2281,Employee_2281,Termination,2025-03-02,Engineering,,Software Engineer,L4,145009,Voluntary,10,Taylor Brooks,Austin
+E2282,Employee_2282,Termination,2025-02-19,Engineering,,Software Engineer,L5,167233,Voluntary,13,Taylor Brooks,Austin
+E2283,Employee_2283,Termination,2025-04-15,Engineering,,Staff Engineer,L4,127310,Voluntary,9,Jordan Kim,Chicago
+E2284,Employee_2284,Termination,2024-10-01,Engineering,,Staff Engineer,L5,137261,Layoff,5,Taylor Brooks,New York
+E2285,Employee_2285,Termination,2025-05-11,Engineering,,Staff Engineer,L4,161874,,12,Jordan Kim,San Francisco
+E2286,Employee_2286,Termination,2024-08-02,Customer Success,,Senior Designer,L3,136384,Voluntary,19,Remote Manager,Chicago
+E2287,Employee_2287,Termination,2025-05-12,Customer Success,,Senior Designer,L2,97445,Voluntary,14,Remote Manager,New York
+E2288,Employee_2288,Termination,2025-05-24,Engineering,,Senior PM,L2,134019,Voluntary,15,Remote Manager,Chicago
+E2289,Employee_2289,Termination,2025-05-27,Engineering,,Senior Designer,L4,140883,Voluntary,10,Remote Manager,Austin
+E2290,Employee_2290,Termination,2024-09-11,Product,,Senior Account Executive,L2,123996,Voluntary,7,Remote Manager,Austin
+E2291,Employee_2291,Termination,2024-10-01,Customer Success,,Senior PM,L2,122940,Voluntary,6,Remote Manager,Chicago
+E2292,Employee_2292,Termination,2025-05-26,Customer Success,,Senior PM,L4,105733,Voluntary,13,Remote Manager,Austin
+E2293,Employee_2293,Termination,2025-01-08,Design,,Senior Account Executive,L3,110938,Voluntary,9,Remote Manager,Chicago
+E2294,Employee_2294,Termination,2025-01-09,Customer Success,,Senior Engineer,L2,115034,Voluntary,8,Remote Manager,New York
+E2295,Employee_2295,Termination,2024-11-18,Product,,Senior PM,L3,93680,Voluntary,16,Remote Manager,Austin
+E2296,Employee_2296,Termination,2025-02-06,Sales,,Senior CSM,L2,113716,Voluntary,14,Remote Manager,Austin
+E2297,Employee_2297,Termination,2025-05-11,Design,,Senior CSM,L4,91788,Voluntary,9,Remote Manager,Austin
+E2298,Employee_2298,Leave of Absence,2025-02-07,Customer Success,,CSM,L2,86048,,28,Remote Manager,New York
+E2299,Employee_2299,Leave of Absence,2025-05-01,Marketing,,Account Executive,L2,101859,,12,Remote Manager,Remote
+E2300,Employee_2300,Leave of Absence,2024-11-11,Design,,Marketing Manager,L4,126246,,21,Remote Manager,New York
+E2301,Employee_2301,Leave of Absence,2024-10-29,Engineering,,Software Engineer,L4,82361,,19,Remote Manager,Austin
+E2302,Employee_2302,Leave of Absence,2025-01-19,Sales,,Account Executive,L3,103897,,9,Remote Manager,Chicago
+E2303,Employee_2303,Leave of Absence,2024-11-23,Design,,Software Engineer,L4,86736,,19,Remote Manager,New York
+E2304,Employee_2304,Leave of Absence,2025-03-08,Design,,Software Engineer,L2,136662,,13,Remote Manager,Remote
+E2305,Employee_2305,Leave of Absence,2025-05-14,Customer Success,,Account Executive,L2,128271,,18,Remote Manager,Chicago
+E2306,Candidate_CGHOST1000,Hire,2024-11-03,Engineering,,Senior Software Engineer,L3,84340,,0,Jordan Kim,New York
+E2307,Candidate_CGHOST1001,Hire,2025-01-27,Sales,,Account Executive,L4,106991,,0,Casey Turner,Austin
+E2308,Candidate_CGHOST1002,Hire,2024-12-06,Customer Success,,Senior CSM,L2,106720,,0,Blake Nguyen,San Francisco
+E2309,Candidate_CGHOST1003,Hire,2025-03-06,Customer Success,,CSM,L4,108728,,0,Blake Nguyen,Chicago
+E2310,Candidate_CGHOST1004,Hire,2025-01-21,Engineering,,Senior Software Engineer,L3,103107,,0,Alex Rivera,Remote
+E2311,Candidate_CGHOST1005,Hire,2024-12-02,Product,,Senior PM,L2,105807,,0,Jamie Park,New York
+E2312,Candidate_CGHOST1006,Hire,2025-01-20,Customer Success,,CSM,L3,105442,,0,Blake Nguyen,San Francisco

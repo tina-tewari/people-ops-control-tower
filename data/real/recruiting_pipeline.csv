@@ -1,0 +1,336 @@
+candidate_id,candidate_name,role,department,level,hiring_manager,source,applied_date,phone_screen_date,assessment_date,hm_interview_date,final_round_date,offer_extended_date,offer_close_date,current_stage,days_in_current_stage,total_days_in_process,time_to_offer_days,time_to_close_days,time_to_start_days,disposition,rejection_reason
+C0001,Alex Martinez,Senior Software Engineer,Engineering,L4,Jordan Kim,LinkedIn,2024-11-15,2024-11-24,2024-12-05,2024-12-16,2025-01-06,2025-01-07,2025-05-01,Offer Accepted,3,167,53.0,167.0,199.0,Hired,
+C0002,Priya Sharma,Account Executive,Sales,L3,Morgan Lee,Referral,2024-12-01,2024-12-04,2024-12-12,2024-12-18,2024-12-22,2024-12-24,2025-05-05,Offer Accepted,4,155,23.0,155.0,190.0,Hired,
+C0003,Jordan Wu,Product Manager,Product,L4,Jamie Park,Careers Page,2025-01-10,2025-01-15,2025-01-21,2025-01-28,2025-01-31,2025-02-01,2025-05-08,Offer Accepted,2,118,22.0,118.0,157.0,Hired,
+C0004,Casey Thompson,Marketing Manager,Marketing,L3,Sam Chen,LinkedIn,2025-01-20,2025-01-23,2025-01-26,2025-02-01,2025-02-05,2025-02-06,2025-05-12,Offer Accepted,5,112,17.0,112.0,154.0,Hired,
+C0005,Riley Nguyen,Senior CSM,Customer Success,L3,Blake Nguyen,Referral,2025-01-28,2025-02-03,2025-02-07,2025-02-12,2025-02-15,2025-02-16,2025-05-15,Offer Accepted,1,107,19.0,107.0,153.0,Hired,
+C0006,Sam Patel,Senior Recruiter,People Ops,L3,Riley Johnson,Job Board,2025-02-03,2025-02-07,2025-02-09,2025-02-14,2025-02-18,2025-02-19,2025-05-17,Offer Accepted,3,103,16.0,103.0,154.0,Hired,
+C0007,Morgan Davis,Staff Engineer,Engineering,L5,Alex Rivera,LinkedIn,2025-01-05,2025-01-11,2025-01-30,2025-02-08,2025-02-16,2025-02-18,2025-05-19,Offer Accepted,4,134,44.0,134.0,162.0,Hired,
+C0008,Drew Kim,Financial Analyst,Finance,L2,Dana White,University,2025-02-14,2025-02-16,2025-02-23,2025-02-25,2025-03-01,2025-03-03,2025-05-22,Offer Accepted,2,97,17.0,97.0,150.0,Hired,
+C1000,Candidate_1000,SDR,Sales,L3,Morgan Lee,Referral,2024-08-11,2024-08-16,2024-08-21,2024-08-25,2024-08-30,2024-08-31,2024-10-08,Offer Accepted,1,58,20.0,58.0,78.0,Hired,
+C1001,Candidate_1001,Controller,Finance,L5,Dana White,LinkedIn,2024-08-21,2024-08-24,2024-08-29,2024-09-06,2024-09-15,2024-09-16,2024-10-01,Offer Accepted,1,41,26.0,41.0,61.0,Hired,
+C1002,Candidate_1002,Sales Manager,Sales,L1,Casey Turner,University,2024-12-03,2024-12-07,2024-12-11,2024-12-14,2024-12-21,,,Final Round,4,18,,,,Active,
+C1003,Candidate_1003,HR Coordinator,People Ops,L2,Riley Johnson,Careers Page,2024-10-21,2024-10-27,,,,,,Rejected,6,6,,,,Rejected,Salary Mismatch
+C1004,Candidate_1004,Product Manager,Product,L3,Jamie Park,Agency,2024-08-27,2024-09-03,,,,,,Rejected,5,7,,,,Rejected,Culture Fit
+C1005,Candidate_1005,Finance Manager,Finance,L1,Dana White,LinkedIn,2024-11-09,2024-11-12,,,,,,Rejected,12,3,,,,Rejected,No Show
+C1006,Candidate_1006,Product Manager,Product,L4,Drew Davis,University,2025-01-21,2025-01-26,,,,,,Phone Screen,4,5,,,,Active,
+C1007,Candidate_1007,VP People,People Ops,L4,Riley Johnson,Job Board,2024-09-21,2024-09-25,,,,,,Withdrew,2,4,,,,Withdrew,
+C1008,Candidate_1008,Demand Gen Manager,Marketing,L5,Sam Chen,Careers Page,2024-12-13,2024-12-19,2024-12-24,2024-12-29,2025-01-01,,,Final Round,14,19,,,,Active,
+C1009,Candidate_1009,Software Engineer,Engineering,L5,Alex Rivera,University,2024-11-22,2024-11-26,,,,,,Rejected,3,4,,,,Rejected,Underqualified
+C1010,Candidate_1010,CSM,Customer Success,L3,Blake Nguyen,Agency,2024-07-25,2024-07-30,,,,,,Rejected,3,5,,,,Rejected,Culture Fit
+C1011,Candidate_1011,Principal Engineer,Engineering,L3,Alex Rivera,LinkedIn,2024-07-28,2024-08-09,,,,,,Rejected,1,12,,,,Rejected,Underqualified
+C1012,Candidate_1012,CSM,Customer Success,L5,Blake Nguyen,Referral,2025-01-30,2025-02-02,,,,,,Rejected,5,3,,,,Rejected,Culture Fit
+C1013,Candidate_1013,HRBP,People Ops,L3,Riley Johnson,Agency,2025-01-18,2025-01-24,,,,,,Phone Screen,2,6,,,,Active,
+C1014,Candidate_1014,Associate PM,Product,L5,Jamie Park,Agency,2024-09-21,2024-09-27,,,,,,Withdrew,12,6,,,,Withdrew,
+C1015,Candidate_1015,Senior Software Engineer,Engineering,L1,Jordan Kim,Job Board,2024-07-07,2024-07-13,,,,,,Rejected,9,6,,,,Rejected,Overqualified
+C1016,Candidate_1016,CMO,Marketing,L5,Sam Chen,Referral,2025-01-29,2025-02-03,2025-02-12,2025-02-17,2025-02-28,2025-03-01,2025-03-05,Offer Accepted,4,35,31.0,35.0,75.0,Hired,
+C1017,Candidate_1017,Senior Analyst,Finance,L2,Dana White,Referral,2025-01-03,2025-01-09,,,,,,Phone Screen,4,6,,,,Active,
+C1018,Candidate_1018,Sales Manager,Sales,L5,Morgan Lee,LinkedIn,2025-03-04,2025-03-08,,,,,,Rejected,4,4,,,,Rejected,Culture Fit
+C1019,Candidate_1019,UX Designer,Design,L2,Quinn Reyes,LinkedIn,2024-12-17,2024-12-21,2024-12-28,,,,,Technical/Assessment,8,11,,,,Active,
+C1020,Candidate_1020,HRBP,People Ops,L5,Riley Johnson,Referral,2024-09-06,2024-09-07,2024-09-11,,,,,Technical/Assessment,12,5,,,,Active,
+C1021,Candidate_1021,Staff Engineer,Engineering,L1,Jordan Kim,Agency,2025-01-31,2025-02-09,2025-02-26,2025-03-06,2025-03-15,,,Final Round,21,43,,,,Active,
+C1022,Candidate_1022,Account Executive,Sales,L1,Morgan Lee,University,2024-09-29,2024-10-01,,,,,,Withdrew,10,2,,,,Withdrew,
+C1023,Candidate_1023,Principal Engineer,Engineering,L1,Alex Rivera,University,2025-03-26,2025-04-05,2025-04-18,2025-04-26,2025-05-12,,,Final Round,31,47,,,,Active,
+C1024,Candidate_1024,Product Manager,Product,L3,Drew Davis,Referral,2024-11-01,2024-11-07,,,,,,Rejected,8,6,,,,Rejected,Overqualified
+C1025,Candidate_1025,SDR,Sales,L5,Morgan Lee,Agency,2024-10-14,2024-10-19,,,,,,Rejected,2,5,,,,Rejected,No Show
+C1026,Candidate_1026,Finance Manager,Finance,L3,Dana White,Careers Page,2025-03-06,2025-03-09,2025-03-15,2025-03-20,2025-03-23,2025-03-25,2025-05-05,Offer Accepted,7,60,19.0,60.0,95.0,Hired,
+C1027,Candidate_1027,Senior Recruiter,People Ops,L5,Riley Johnson,University,2024-11-23,2024-11-27,,,,,,Rejected,5,4,,,,Rejected,Overqualified
+C1028,Candidate_1028,CS Team Lead,Customer Success,L1,Blake Nguyen,University,2025-01-03,2025-01-07,2025-01-11,2025-01-13,2025-01-18,2025-01-19,2025-02-12,Offer Accepted,3,40,16.0,40.0,66.0,Hired,
+C1029,Candidate_1029,VP Product,Product,L5,Jamie Park,Careers Page,2024-08-05,2024-08-09,,,,,,Rejected,6,4,,,,Rejected,No Show
+C1030,Candidate_1030,Staff Engineer,Engineering,L2,Taylor Brooks,Referral,2024-07-23,2024-07-30,2024-08-12,2024-08-27,,,,Hiring Manager Interview,15,35,,,,Active,
+C1031,Candidate_1031,Content Marketer,Marketing,L2,Sam Chen,Careers Page,2024-06-13,2024-06-18,,,,,,Withdrew,13,5,,,,Withdrew,
+C1032,Candidate_1032,Product Designer,Design,L3,Quinn Reyes,University,2024-07-26,2024-07-31,,,,,,Rejected,4,5,,,,Rejected,No Show
+C1033,Candidate_1033,Controller,Finance,L3,Dana White,Referral,2024-09-23,2024-09-27,,,,,,Rejected,4,4,,,,Rejected,Overqualified
+C1034,Candidate_1034,Senior Designer,Design,L3,Quinn Reyes,Job Board,2024-11-27,2024-11-28,,,,,,Rejected,1,1,,,,Rejected,Salary Mismatch
+C1035,Candidate_1035,Senior AE,Sales,L2,Casey Turner,LinkedIn,2024-07-26,2024-07-29,,,,,,Rejected,7,3,,,,Rejected,Underqualified
+C1036,Candidate_1036,Sales Manager,Sales,L5,Morgan Lee,Job Board,2024-06-23,2024-06-27,2024-07-06,2024-07-10,2024-07-16,2024-07-17,2024-08-24,Offer Accepted,6,62,24.0,62.0,106.0,Hired,
+C1037,Candidate_1037,Senior AE,Sales,L5,Casey Turner,University,2024-12-27,2024-12-28,2025-01-04,,,,,Technical/Assessment,9,8,,,,Active,
+C1038,Candidate_1038,Content Marketer,Marketing,L4,Sam Chen,University,2024-08-29,2024-09-04,,,,,,Withdrew,3,6,,,,Withdrew,
+C1039,Candidate_1039,Recruiter,People Ops,L4,Riley Johnson,Careers Page,2025-01-13,2025-01-18,2025-01-21,2025-01-28,,,,Hiring Manager Interview,13,15,,,,Active,
+C1040,Candidate_1040,Marketing Coordinator,Marketing,L3,Sam Chen,LinkedIn,2024-09-29,2024-10-01,,,,,,Rejected,1,2,,,,Rejected,Culture Fit
+C1041,Candidate_1041,Controller,Finance,L5,Dana White,Careers Page,2024-12-30,2025-01-05,,,,,,Rejected,2,6,,,,Rejected,Culture Fit
+C1042,Candidate_1042,Software Engineer,Engineering,L4,Jordan Kim,Referral,2025-02-21,2025-03-07,2025-03-15,2025-03-23,,,,Hiring Manager Interview,21,30,,,,Active,
+C1043,Candidate_1043,Senior CSM,Customer Success,L4,Blake Nguyen,Careers Page,2025-02-14,2025-02-18,2025-02-21,2025-02-22,,,,Hiring Manager Interview,12,8,,,,Active,
+C1044,Candidate_1044,Director of CS,Customer Success,L3,Blake Nguyen,University,2024-10-20,2024-10-24,2024-10-26,2024-10-31,2024-11-04,2024-11-07,2024-12-07,Offer Accepted,1,48,18.0,48.0,92.0,Hired,
+C1045,Candidate_1045,Controller,Finance,L2,Dana White,LinkedIn,2024-12-30,2025-01-02,2025-01-08,2025-01-15,,,,Hiring Manager Interview,1,16,,,,Active,
+C1046,Candidate_1046,Controller,Finance,L4,Dana White,Agency,2024-12-12,2024-12-14,2024-12-21,2024-12-29,,,,Hiring Manager Interview,7,17,,,,Active,
+C1047,Candidate_1047,Head of Design,Design,L5,Quinn Reyes,Careers Page,2024-09-21,2024-09-22,,,,,,Withdrew,7,1,,,,Withdrew,
+C1048,Candidate_1048,Director of Product,Product,L2,Drew Davis,Referral,2025-03-01,,,,,,,Applied,7,0,,,,Active,
+C1049,Candidate_1049,Software Engineer,Engineering,L4,Jordan Kim,Careers Page,2024-09-02,2024-09-10,,,,,,Withdrew,6,8,,,,Withdrew,
+C1050,Candidate_1050,Controller,Finance,L3,Dana White,Careers Page,2024-10-21,2024-10-26,2024-11-04,2024-11-07,2024-11-11,2024-11-13,2024-12-11,Offer Accepted,1,51,23.0,51.0,84.0,Hired,
+C1051,Candidate_1051,Senior Analyst,Finance,L1,Dana White,Referral,2024-08-04,2024-08-09,,,,,,Withdrew,8,5,,,,Withdrew,
+C1052,Candidate_1052,Senior Recruiter,People Ops,L2,Riley Johnson,Referral,2024-11-07,2024-11-11,,,,,,Withdrew,5,4,,,,Withdrew,
+C1053,Candidate_1053,Design Lead,Design,L2,Quinn Reyes,Agency,2024-10-03,2024-10-08,,,,,,Rejected,5,5,,,,Rejected,Overqualified
+C1054,Candidate_1054,VP of Sales,Sales,L1,Casey Turner,Agency,2025-01-06,2025-01-08,2025-01-13,2025-01-18,2025-01-21,2025-01-24,,Offer Extended,7,18,18.0,,,Active,
+C1055,Candidate_1055,Design Lead,Design,L1,Quinn Reyes,Job Board,2025-01-22,2025-01-27,2025-01-30,2025-02-06,2025-02-10,2025-02-12,2025-03-20,Offer Accepted,5,57,21.0,57.0,89.0,Hired,
+C1056,Candidate_1056,Financial Analyst,Finance,L3,Dana White,Referral,2025-01-24,2025-01-31,2025-02-04,2025-02-11,2025-02-20,,,Final Round,8,27,,,,Active,
+C1057,Candidate_1057,Product Manager,Product,L4,Jamie Park,Job Board,2024-10-11,2024-10-18,,,,,,Withdrew,5,7,,,,Withdrew,
+C1058,Candidate_1058,Principal Engineer,Engineering,L2,Jordan Kim,Referral,2024-12-26,2025-01-08,2025-01-19,2025-01-26,,,,Hiring Manager Interview,35,31,,,,Active,
+C1059,Candidate_1059,Director of CS,Customer Success,L1,Blake Nguyen,Job Board,2024-09-22,2024-09-24,2024-09-27,2024-10-01,,,,Hiring Manager Interview,10,9,,,,Active,
+C1060,Candidate_1060,Director of Product,Product,L5,Drew Davis,Careers Page,2025-03-09,2025-03-15,2025-03-23,,,,,Technical/Assessment,5,14,,,,Active,
+C1061,Candidate_1061,Senior Recruiter,People Ops,L2,Riley Johnson,University,2024-09-07,2024-09-12,,,,,,Withdrew,13,5,,,,Withdrew,
+C1062,Candidate_1062,Content Marketer,Marketing,L2,Sam Chen,Job Board,2025-03-29,2025-04-03,,,,,,Withdrew,3,5,,,,Withdrew,
+C1063,Candidate_1063,Marketing Manager,Marketing,L1,Sam Chen,Job Board,2024-06-24,2024-07-01,,,,,,Withdrew,1,7,,,,Withdrew,
+C1064,Candidate_1064,Principal Engineer,Engineering,L3,Alex Rivera,Careers Page,2025-01-12,2025-01-19,2025-02-10,,,,,Technical/Assessment,32,29,,,,Active,
+C1065,Candidate_1065,CSM,Customer Success,L1,Blake Nguyen,Careers Page,2024-07-08,2024-07-13,,,,,,Rejected,13,5,,,,Rejected,Position Closed
+C1066,Candidate_1066,HR Coordinator,People Ops,L2,Riley Johnson,Agency,2024-12-31,2025-01-02,2025-01-04,2025-01-09,2025-01-14,2025-01-16,,Offer Extended,4,16,16.0,,,Active,
+C1067,Candidate_1067,Director of CS,Customer Success,L3,Blake Nguyen,Job Board,2025-03-19,2025-03-23,2025-03-27,2025-03-30,2025-04-01,2025-04-02,,Offer Extended,6,14,14.0,,,Active,
+C1068,Candidate_1068,Finance Manager,Finance,L1,Dana White,Referral,2024-08-28,2024-09-03,,,,,,Rejected,12,6,,,,Rejected,Salary Mismatch
+C1069,Candidate_1069,CS Team Lead,Customer Success,L1,Blake Nguyen,Job Board,2024-10-23,2024-10-27,2024-10-29,2024-11-03,2024-11-09,2024-11-10,2024-12-13,Offer Accepted,7,51,18.0,51.0,68.0,Hired,
+C1070,Candidate_1070,SDR,Sales,L2,Casey Turner,Agency,2025-03-19,2025-03-23,,,,,,Rejected,3,4,,,,Rejected,
+C1071,Candidate_1071,Director of CS,Customer Success,L1,Blake Nguyen,Careers Page,2024-11-13,2024-11-17,,,,,,Rejected,7,4,,,,Rejected,Overqualified
+C1072,Candidate_1072,Staff Engineer,Engineering,L5,Jordan Kim,Referral,2025-01-27,2025-01-31,2025-02-13,2025-02-24,2025-03-15,,,Final Round,22,47,,,,Active,
+C1073,Candidate_1073,CSM,Customer Success,L4,Blake Nguyen,Careers Page,2024-11-18,2024-11-24,,,,,,Withdrew,3,6,,,,Withdrew,
+C1074,Candidate_1074,Director of Product,Product,L4,Drew Davis,University,2024-12-23,2024-12-26,2024-12-31,2025-01-08,2025-01-18,2025-01-20,2025-02-02,Offer Accepted,3,41,28.0,41.0,56.0,Hired,
+C1075,Candidate_1075,VP Product,Product,L4,Drew Davis,LinkedIn,2024-09-13,2024-09-26,,,,,,Withdrew,8,13,,,,Withdrew,
+C1076,Candidate_1076,CSM,Customer Success,L1,Blake Nguyen,University,2024-08-21,2024-08-26,,,,,,Withdrew,7,5,,,,Withdrew,
+C1077,Candidate_1077,Account Executive,Sales,L1,Casey Turner,LinkedIn,2024-08-18,2024-08-24,,,,,,Withdrew,12,6,,,,Withdrew,
+C1078,Candidate_1078,HRBP,People Ops,L4,Riley Johnson,Referral,2025-01-20,2025-01-25,2025-01-31,2025-02-04,2025-02-11,,,Final Round,12,22,,,,Active,
+C1079,Candidate_1079,Marketing Coordinator,Marketing,L3,Sam Chen,Job Board,2025-02-15,2025-02-18,2025-02-23,,,,,Technical/Assessment,12,8,,,,Active,
+C1080,Candidate_1080,VP People,People Ops,L5,Riley Johnson,Referral,2025-01-15,2025-01-18,2025-01-23,2025-02-01,2025-02-03,,,Final Round,9,19,,,,Active,
+C1081,Candidate_1081,Design Lead,Design,L3,Quinn Reyes,University,2024-10-01,2024-10-07,,,,,,Rejected,1,6,,,,Rejected,Underqualified
+C1082,Candidate_1082,Director of Product,Product,L4,Drew Davis,University,2024-08-17,2024-08-19,,,,,,Rejected,10,2,,,,Rejected,Salary Mismatch
+C1083,Candidate_1083,Associate PM,Product,L4,Jamie Park,Agency,2025-01-20,,,,,,,Applied,3,0,,,,Active,
+C1084,Candidate_1084,Product Designer,Design,L1,Quinn Reyes,Job Board,2024-11-21,2024-11-25,,,,,,Withdrew,7,4,,,,Withdrew,
+C1085,Candidate_1085,Senior Designer,Design,L4,Quinn Reyes,Agency,2024-07-06,2024-07-13,2024-07-20,,,,,Technical/Assessment,4,14,,,,Active,
+C1086,Candidate_1086,Sales Manager,Sales,L1,Morgan Lee,Careers Page,2024-08-25,2024-08-26,2024-08-29,2024-09-04,2024-09-07,2024-09-09,2024-10-01,Offer Accepted,3,37,15.0,37.0,78.0,Hired,
+C1087,Candidate_1087,Marketing Coordinator,Marketing,L5,Sam Chen,Agency,2024-10-02,2024-10-07,,,,,,Withdrew,8,5,,,,Withdrew,
+C1088,Candidate_1088,HRBP,People Ops,L3,Riley Johnson,Careers Page,2024-10-26,2024-10-28,,,,,,Rejected,3,2,,,,Rejected,Position Closed
+C1089,Candidate_1089,Senior Designer,Design,L4,Quinn Reyes,Referral,2024-12-14,2024-12-23,,,,,,Rejected,6,9,,,,Rejected,Salary Mismatch
+C1090,Candidate_1090,Engineering Manager,Engineering,L3,Jordan Kim,Agency,2024-06-26,2024-07-05,,,,,,Rejected,5,9,,,,Rejected,Salary Mismatch
+C1091,Candidate_1091,Senior Analyst,Finance,L5,Dana White,University,2024-08-10,2024-08-11,,,,,,Withdrew,4,1,,,,Withdrew,
+C1092,Candidate_1092,Principal Engineer,Engineering,L3,Taylor Brooks,Referral,2024-07-17,2024-07-25,,,,,,Rejected,5,8,,,,Rejected,Salary Mismatch
+C1093,Candidate_1093,Recruiter,People Ops,L3,Riley Johnson,Job Board,2024-11-21,2024-11-23,2024-11-29,2024-12-02,2024-12-07,2024-12-09,2025-01-09,Offer Accepted,6,49,18.0,49.0,81.0,Hired,
+C1094,Candidate_1094,VP People,People Ops,L1,Riley Johnson,Job Board,2024-10-13,2024-10-18,,,,,,Withdrew,11,5,,,,Withdrew,
+C1095,Candidate_1095,Controller,Finance,L1,Dana White,Agency,2024-09-22,2024-09-24,,,,,,Withdrew,6,2,,,,Withdrew,
+C1096,Candidate_1096,UX Designer,Design,L2,Quinn Reyes,LinkedIn,2024-11-03,2024-11-07,,,,,,Withdrew,6,4,,,,Withdrew,
+C1097,Candidate_1097,Head of Design,Design,L2,Quinn Reyes,University,2024-07-21,2024-07-25,,,,,,Rejected,4,4,,,,Rejected,No Show
+C1098,Candidate_1098,Finance Manager,Finance,L1,Dana White,Agency,2024-12-01,2024-12-04,,,,,,Phone Screen,4,3,,,,Active,
+C1099,Candidate_1099,Sales Manager,Sales,L1,Morgan Lee,University,2024-06-11,2024-06-18,,,,,,Rejected,4,7,,,,Rejected,Overqualified
+C1100,Candidate_1100,CMO,Marketing,L2,Sam Chen,Agency,2024-09-15,2024-09-20,,,,,,Withdrew,13,5,,,,Withdrew,
+C1101,Candidate_1101,CMO,Marketing,L1,Sam Chen,Referral,2024-08-06,2024-08-08,,,,,,Rejected,14,2,,,,Rejected,Overqualified
+C1102,Candidate_1102,Senior Software Engineer,Engineering,L1,Alex Rivera,Referral,2025-03-29,2025-04-08,2025-04-28,,,,,Technical/Assessment,33,30,,,,Active,
+C1103,Candidate_1103,Demand Gen Manager,Marketing,L5,Sam Chen,University,2024-07-03,2024-07-10,,,,,,Withdrew,10,7,,,,Withdrew,
+C1104,Candidate_1104,Sales Manager,Sales,L5,Morgan Lee,Agency,2024-06-23,2024-06-24,2024-06-28,2024-07-05,2024-07-08,2024-07-10,2024-08-18,Offer Accepted,1,56,17.0,56.0,78.0,Hired,
+C1105,Candidate_1105,VP Product,Product,L2,Jamie Park,Referral,2024-10-19,2024-10-26,,,,,,Rejected,5,7,,,,Rejected,Culture Fit
+C1106,Candidate_1106,HRBP,People Ops,L5,Riley Johnson,LinkedIn,2024-07-29,2024-07-31,,,,,,Rejected,4,2,,,,Rejected,Culture Fit
+C1107,Candidate_1107,Senior Designer,Design,L4,Quinn Reyes,Careers Page,2024-07-19,2024-07-23,,,,,,Withdrew,5,4,,,,Withdrew,
+C1108,Candidate_1108,Product Manager,Product,L4,Jamie Park,LinkedIn,2024-07-14,2024-07-15,,,,,,Rejected,12,1,,,,Rejected,Overqualified
+C1109,Candidate_1109,Product Manager,Product,L5,Jamie Park,Agency,2025-03-15,2025-03-18,2025-03-25,2025-03-29,2025-04-11,,,Final Round,14,27,,,,Active,
+C1110,Candidate_1110,UX Designer,Design,L3,Quinn Reyes,Job Board,2024-07-24,2024-07-26,,,,,,Rejected,4,2,,,,Rejected,Position Closed
+C1111,Candidate_1111,Senior AE,Sales,L5,Casey Turner,LinkedIn,2024-10-21,2024-10-24,,,,,,Withdrew,13,3,,,,Withdrew,
+C1112,Candidate_1112,Principal Engineer,Engineering,L3,Jordan Kim,Referral,2024-10-18,2024-10-26,2024-11-12,2024-11-17,2024-12-06,2024-12-08,2024-11-20,Offer Accepted,2,33,51.0,33.0,73.0,Hired,
+C1113,Candidate_1113,Controller,Finance,L4,Dana White,Job Board,2024-08-20,2024-08-23,,,,,,Rejected,10,3,,,,Rejected,Overqualified
+C1114,Candidate_1114,SDR,Sales,L2,Morgan Lee,Agency,2024-06-26,2024-06-30,,,,,,Rejected,5,4,,,,Rejected,Salary Mismatch
+C1115,Candidate_1115,Director of CS,Customer Success,L3,Blake Nguyen,Agency,2024-07-29,2024-08-02,,,,,,Rejected,11,4,,,,Rejected,Position Closed
+C1116,Candidate_1116,VP Customer Success,Customer Success,L3,Blake Nguyen,Referral,2024-12-20,2024-12-22,,,,,,Withdrew,3,2,,,,Withdrew,
+C1117,Candidate_1117,Senior Recruiter,People Ops,L1,Riley Johnson,Careers Page,2025-01-07,2025-01-11,,,,,,Phone Screen,9,4,,,,Active,
+C1118,Candidate_1118,CFO,Finance,L5,Dana White,LinkedIn,2024-12-21,2024-12-25,,,,,,Rejected,5,4,,,,Rejected,No Show
+C1119,Candidate_1119,Design Lead,Design,L3,Quinn Reyes,Careers Page,2024-06-11,2024-06-16,,,,,,Withdrew,4,5,,,,Withdrew,
+C1120,Candidate_1120,Account Executive,Sales,L4,Casey Turner,Agency,2024-07-11,2024-07-16,,,,,,Withdrew,4,5,,,,Withdrew,
+C1121,Candidate_1121,Product Manager,Product,L1,Jamie Park,Agency,2025-02-17,2025-02-26,,,,,,Phone Screen,6,9,,,,Active,
+C1122,Candidate_1122,Product Manager,Product,L2,Jamie Park,Referral,2024-10-10,2024-10-13,,,,,,Rejected,3,3,,,,Rejected,No Show
+C1123,Candidate_1123,Account Executive,Sales,L4,Casey Turner,Agency,2025-03-24,2025-04-01,2025-04-02,2025-04-06,,,,Hiring Manager Interview,10,13,,,,Active,
+C1124,Candidate_1124,Senior PM,Product,L2,Drew Davis,LinkedIn,2025-01-27,2025-02-03,2025-02-11,2025-02-16,,,,Hiring Manager Interview,10,20,,,,Active,
+C1125,Candidate_1125,Staff Engineer,Engineering,L5,Jordan Kim,Job Board,2025-01-23,2025-01-30,2025-02-09,2025-02-17,,,,Hiring Manager Interview,40,25,,,,Active,
+C1126,Candidate_1126,SDR,Sales,L5,Casey Turner,Careers Page,2025-03-25,2025-03-30,2025-04-04,2025-04-07,2025-04-15,,,Final Round,13,21,,,,Active,
+C1127,Candidate_1127,Finance Manager,Finance,L5,Dana White,Agency,2024-08-17,2024-08-22,,,,,,Withdrew,6,5,,,,Withdrew,
+C1128,Candidate_1128,Marketing Coordinator,Marketing,L2,Sam Chen,Careers Page,2025-02-24,2025-03-02,2025-03-09,2025-03-13,2025-03-18,,,Final Round,7,22,,,,Active,
+C1129,Candidate_1129,Senior Designer,Design,L5,Quinn Reyes,University,2024-11-19,2024-11-25,,,,,,Withdrew,9,6,,,,Withdrew,
+C1130,Candidate_1130,Senior Designer,Design,L3,Quinn Reyes,Job Board,2024-07-12,2024-07-18,2024-07-24,2024-07-30,2024-08-09,,,Final Round,12,28,,,,Active,
+C1131,Candidate_1131,Product Designer,Design,L5,Quinn Reyes,Job Board,2025-03-14,2025-03-17,2025-03-25,2025-03-30,,,,Hiring Manager Interview,3,16,,,,Active,
+C1132,Candidate_1132,Sales Manager,Sales,L5,Casey Turner,LinkedIn,2024-12-03,2024-12-06,2024-12-13,,,,,Technical/Assessment,13,10,,,,Active,
+C1133,Candidate_1133,Senior CSM,Customer Success,L2,Blake Nguyen,Referral,2024-07-10,2024-07-15,,,,,,Rejected,9,5,,,,Rejected,No Show
+C1134,Candidate_1134,Staff Engineer,Engineering,L5,Jordan Kim,Agency,2024-12-10,2024-12-20,,,,,,Phone Screen,15,10,,,,Active,
+C1135,Candidate_1135,Demand Gen Manager,Marketing,L1,Sam Chen,Job Board,2024-09-30,2024-10-07,,,,,,Withdrew,2,7,,,,Withdrew,
+C1136,Candidate_1136,HRBP,People Ops,L2,Riley Johnson,University,2025-03-20,2025-03-24,,,,,,Withdrew,2,4,,,,Withdrew,
+C1137,Candidate_1137,CFO,Finance,L2,Dana White,LinkedIn,2025-02-02,2025-02-08,,,,,,Rejected,3,6,,,,Rejected,Underqualified
+C1138,Candidate_1138,Marketing Manager,Marketing,L4,Sam Chen,Careers Page,2024-07-17,2024-07-21,,,,,,Rejected,4,4,,,,Rejected,
+C1139,Candidate_1139,Product Manager,Product,L4,Jamie Park,Job Board,2024-09-23,2024-09-29,,,,,,Withdrew,2,6,,,,Withdrew,
+C1140,Candidate_1140,Product Manager,Product,L2,Jamie Park,Job Board,2025-01-28,2025-02-02,2025-02-10,2025-02-18,2025-02-24,2025-02-28,2025-03-23,Offer Accepted,1,54,31.0,54.0,97.0,Hired,
+C1141,Candidate_1141,Recruiter,People Ops,L3,Riley Johnson,LinkedIn,2024-10-01,2024-10-02,,,,,,Rejected,2,1,,,,Rejected,Underqualified
+C1142,Candidate_1142,Sales Manager,Sales,L5,Morgan Lee,University,2025-02-19,2025-02-20,2025-02-27,2025-03-05,2025-03-12,,,Final Round,1,21,,,,Active,
+C1143,Candidate_1143,Product Manager,Product,L5,Drew Davis,Referral,2024-07-14,2024-07-21,,,,,,Rejected,9,7,,,,Rejected,Underqualified
+C1144,Candidate_1144,Engineering Manager,Engineering,L4,Jordan Kim,University,2024-12-16,2024-12-23,,,,,,Withdrew,6,7,,,,Withdrew,
+C1145,Candidate_1145,VP of Sales,Sales,L3,Morgan Lee,LinkedIn,2024-11-28,2024-11-30,,,,,,Rejected,13,2,,,,Rejected,Culture Fit
+C1146,Candidate_1146,Director of CS,Customer Success,L2,Blake Nguyen,LinkedIn,2025-01-21,,,,,,,Applied,4,0,,,,Active,
+C1147,Candidate_1147,Senior Software Engineer,Engineering,L1,Alex Rivera,Job Board,2025-02-19,2025-02-27,2025-03-08,2025-03-20,,,,Hiring Manager Interview,40,29,,,,Active,
+C1148,Candidate_1148,Senior Software Engineer,Engineering,L3,Alex Rivera,LinkedIn,2024-11-17,2024-11-24,,,,,,Rejected,7,7,,,,Rejected,Overqualified
+C1149,Candidate_1149,Design Lead,Design,L4,Quinn Reyes,Referral,2025-02-10,2025-02-13,2025-02-19,2025-02-25,2025-03-02,2025-03-03,2025-04-07,Offer Accepted,6,56,21.0,56.0,98.0,Hired,
+C1150,Candidate_1150,Senior AE,Sales,L3,Casey Turner,Careers Page,2025-01-05,2025-01-09,,,,,,Phone Screen,6,4,,,,Active,
+C1151,Candidate_1151,CSM,Customer Success,L3,Blake Nguyen,Job Board,2024-06-30,2024-07-04,,,,,,Withdrew,7,4,,,,Withdrew,
+C1152,Candidate_1152,VP Product,Product,L2,Jamie Park,Referral,2025-01-11,,,,,,,Applied,2,0,,,,Active,
+C1153,Candidate_1153,Finance Manager,Finance,L3,Dana White,Agency,2024-06-17,2024-06-20,,,,,,Withdrew,7,3,,,,Withdrew,
+C1154,Candidate_1154,VP of Sales,Sales,L2,Casey Turner,Careers Page,2024-11-08,2024-11-11,2024-11-16,2024-11-18,2024-11-19,2024-11-20,,Offer Extended,4,12,12.0,,,Active,
+C1155,Candidate_1155,Head of Design,Design,L1,Quinn Reyes,Job Board,2025-01-15,2025-01-19,2025-01-26,,,,,Technical/Assessment,12,11,,,,Active,
+C1156,Candidate_1156,Senior CSM,Customer Success,L1,Blake Nguyen,LinkedIn,2025-01-18,2025-01-24,,,,,,Phone Screen,8,6,,,,Active,
+C1157,Candidate_1157,Senior AE,Sales,L3,Morgan Lee,Agency,2025-03-05,2025-03-10,2025-03-14,,,,,Technical/Assessment,3,9,,,,Active,
+C1158,Candidate_1158,Marketing Manager,Marketing,L5,Sam Chen,LinkedIn,2024-09-11,2024-09-15,2024-09-18,2024-09-23,2024-09-29,2024-10-01,2024-11-02,Offer Accepted,5,52,20.0,52.0,96.0,Hired,
+C1159,Candidate_1159,VP Customer Success,Customer Success,L4,Blake Nguyen,Agency,2024-07-08,2024-07-10,,,,,,Withdrew,11,2,,,,Withdrew,
+C1160,Candidate_1160,Sales Manager,Sales,L4,Casey Turner,Referral,2025-03-10,2025-03-15,2025-03-23,2025-03-27,2025-04-03,2025-04-05,,Offer Extended,7,26,26.0,,,Active,
+C1161,Candidate_1161,Software Engineer,Engineering,L5,Jordan Kim,Job Board,2024-08-24,2024-08-30,,,,,,Withdrew,4,6,,,,Withdrew,
+C1162,Candidate_1162,VP Product,Product,L3,Jamie Park,Job Board,2024-09-09,2024-09-15,,,,,,Withdrew,5,6,,,,Withdrew,
+C1163,Candidate_1163,VP of Sales,Sales,L2,Morgan Lee,Referral,2024-11-20,2024-11-24,,,,,,Rejected,6,4,,,,Rejected,
+C1164,Candidate_1164,Recruiter,People Ops,L5,Riley Johnson,Agency,2024-06-16,2024-06-20,,,,,,Rejected,11,4,,,,Rejected,Overqualified
+C1165,Candidate_1165,HRBP,People Ops,L2,Riley Johnson,Job Board,2025-01-19,2025-01-21,,,,,,Phone Screen,3,2,,,,Active,
+C1166,Candidate_1166,Director of CS,Customer Success,L4,Blake Nguyen,Referral,2024-11-22,2024-11-26,,,,,,Rejected,7,4,,,,Rejected,Underqualified
+C1167,Candidate_1167,Director of Product,Product,L2,Drew Davis,Agency,2025-03-15,2025-03-21,,,,,,Phone Screen,8,6,,,,Active,
+C1168,Candidate_1168,Senior AE,Sales,L4,Morgan Lee,Referral,2024-07-20,2024-07-26,,,,,,Withdrew,14,6,,,,Withdrew,
+C1169,Candidate_1169,Product Designer,Design,L2,Quinn Reyes,Agency,2024-11-08,2024-11-14,,,,,,Phone Screen,8,6,,,,Active,
+C1170,Candidate_1170,Director of CS,Customer Success,L3,Blake Nguyen,LinkedIn,2024-07-17,2024-07-25,,,,,,Rejected,1,8,,,,Rejected,Salary Mismatch
+C1171,Candidate_1171,VP Customer Success,Customer Success,L4,Blake Nguyen,Agency,2024-06-05,2024-06-07,,,,,,Rejected,3,2,,,,Rejected,Underqualified
+C1172,Candidate_1172,UX Designer,Design,L5,Quinn Reyes,Job Board,2025-03-11,2025-03-17,2025-03-24,,,,,Technical/Assessment,8,13,,,,Active,
+C1173,Candidate_1173,VP People,People Ops,L5,Riley Johnson,Referral,2024-07-20,2024-07-28,,,,,,Withdrew,6,8,,,,Withdrew,
+C1174,Candidate_1174,Content Marketer,Marketing,L5,Sam Chen,Agency,2024-06-21,2024-06-24,,,,,,Rejected,3,3,,,,Rejected,Overqualified
+C1175,Candidate_1175,Director of Product,Product,L5,Drew Davis,Referral,2025-02-19,2025-02-23,,,,,,Phone Screen,6,4,,,,Active,
+C1176,Candidate_1176,Demand Gen Manager,Marketing,L5,Sam Chen,Agency,2024-11-20,2024-11-23,,,,,,Rejected,10,3,,,,Rejected,Overqualified
+C1177,Candidate_1177,HRBP,People Ops,L1,Riley Johnson,Job Board,2024-07-27,2024-07-28,,,,,,Withdrew,5,1,,,,Withdrew,
+C1178,Candidate_1178,CS Team Lead,Customer Success,L5,Blake Nguyen,University,2024-06-27,2024-06-29,,,,,,Rejected,10,2,,,,Rejected,Position Closed
+C1179,Candidate_1179,Product Designer,Design,L2,Quinn Reyes,Agency,2024-07-27,2024-07-30,,,,,,Withdrew,6,3,,,,Withdrew,
+C1180,Candidate_1180,Product Designer,Design,L4,Quinn Reyes,Careers Page,2025-02-12,2025-02-17,2025-02-25,2025-03-06,2025-03-15,2025-03-16,2025-03-18,Offer Accepted,6,34,32.0,34.0,,Hired,
+C1181,Candidate_1181,Product Manager,Product,L4,Drew Davis,Agency,2024-11-29,2024-12-05,,,,,,Withdrew,6,6,,,,Withdrew,
+C1182,Candidate_1182,VP People,People Ops,L4,Riley Johnson,Referral,2024-10-21,2024-10-22,,,,,,Rejected,12,1,,,,Rejected,Culture Fit
+C1183,Candidate_1183,Controller,Finance,L3,Dana White,Job Board,2025-03-14,2025-03-22,,,,,,Rejected,5,8,,,,Rejected,No Show
+C1184,Candidate_1184,Senior Designer,Design,L2,Quinn Reyes,LinkedIn,2024-10-26,2024-11-02,,,,,,Withdrew,2,7,,,,Withdrew,
+C1185,Candidate_1185,VP People,People Ops,L3,Riley Johnson,LinkedIn,2025-03-28,2025-03-31,2025-04-01,,,,,Technical/Assessment,9,4,,,,Active,
+C1186,Candidate_1186,Senior Analyst,Finance,L1,Dana White,Careers Page,2024-11-17,2024-11-24,2024-11-30,2024-12-08,2024-12-11,2024-12-12,2024-12-28,Offer Accepted,2,41,25.0,41.0,57.0,Hired,
+C1187,Candidate_1187,Software Engineer,Engineering,L5,Jordan Kim,Agency,2024-06-20,2024-06-28,,,,,,Rejected,7,8,,,,Rejected,No Show
+C1188,Candidate_1188,Marketing Manager,Marketing,L1,Sam Chen,Job Board,2025-03-18,2025-03-23,2025-03-28,2025-04-04,2025-04-07,2025-04-08,,Offer Extended,5,21,21.0,,,Active,
+C1189,Candidate_1189,Senior CSM,Customer Success,L5,Blake Nguyen,Job Board,2024-09-07,2024-09-11,2024-09-17,2024-09-23,2024-09-26,2024-09-27,2024-10-31,Offer Accepted,6,54,20.0,54.0,93.0,Hired,
+C1190,Candidate_1190,Head of Design,Design,L3,Quinn Reyes,Careers Page,2024-07-19,2024-07-26,,,,,,Rejected,8,7,,,,Rejected,Position Closed
+C1191,Candidate_1191,Product Manager,Product,L1,Drew Davis,Careers Page,2024-09-29,2024-10-05,,,,,,Rejected,10,6,,,,Rejected,Position Closed
+C1192,Candidate_1192,Staff Engineer,Engineering,L3,Taylor Brooks,Referral,2024-07-02,2024-07-07,,,,,,Rejected,5,5,,,,Rejected,Overqualified
+C1193,Candidate_1193,HR Coordinator,People Ops,L3,Riley Johnson,Agency,2024-09-22,2024-09-29,,,,,,Withdrew,3,7,,,,Withdrew,
+C1194,Candidate_1194,VP Customer Success,Customer Success,L3,Blake Nguyen,University,2025-03-09,2025-03-13,,,,,,Rejected,2,4,,,,Rejected,
+C1195,Candidate_1195,VP of Sales,Sales,L4,Casey Turner,LinkedIn,2025-03-16,2025-03-22,,,,,,Phone Screen,9,6,,,,Active,
+C1196,Candidate_1196,CFO,Finance,L5,Dana White,Referral,2024-11-15,2024-11-20,,,,,,Rejected,1,5,,,,Rejected,
+C1197,Candidate_1197,CSM,Customer Success,L4,Blake Nguyen,Agency,2024-12-30,2025-01-07,2025-01-15,2025-01-19,,,,Hiring Manager Interview,11,20,,,,Active,
+C1198,Candidate_1198,HR Coordinator,People Ops,L4,Riley Johnson,LinkedIn,2024-09-20,2024-09-25,,,,,,Withdrew,2,5,,,,Withdrew,
+C1199,Candidate_1199,Software Engineer,Engineering,L4,Jordan Kim,Job Board,2024-12-27,2025-01-05,,,,,,Phone Screen,37,9,,,,Active,
+C1200,Candidate_1200,Senior Designer,Design,L4,Quinn Reyes,Careers Page,2024-12-10,2024-12-17,,,,,,Phone Screen,14,7,,,,Active,
+C1201,Candidate_1201,Marketing Manager,Marketing,L1,Sam Chen,Agency,2024-12-19,2024-12-22,2024-12-29,2025-01-06,2025-01-07,,,Final Round,13,19,,,,Active,
+C1202,Candidate_1202,Staff Engineer,Engineering,L4,Taylor Brooks,University,2025-03-06,2025-03-10,2025-03-13,2025-03-22,,,,Hiring Manager Interview,25,16,,,,Active,
+C1203,Candidate_1203,CS Team Lead,Customer Success,L2,Blake Nguyen,Referral,2024-07-28,2024-08-02,,,,,,Rejected,11,5,,,,Rejected,Underqualified
+C1204,Candidate_1204,Head of Design,Design,L1,Quinn Reyes,Referral,2024-07-05,2024-07-13,,,,,,Rejected,8,8,,,,Rejected,Position Closed
+C1205,Candidate_1205,Senior Software Engineer,Engineering,L1,Alex Rivera,Careers Page,2024-09-28,2024-10-06,,,,,,Withdrew,3,8,,,,Withdrew,
+C1206,Candidate_1206,Recruiter,People Ops,L5,Riley Johnson,Agency,2024-11-12,2024-11-19,,,,,,Withdrew,9,7,,,,Withdrew,
+C1207,Candidate_1207,Controller,Finance,L3,Dana White,LinkedIn,2025-03-13,2025-03-15,,,,,,Rejected,1,2,,,,Rejected,Salary Mismatch
+C1208,Candidate_1208,Head of Design,Design,L3,Quinn Reyes,Careers Page,2024-08-16,2024-08-17,,,,,,Withdrew,9,1,,,,Withdrew,
+C1209,Candidate_1209,Senior CSM,Customer Success,L2,Blake Nguyen,University,2024-08-13,2024-08-16,2024-08-21,2024-08-25,2024-08-26,2024-08-27,2024-09-28,Offer Accepted,2,46,14.0,46.0,62.0,Hired,
+C1210,Candidate_1210,Financial Analyst,Finance,L3,Dana White,University,2024-06-21,2024-06-23,,,,,,Rejected,2,2,,,,Rejected,No Show
+C1211,Candidate_1211,Finance Manager,Finance,L3,Dana White,Referral,2024-09-06,2024-09-12,,,,,,Withdrew,2,6,,,,Withdrew,
+C1212,Candidate_1212,Product Designer,Design,L5,Quinn Reyes,Job Board,2024-12-12,2024-12-17,2024-12-21,2024-12-25,,,,Hiring Manager Interview,5,13,,,,Active,
+C1213,Candidate_1213,VP Product,Product,L4,Drew Davis,LinkedIn,2025-01-27,2025-01-30,2025-02-06,2025-02-14,2025-02-20,2025-02-22,2025-03-04,Offer Accepted,5,36,26.0,36.0,63.0,Hired,
+C1214,Candidate_1214,Recruiter,People Ops,L2,Riley Johnson,Referral,2024-12-12,2024-12-14,2024-12-17,2024-12-21,2024-12-24,,,Final Round,11,12,,,,Active,
+C1215,Candidate_1215,Senior PM,Product,L4,Drew Davis,Careers Page,2024-08-26,2024-08-30,2024-09-03,2024-09-13,2024-09-22,2024-09-23,2024-10-13,Offer Accepted,2,48,28.0,48.0,70.0,Hired,
+C1216,Candidate_1216,Engineering Manager,Engineering,L2,Taylor Brooks,Referral,2024-07-05,2024-07-13,2024-07-24,2024-08-02,2024-08-19,2024-08-21,2024-08-16,Offer Accepted,5,42,47.0,42.0,80.0,Hired,
+C1217,Candidate_1217,Software Engineer,Engineering,L5,Taylor Brooks,Job Board,2025-03-02,2025-03-08,,,,,,Withdrew,1,6,,,,Withdrew,
+C1218,Candidate_1218,VP of Sales,Sales,L2,Morgan Lee,Referral,2025-02-25,2025-02-27,2025-03-03,,,,,Technical/Assessment,13,6,,,,Active,
+C1219,Candidate_1219,UX Designer,Design,L3,Quinn Reyes,Careers Page,2025-03-17,2025-03-18,2025-03-20,,,,,Technical/Assessment,5,3,,,,Active,
+C1220,Candidate_1220,SDR,Sales,L1,Casey Turner,Careers Page,2024-12-11,2024-12-17,2024-12-25,2024-12-29,2025-01-05,,,Final Round,3,25,,,,Active,
+C1221,Candidate_1221,Sales Manager,Sales,L4,Casey Turner,Agency,2024-07-19,2024-07-23,,,,,,Rejected,3,4,,,,Rejected,Underqualified
+C1222,Candidate_1222,Senior AE,Sales,L5,Morgan Lee,Referral,2024-11-09,2024-11-19,,,,,,Rejected,4,10,,,,Rejected,Overqualified
+C1223,Candidate_1223,Demand Gen Manager,Marketing,L1,Sam Chen,Referral,2025-03-16,2025-03-23,2025-03-28,,,,,Technical/Assessment,7,12,,,,Active,
+C1224,Candidate_1224,Director of Product,Product,L2,Jamie Park,Agency,2024-11-25,2024-11-29,,,,,,Rejected,4,4,,,,Rejected,Position Closed
+C1225,Candidate_1225,Senior AE,Sales,L5,Casey Turner,Job Board,2024-06-16,2024-06-17,,,,,,Rejected,5,1,,,,Rejected,Overqualified
+C1226,Candidate_1226,Design Lead,Design,L2,Quinn Reyes,LinkedIn,2024-10-30,2024-11-04,2024-11-08,2024-11-11,2024-11-16,2024-11-17,2024-12-09,Offer Accepted,6,40,18.0,40.0,68.0,Hired,
+C1227,Candidate_1227,HRBP,People Ops,L3,Riley Johnson,LinkedIn,2024-08-07,2024-08-14,,,,,,Rejected,8,7,,,,Rejected,Salary Mismatch
+C1228,Candidate_1228,UX Designer,Design,L1,Quinn Reyes,Job Board,2025-03-11,2025-03-17,,,,,,Phone Screen,13,6,,,,Active,
+C1229,Candidate_1229,Director of Product,Product,L1,Drew Davis,Careers Page,2024-12-16,2024-12-21,2025-01-02,2025-01-09,2025-01-15,2025-01-18,2025-02-11,Offer Accepted,6,57,33.0,57.0,77.0,Hired,
+C1230,Candidate_1230,Demand Gen Manager,Marketing,L3,Sam Chen,Job Board,2025-02-03,2025-02-09,2025-02-12,2025-02-17,2025-02-21,2025-02-22,2025-03-25,Offer Accepted,5,50,19.0,50.0,91.0,Hired,
+C1231,Candidate_1231,Senior Designer,Design,L4,Quinn Reyes,Careers Page,2025-04-01,2025-04-07,,,,,,Phone Screen,10,6,,,,Active,
+C1232,Candidate_1232,Controller,Finance,L3,Dana White,Careers Page,2024-11-11,2024-11-19,2024-11-21,,,,,Technical/Assessment,8,10,,,,Active,
+C1233,Candidate_1233,Finance Manager,Finance,L4,Dana White,Careers Page,2024-12-04,2024-12-10,,,,,,Phone Screen,4,6,,,,Active,
+C1234,Candidate_1234,CMO,Marketing,L1,Sam Chen,University,2024-09-16,2024-09-19,,,,,,Withdrew,2,3,,,,Withdrew,
+C1235,Candidate_1235,Design Lead,Design,L2,Quinn Reyes,Referral,2024-10-08,2024-10-12,,,,,,Withdrew,4,4,,,,Withdrew,
+C1236,Candidate_1236,VP Customer Success,Customer Success,L4,Blake Nguyen,Agency,2024-06-19,2024-06-21,2024-06-24,2024-06-29,2024-07-03,2024-07-05,2024-08-18,Offer Accepted,1,60,16.0,60.0,89.0,Hired,
+C1237,Candidate_1237,SDR,Sales,L1,Casey Turner,Referral,2025-02-17,2025-02-20,2025-02-24,2025-02-27,2025-03-03,2025-03-05,2025-04-19,Offer Accepted,3,61,16.0,61.0,91.0,Hired,
+C1238,Candidate_1238,HRBP,People Ops,L1,Riley Johnson,University,2024-08-12,2024-08-17,,,,,,Rejected,13,5,,,,Rejected,Culture Fit
+C1239,Candidate_1239,CFO,Finance,L4,Dana White,Careers Page,2024-07-20,2024-07-23,,,,,,Withdrew,2,3,,,,Withdrew,
+C1240,Candidate_1240,HR Coordinator,People Ops,L1,Riley Johnson,Job Board,2024-07-26,2024-07-30,,,,,,Rejected,5,4,,,,Rejected,No Show
+C1241,Candidate_1241,Marketing Manager,Marketing,L5,Sam Chen,Careers Page,2024-09-27,2024-10-03,2024-10-05,2024-10-12,2024-10-17,2024-10-19,2024-11-21,Offer Accepted,4,55,22.0,55.0,73.0,Hired,
+C1242,Candidate_1242,Senior Analyst,Finance,L3,Dana White,Agency,2024-07-23,2024-07-26,2024-07-27,2024-07-29,2024-08-06,2024-08-08,2024-08-31,Offer Accepted,1,39,16.0,39.0,83.0,Hired,
+C1243,Candidate_1243,Senior AE,Sales,L3,Casey Turner,Agency,2024-08-28,2024-08-30,2024-09-05,2024-09-06,2024-09-11,2024-09-12,2024-10-29,Offer Accepted,6,62,15.0,62.0,103.0,Hired,
+C1244,Candidate_1244,Head of Design,Design,L2,Quinn Reyes,Careers Page,2024-09-04,2024-09-07,,,,,,Rejected,3,3,,,,Rejected,No Show
+C1245,Candidate_1245,Demand Gen Manager,Marketing,L3,Sam Chen,Referral,2024-11-09,2024-11-14,,,,,,Rejected,2,5,,,,Rejected,No Show
+C1246,Candidate_1246,Director of CS,Customer Success,L4,Blake Nguyen,University,2025-01-14,2025-01-16,2025-01-20,2025-01-27,,,,Hiring Manager Interview,13,13,,,,Active,
+C1247,Candidate_1247,Finance Manager,Finance,L1,Dana White,Referral,2025-03-03,2025-03-06,2025-03-15,,,,,Technical/Assessment,10,12,,,,Active,
+C1248,Candidate_1248,VP Customer Success,Customer Success,L5,Blake Nguyen,Agency,2024-07-29,2024-07-30,,,,,,Rejected,6,1,,,,Rejected,Underqualified
+C1249,Candidate_1249,Engineering Manager,Engineering,L5,Jordan Kim,Careers Page,2024-07-23,2024-08-01,2024-08-18,2024-08-20,2024-08-30,2024-09-01,2024-09-15,Offer Accepted,4,54,40.0,54.0,76.0,Hired,
+C1250,Candidate_1250,VP Product,Product,L4,Jamie Park,Agency,2024-08-11,2024-08-16,2024-08-25,2024-08-30,2024-09-08,2024-09-09,2024-09-15,Offer Accepted,5,35,29.0,35.0,,Hired,
+C1251,Candidate_1251,VP People,People Ops,L1,Riley Johnson,Careers Page,2024-07-01,2024-07-05,,,,,,Withdrew,6,4,,,,Withdrew,
+C1252,Candidate_1252,Product Manager,Product,L4,Drew Davis,Referral,2025-03-23,2025-03-29,2025-04-04,2025-04-10,2025-04-17,2025-04-19,,Offer Extended,6,27,27.0,,,Active,
+C1253,Candidate_1253,Sales Manager,Sales,L5,Casey Turner,University,2024-12-06,2024-12-09,2024-12-14,2024-12-23,,,,Hiring Manager Interview,1,17,,,,Active,
+C1254,Candidate_1254,Sales Manager,Sales,L3,Morgan Lee,Agency,2024-12-21,2024-12-26,2024-12-30,,,,,Technical/Assessment,4,9,,,,Active,
+C1255,Candidate_1255,CS Team Lead,Customer Success,L3,Blake Nguyen,Job Board,2025-03-08,2025-03-14,2025-03-18,2025-03-19,2025-03-22,,,Final Round,6,14,,,,Active,
+C1256,Candidate_1256,Software Engineer,Engineering,L1,Taylor Brooks,Careers Page,2024-06-09,2024-06-11,,,,,,Rejected,3,2,,,,Rejected,Overqualified
+C1257,Candidate_1257,Director of CS,Customer Success,L1,Blake Nguyen,Referral,2024-08-07,2024-08-10,,,,,,Rejected,3,3,,,,Rejected,Underqualified
+C1258,Candidate_1258,Product Manager,Product,L1,Drew Davis,University,2024-11-04,2024-11-10,2024-11-23,2024-11-30,2024-12-08,2024-12-10,2024-12-21,Offer Accepted,1,47,36.0,47.0,70.0,Hired,
+C1259,Candidate_1259,Software Engineer,Engineering,L3,Jordan Kim,Careers Page,2024-08-07,2024-08-08,2024-08-20,2024-09-01,,,,Hiring Manager Interview,19,25,,,,Active,
+C1260,Candidate_1260,SDR,Sales,L3,Casey Turner,Job Board,2024-08-10,2024-08-11,,,,,,Rejected,3,1,,,,Rejected,Salary Mismatch
+C1261,Candidate_1261,Marketing Coordinator,Marketing,L5,Sam Chen,Agency,2024-08-24,2024-08-31,,,,,,Rejected,12,7,,,,Rejected,Underqualified
+C1262,Candidate_1262,Demand Gen Manager,Marketing,L5,Sam Chen,Referral,2024-07-15,2024-07-20,,,,,,Rejected,4,5,,,,Rejected,Salary Mismatch
+C1263,Candidate_1263,Content Marketer,Marketing,L3,Sam Chen,Referral,2025-03-11,2025-03-15,2025-03-22,2025-04-01,2025-04-08,2025-04-10,,Offer Extended,1,30,30.0,,,Active,
+C1264,Candidate_1264,Recruiter,People Ops,L5,Riley Johnson,University,2024-12-18,2024-12-21,2024-12-24,,,,,Technical/Assessment,13,6,,,,Active,
+C1265,Candidate_1265,Controller,Finance,L4,Dana White,Referral,2025-02-11,2025-02-17,2025-02-21,2025-02-27,2025-03-05,2025-03-07,,Offer Extended,2,24,24.0,,,Active,
+C1266,Candidate_1266,Head of Design,Design,L4,Quinn Reyes,Agency,2024-08-28,2024-09-02,2024-09-12,2024-09-16,2024-09-22,2024-09-23,2024-10-08,Offer Accepted,3,41,26.0,41.0,68.0,Hired,
+C1267,Candidate_1267,Design Lead,Design,L1,Quinn Reyes,Job Board,2024-07-13,2024-07-17,,,,,,Withdrew,13,4,,,,Withdrew,
+C1268,Candidate_1268,CMO,Marketing,L3,Sam Chen,Agency,2024-07-04,2024-07-09,,,,,,Withdrew,14,5,,,,Withdrew,
+C1269,Candidate_1269,Financial Analyst,Finance,L2,Dana White,Careers Page,2024-07-30,2024-08-05,,,,,,Rejected,11,6,,,,Rejected,Position Closed
+C1270,Candidate_1270,Marketing Coordinator,Marketing,L1,Sam Chen,University,2024-06-06,2024-06-09,,,,,,Withdrew,9,3,,,,Withdrew,
+C1271,Candidate_1271,Recruiter,People Ops,L3,Riley Johnson,University,2024-10-16,2024-10-21,2024-10-28,2024-11-02,2024-11-11,2024-11-12,2024-11-29,Offer Accepted,3,44,27.0,44.0,68.0,Hired,
+C1272,Candidate_1272,Engineering Manager,Engineering,L5,Jordan Kim,Job Board,2024-08-20,2024-08-24,,,,,,Withdrew,11,4,,,,Withdrew,
+C1273,Candidate_1273,Account Executive,Sales,L5,Morgan Lee,LinkedIn,2024-06-07,2024-06-08,,,,,,Withdrew,7,1,,,,Withdrew,
+C1274,Candidate_1274,Content Marketer,Marketing,L1,Sam Chen,Referral,2024-11-12,2024-11-19,,,,,,Withdrew,5,7,,,,Withdrew,
+C1275,Candidate_1275,VP of Sales,Sales,L3,Morgan Lee,Agency,2024-06-27,2024-07-02,,,,,,Withdrew,9,5,,,,Withdrew,
+C1276,Candidate_1276,Engineering Manager,Engineering,L1,Alex Rivera,Job Board,2024-11-07,2024-11-14,,,,,,Withdrew,1,7,,,,Withdrew,
+C1277,Candidate_1277,Product Manager,Product,L3,Drew Davis,University,2024-10-03,2024-10-09,,,,,,Rejected,13,6,,,,Rejected,No Show
+C1278,Candidate_1278,CFO,Finance,L2,Dana White,LinkedIn,2024-12-27,,,,,,,Applied,9,0,,,,Active,
+C1279,Candidate_1279,Associate PM,Product,L3,Jamie Park,University,2024-12-10,2024-12-13,,,,,,Rejected,4,3,,,,Rejected,Underqualified
+C1280,Candidate_1280,Marketing Manager,Marketing,L1,Sam Chen,Referral,2025-02-22,2025-03-03,2025-03-09,2025-03-15,,,,Hiring Manager Interview,2,21,,,,Active,
+C1281,Candidate_1281,VP of Sales,Sales,L2,Casey Turner,LinkedIn,2025-03-31,2025-04-05,2025-04-10,2025-04-15,2025-04-18,,,Final Round,5,18,,,,Active,
+C1282,Candidate_1282,Senior Recruiter,People Ops,L4,Riley Johnson,Job Board,2025-01-18,2025-01-22,2025-01-30,,,,,Technical/Assessment,3,12,,,,Active,
+C1283,Candidate_1283,Account Executive,Sales,L1,Morgan Lee,Careers Page,2025-01-25,2025-01-31,2025-02-08,,,,,Technical/Assessment,6,14,,,,Active,
+C1284,Candidate_1284,Controller,Finance,L3,Dana White,Job Board,2024-08-01,2024-08-04,,,,,,Rejected,11,3,,,,Rejected,No Show
+C1285,Candidate_1285,VP People,People Ops,L1,Riley Johnson,Job Board,2024-08-15,2024-08-17,,,,,,Phone Screen,6,2,,,,Active,
+C1286,Candidate_1286,Head of Design,Design,L1,Quinn Reyes,Job Board,2024-08-29,2024-09-02,,,,,,Withdrew,7,4,,,,Withdrew,
+C1287,Candidate_1287,VP Customer Success,Customer Success,L5,Blake Nguyen,LinkedIn,2025-01-23,2025-01-27,,,,,,Phone Screen,3,4,,,,Active,
+C1288,Candidate_1288,SDR,Sales,L1,Morgan Lee,Referral,2024-09-10,2024-09-16,2024-09-17,2024-09-25,2024-09-30,2024-10-01,2024-10-02,Offer Accepted,5,22,21.0,22.0,,Hired,
+C1289,Candidate_1289,Associate PM,Product,L1,Drew Davis,LinkedIn,2024-08-26,2024-08-28,,,,,,Rejected,6,2,,,,Rejected,No Show
+C1290,Candidate_1290,Marketing Manager,Marketing,L2,Sam Chen,Job Board,2024-10-22,2024-10-28,,,,,,Rejected,10,6,,,,Rejected,Position Closed
+C1291,Candidate_1291,Finance Manager,Finance,L4,Dana White,Agency,2025-02-01,2025-02-06,,,,,,Phone Screen,7,5,,,,Active,
+C1292,Candidate_1292,Demand Gen Manager,Marketing,L2,Sam Chen,University,2025-03-06,2025-03-08,2025-03-11,2025-03-16,2025-03-28,2025-03-29,2025-05-09,Offer Accepted,7,64,23.0,64.0,102.0,Hired,
+C1293,Candidate_1293,VP Product,Product,L2,Jamie Park,Job Board,2024-06-30,2024-07-02,2024-07-09,2024-07-15,2024-07-16,2024-07-17,2024-08-24,Offer Accepted,2,55,17.0,55.0,99.0,Hired,
+C1294,Candidate_1294,Senior Designer,Design,L2,Quinn Reyes,Referral,2025-03-31,2025-04-04,2025-04-13,,,,,Technical/Assessment,6,13,,,,Active,
+C1295,Candidate_1295,Staff Engineer,Engineering,L5,Taylor Brooks,Referral,2025-03-16,2025-03-29,,,,,,Rejected,1,13,,,,Rejected,Underqualified
+C1296,Candidate_1296,Senior Software Engineer,Engineering,L5,Jordan Kim,LinkedIn,2025-02-25,2025-03-08,2025-03-18,2025-03-24,,,,Hiring Manager Interview,45,27,,,,Active,
+C1297,Candidate_1297,Marketing Manager,Marketing,L2,Sam Chen,LinkedIn,2024-06-12,2024-06-22,,,,,,Rejected,3,10,,,,Rejected,Salary Mismatch
+C1298,Candidate_1298,VP of Sales,Sales,L3,Morgan Lee,Job Board,2024-12-20,2024-12-24,2024-12-29,2025-01-02,2025-01-08,,,Final Round,3,19,,,,Active,
+C1299,Candidate_1299,Design Lead,Design,L3,Quinn Reyes,University,2025-03-15,2025-03-19,2025-03-24,2025-03-28,2025-04-03,2025-04-04,2025-05-13,Offer Accepted,7,59,20.0,59.0,79.0,Hired,
+C1300,Candidate_1300,Senior Software Engineer,Engineering,L5,Alex Rivera,Agency,2024-09-22,2024-09-27,,,,,,Rejected,1,5,,,,Rejected,Position Closed
+C1301,Candidate_1301,Finance Manager,Finance,L3,Dana White,University,2024-07-16,2024-07-21,2024-07-27,2024-08-05,2024-08-06,2024-08-09,2024-09-12,Offer Accepted,3,58,24.0,58.0,83.0,Hired,
+C1302,Candidate_1302,Engineering Manager,Engineering,L4,Taylor Brooks,Careers Page,2024-08-25,2024-09-05,,,,,,Rejected,4,11,,,,Rejected,
+C1303,Candidate_1303,Senior Analyst,Finance,L4,Dana White,LinkedIn,2024-10-29,,,,,,,Applied,5,0,,,,Active,
+C1304,Candidate_1304,SDR,Sales,L3,Morgan Lee,Careers Page,2024-08-22,2024-08-23,2024-08-27,2024-08-31,2024-09-01,2024-09-02,2024-10-18,Offer Accepted,6,57,11.0,57.0,81.0,Hired,
+C1305,Candidate_1305,Head of Design,Design,L5,Quinn Reyes,University,2024-10-23,2024-10-25,,,,,,Rejected,7,2,,,,Rejected,Salary Mismatch
+C1306,Candidate_1306,Senior CSM,Customer Success,L1,Blake Nguyen,LinkedIn,2025-01-05,2025-01-12,,,,,,Phone Screen,11,7,,,,Active,
+C1307,Candidate_1307,Senior CSM,Customer Success,L1,Blake Nguyen,Referral,2024-08-27,2024-09-01,,,,,,Rejected,7,5,,,,Rejected,No Show
+C1308,Candidate_1308,Design Lead,Design,L4,Quinn Reyes,LinkedIn,2025-03-06,2025-03-13,2025-03-22,2025-03-25,,,,Hiring Manager Interview,3,19,,,,Active,
+C1309,Candidate_1309,CSM,Customer Success,L3,Blake Nguyen,Careers Page,2024-10-13,2024-10-15,2024-10-20,,,,,Technical/Assessment,1,7,,,,Active,
+C1310,Candidate_1310,Marketing Coordinator,Marketing,L1,Sam Chen,Agency,2024-12-29,2024-12-31,,,,,,Withdrew,4,2,,,,Withdrew,
+C1311,Candidate_1311,VP Customer Success,Customer Success,L2,Blake Nguyen,Job Board,2024-07-11,2024-07-16,2024-07-20,2024-07-24,,,,Hiring Manager Interview,9,13,,,,Active,
+CENG1000,Candidate_CENG1000,Senior Software Engineer,Engineering,L4,Alex Rivera,Agency,2024-11-26,2024-12-06,,,,,,Withdrew,3,10,,,,Withdrew,Competing Offer
+CENG1001,Candidate_CENG1001,Senior Software Engineer,Engineering,L5,Alex Rivera,Agency,2024-09-12,2024-09-21,,,,,,Withdrew,5,9,,,,Withdrew,Competing Offer
+CENG1002,Candidate_CENG1002,Staff Engineer,Engineering,L4,Jordan Kim,LinkedIn,2024-12-02,2024-12-08,,,,,,Withdrew,1,6,,,,Withdrew,Salary Mismatch
+CENG1003,Candidate_CENG1003,Engineering Manager,Engineering,L3,Alex Rivera,Referral,2024-12-07,2024-12-18,,,,,,Rejected,2,11,,,,Rejected,
+CENG1004,Candidate_CENG1004,Staff Engineer,Engineering,L5,Taylor Brooks,LinkedIn,2025-02-19,2025-02-23,,,,,,Withdrew,2,4,,,,Withdrew,
+CENG1005,Candidate_CENG1005,Staff Engineer,Engineering,L5,Alex Rivera,LinkedIn,2024-12-28,2025-01-06,,,,,,Rejected,2,9,,,,Rejected,
+CENG1006,Candidate_CENG1006,Senior Software Engineer,Engineering,L3,Taylor Brooks,Agency,2024-09-09,2024-09-18,,,,,,Rejected,3,9,,,,Rejected,Competing Offer
+CENG1007,Candidate_CENG1007,Principal Engineer,Engineering,L3,Alex Rivera,LinkedIn,2024-10-25,2024-11-01,,,,,,Rejected,2,7,,,,Rejected,
+CGHOST1000,Candidate_CGHOST1000,Senior Software Engineer,Engineering,L3,Jordan Kim,Referral,2024-10-07,2024-10-16,,,,,,Phone Screen,54,63,,,,Active,
+CGHOST1001,Candidate_CGHOST1001,Account Executive,Sales,L4,Casey Turner,Careers Page,2024-12-15,2024-12-20,2024-12-29,2025-01-03,,,,Hiring Manager Interview,21,40,,,,Active,
+CGHOST1002,Candidate_CGHOST1002,Senior CSM,Customer Success,L2,Blake Nguyen,Referral,2024-10-26,2024-11-02,2024-11-11,,,,,Technical/Assessment,23,39,,,,Active,
+CGHOST1003,Candidate_CGHOST1003,CSM,Customer Success,L4,Blake Nguyen,Job Board,2025-01-14,2025-01-21,2025-01-31,2025-02-06,2025-02-14,,,Final Round,47,78,,,,Rejected,Overqualified
+CGHOST1004,Candidate_CGHOST1004,Senior Software Engineer,Engineering,L3,Alex Rivera,LinkedIn,2024-11-25,2024-12-03,2024-12-11,2024-12-19,2024-12-29,,,Final Round,33,67,,,,Active,
+CGHOST1005,Candidate_CGHOST1005,Senior PM,Product,L2,Jamie Park,Job Board,2024-10-20,2024-10-24,2024-11-02,2024-11-09,,,,Hiring Manager Interview,45,65,,,,Withdrew,
+CGHOST1006,Candidate_CGHOST1006,CSM,Customer Success,L3,Blake Nguyen,LinkedIn,2024-12-13,2024-12-17,,,,,,Phone Screen,37,41,,,,Active,

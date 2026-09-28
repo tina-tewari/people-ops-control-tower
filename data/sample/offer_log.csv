@@ -1,0 +1,7 @@
+offer_id,candidate_id,candidate_name,role,department,level,hiring_manager,location,offer_date,start_date,base_salary_usd,bonus_target_pct,bonus_target_usd,commission_plan,commission_detail,ote_usd,equity_grant_usd,signing_bonus_usd,offer_status,close_date,days_to_close,competing_offer,decline_reason
+O101,S101,Olive Grant,Senior Software Engineer,Engineering,L4,Morgan Hale,New York,2025-02-14,2025-03-17,150000,15,22500,,,,60000,10000,Accepted,2025-02-17,3.0,False,
+O102,S102,Parker Ames,Account Executive,Sales,L2,Casey Lin,Chicago,2025-03-03,2025-04-07,90000,10,9000,Commission,"10% of closed ARR, paid quarterly; OTE $135,000",135000.0,0,5000,Declined,2025-03-06,3.0,True,Competing Offer
+O103,S103,Quinn Harlow,Marketing Manager,Marketing,L4,Sam Ortiz,Austin,2025-03-20,,115000,10,11500,,,,30000,0,Negotiating,,,False,
+O104,S104,Rowan Pike,Product Manager,Product,L3,Riley Moss,Remote,2025-04-02,2025-05-05,120000,10,12000,Performance Bonus,"Up to 10% of base salary tied to product adoption OKRs; OTE $132,000",132000.0,25000,0,Accepted,2025-04-05,3.0,False,
+O105,S105,Sage Holloway,CSM,Customer Success,L2,Blake Ward,Chicago,2025-04-10,2025-05-12,80000,0,0,Commission,"5% of expansion ARR on managed accounts; OTE $80,000",80000.0,10000,0,Accepted,2025-04-14,4.0,False,
+O106,S106,Tatum Cole,Senior AE,Sales,L3,Casey Lin,San Francisco,2025-04-18,2025-05-19,105000,20,21000,Commission,"10% of closed ARR, paid quarterly; uncapped; OTE $157,500",157500.0,0,5000,Accepted,2025-04-21,3.0,False,
