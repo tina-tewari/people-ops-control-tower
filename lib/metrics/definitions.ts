@@ -57,7 +57,7 @@ export const METRIC_DEFINITIONS: MetricDefinition[] = [
     field: "coverage",
     source: "Derived",
     sourceColumn: "—",
-    definition: "Active candidates ÷ open seats for a department + level (inferred link).",
+    definition: "Active candidates ÷ open seats per req_id (inferred for legacy candidates).",
     renamed: false,
   },
 ];

@@ -1,8 +1,8 @@
-department,level,approved_headcount,filled_seats,open_seats,target_start_date,annual_budget_usd,priority,notes
-Engineering,L3,4,2,2,2025-03-01,480000,High,Critical hire
-Engineering,L4,3,1,2,2025-04-15,520000,High,Backfill
-Sales,L2,5,3,2,2025-06-01,450000,Medium,Expansion
-Sales,L3,2,2,0,2025-05-01,260000,Low,
-Marketing,L4,2,0,2,2025-05-15,300000,High,Expansion
-Product,L3,3,2,1,2025-07-01,390000,Low,Backfill
-Customer Success,L2,3,2,1,2025-04-01,270000,Medium,New hire
+req_id,department,level,approved_headcount,filled_seats,open_seats,target_start_date,annual_budget_usd,priority,notes
+REQ-ENG-L3,Engineering,L3,4,2,2,2025-03-01,480000,High,Critical hire
+REQ-ENG-L4,Engineering,L4,3,1,2,2025-04-15,520000,High,Backfill
+REQ-SAL-L2,Sales,L2,5,3,2,2025-06-01,450000,Medium,Expansion
+REQ-SAL-L3,Sales,L3,2,2,0,2025-05-01,260000,Low,
+REQ-MAR-L4,Marketing,L4,2,0,2,2025-05-15,300000,High,Expansion
+REQ-PRO-L3,Product,L3,3,2,1,2025-07-01,390000,Low,Backfill
+REQ-CS-L2,Customer Success,L2,3,2,1,2025-04-01,270000,Medium,New hire

@@ -23,7 +23,8 @@ runs against the small placeholder set in `data/sample/`, which exercises every 
 | `lib/reconciliation/sourceOfTruth.ts` | Field hierarchy; auto-resolve only when a second source corroborates |
 | `lib/reconciliation/discrepancies.ts` | Detection rules across systems |
 | `lib/reconciliation/offers.ts` | Normalized offer schema, offer log vs. offer letter comparison |
-| `lib/reconciliation/requisitions.ts` | Inferred requisition model (department + level; no req_id upstream) |
+| `lib/reconciliation/requisitions.ts` | Requisition model keyed by `req_id`; one-time inferred backfill for legacy candidates |
+| `lib/data/validate.ts` | Mandatory fields for headcount lines and new candidates (`npm run validate:data`) |
 | `lib/reconciliation/actions.ts` | Per-owner action queue (discrepancies + stalled candidates) |
 | `lib/reconciliation/results.ts` | Public result schema (`ReconciliationResult`) and summary |
 | `lib/reconciliation/job.ts` | Scheduled job: detect → merge with stored status history → persist; HM approvals |
@@ -34,6 +35,49 @@ runs against the small placeholder set in `data/sample/`, which exercises every 
 | `config/offerStandards.ts` | Standard offer-letter template; anything else is flagged as a non-standard term |
 | `scripts/reconcile-offers.ts` | Weekly offer-letter reconciliation; writes `reports/offers/<dataset>/` |
 | `app/` | One page per section; `app/api/reconcile` is the scheduled run |
+
+## Requisition IDs
+
+The headcount plan and recruiting pipeline are joined on `req_id`. Upstream systems had no shared requisition ID, so
+`npm run backfill:req-ids` did a **one-time backfill** (2026-09-28) of `data/real/` and `data/sample/`:
+
+- `headcount_plan.csv` gained `req_id` (one per department + level line, e.g. `REQ-ENG-L4`).
+- `recruiting_pipeline.csv` gained `req_id`, `req_mapping`, `req_confidence`, `req_match_basis`. Every legacy candidate
+  is `req_mapping=Inferred`: the req is picked on department + level, then role, hiring manager and target start date
+  are compared with the requisition. All three agree: **High**; two: **Medium**; one or none: **Low**.
+  `req_match_basis` lists the fields that agreed. Inferred links are a best guess, not a definitive mapping; a recruiter
+  confirms one by setting `req_mapping=Confirmed`. Candidates whose department + level has no line are `Unmatched`.
+
+The long-term fix is structural: issue the `req_id` when headcount is approved and require it in the ATS, the offer
+log and HRIS hire events.
+
+### Adding a candidate to the pipeline
+
+Every new row in `recruiting_pipeline.csv` must be entered against an existing requisition. `Inferred` / `Unmatched`
+are reserved for the backfill.
+
+| Column | Rule |
+|---|---|
+| `candidate_id` | Unique |
+| `candidate_name` | Full name |
+| `req_id` | An existing `req_id` from `headcount_plan.csv` |
+| `req_mapping` | `Confirmed` |
+| `role` | Job title being hired |
+| `department`, `level` | Must equal the requisition's |
+| `hiring_manager` | Accountable owner for interview stages |
+| `source` | Referral, LinkedIn, Agency, … |
+| `applied_date` | `YYYY-MM-DD` |
+| `current_stage` | Current pipeline stage |
+| `disposition` | Active / Hired / Rejected / Withdrew |
+| `rejection_reason` | Required when `disposition` is Rejected |
+
+A new headcount line needs `req_id` (unique), `department`, `level`, `approved_headcount`, `filled_seats`,
+`open_seats`, `target_start_date`, `annual_budget_usd` and `priority`. The rules live in `lib/data/validate.ts`;
+check them with:
+
+```bash
+npm run validate:data              # DATASET=sample for the sample set; exits non-zero on any issue
+```
 
 ## Scheduled run
 

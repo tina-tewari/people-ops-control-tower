@@ -52,7 +52,7 @@ export function keyFindings(ct: ControlTowerCore): Insight[] {
   findings.push({
     tone: confident / Math.max(1, ev.headcountLines) < 0.5 ? "critical" : "warning",
     headline: `Only ${confident} of ${ev.headcountLines} headcount lines map to a single role`,
-    detail: `No requisition ID links a candidate to an approved seat. ${ev.activeOnAmbiguousLines} of ${ev.activeCandidates} active candidates sit on ambiguous lines, and ${ev.activeOnFilledLines} are recruiting against lines with no open seats.`,
+    detail: `Legacy candidates only have an inferred req_id (${ev.candidateMappings["Inferred Low"]} with low confidence). ${ev.activeOnAmbiguousLines} of ${ev.activeCandidates} active candidates sit on ambiguous lines, and ${ev.activeOnFilledLines} are recruiting against lines with no open seats.`,
     href: "/data-model",
   });
 

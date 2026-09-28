@@ -120,7 +120,7 @@ export default async function HeadcountPage({ searchParams }: PageProps<"/headco
         </div>
       </Card>
       <p className="mt-3 text-xs text-ink-3">
-        Pipeline counts link headcount to candidates on department + level because no shared req_id exists.{" "}
+        Pipeline counts link headcount to candidates by req_id. Legacy candidates carry an inferred req_id from the one-time backfill.{" "}
         <Link href="/data-model" className="text-accent">See the data model gap →</Link>
       </p>
     </>
