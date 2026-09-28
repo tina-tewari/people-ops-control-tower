@@ -1,5 +1,6 @@
 // Normalized offer schema + structured (offer log) vs. extracted (offer letter) comparison.
 
+import { OFFER_DECISIONS, type OfferDecision } from "@/config/offerDecisions";
 import type { OfferLetter, OfferLogRow, OfferStatus } from "@/lib/types";
 import type { RuleId } from "./playbook";
 
@@ -59,6 +60,7 @@ export type FieldResolution =
   | "Confirmed"
   | "Auto-corrected"
   | "Populated from letter"
+  | "Confirmed by Ops"
   | "Needs review";
 
 export interface FieldComparison {
@@ -74,6 +76,8 @@ export interface FieldComparison {
   rule: RuleId | null;
   /** Trusted value for the normalized offer; null while under review. */
   reconciled: string | number | null;
+  /** Recruiting Ops decision that settled a field that would otherwise need review. */
+  decision?: OfferDecision;
 }
 
 /**
@@ -94,6 +98,8 @@ export interface OfferComparison {
   fields: FieldComparison[];
   /** Special terms in the letter that the structured log does not capture. */
   letterOnlyTerms: string[];
+  /** Non-standard letter terms Recruiting Ops has approved. */
+  approvedTerms: { term: string; decision: OfferDecision }[];
   verification: OfferVerification;
   normalized: NormalizedOffer;
 }
@@ -167,6 +173,23 @@ function compareValues(
   return log === letter ? "match" : "conflict";
 }
 
+function fieldDecision(candidateId: string, f: FieldComparison): OfferDecision | undefined {
+  if (f.letter == null) return undefined;
+  return OFFER_DECISIONS.find(
+    (d) =>
+      d.kind === "field" &&
+      d.candidateId === candidateId &&
+      d.field === f.key &&
+      normText(String(d.letterValue)) === normText(String(f.letter)),
+  );
+}
+
+function termDecision(candidateId: string, term: string): OfferDecision | undefined {
+  return OFFER_DECISIONS.find(
+    (d) => d.kind === "term" && d.candidateId === candidateId && normText(d.term) === normText(term),
+  );
+}
+
 export function compareOffers(
   offers: OfferLogRow[],
   letters: OfferLetter[],
@@ -185,13 +208,14 @@ export function compareOffers(
         letterFile: null,
         fields: [],
         letterOnlyTerms: [],
+        approvedTerms: [],
         verification: "No letter",
         normalized: logOffer,
       };
     }
 
     const letterOffer = fromOfferLetter(letter);
-    const fields = OFFER_FIELDS.map((f): FieldComparison => {
+    const compared = OFFER_FIELDS.map((f): FieldComparison => {
       const log = logOffer[f.key];
       const letterValue = letterOffer[f.key];
       const state = compareValues(log, letterValue);
@@ -215,10 +239,18 @@ export function compareOffers(
       // Both sources state a value (or the letter omits one): never overwrite comp.
       return { ...base, resolution: "Needs review", rule: "compConflict", reconciled: null };
     });
+    const fields = compared.map((f): FieldComparison => {
+      const decision = f.resolution === "Needs review" ? fieldDecision(o.candidateId, f) : undefined;
+      return decision ? { ...f, resolution: "Confirmed by Ops", rule: null, reconciled: f.letter, decision } : f;
+    });
     const logText = normText(o.commissionDetail ?? "");
-    const letterOnlyTerms = letter.specialTerms.filter(
-      (t) => !logText.includes(normText(t.split(": ").at(-1) ?? t)),
-    );
+    const approvedTerms: OfferComparison["approvedTerms"] = [];
+    const letterOnlyTerms = letter.specialTerms.filter((t) => {
+      if (logText.includes(normText(t.split(": ").at(-1) ?? t))) return false;
+      const decision = termDecision(o.candidateId, t);
+      if (decision) approvedTerms.push({ term: t, decision });
+      return !decision;
+    });
 
     return {
       offerId: o.offerId,
@@ -228,6 +260,7 @@ export function compareOffers(
       letterFile: letter.fileName,
       fields,
       letterOnlyTerms,
+      approvedTerms,
       verification: verificationOf(fields, letterOnlyTerms),
       normalized: {
         ...logOffer,

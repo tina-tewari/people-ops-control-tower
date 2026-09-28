@@ -79,6 +79,17 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
                 {c.letterOnlyTerms.map((t) => <Tag key={t}>{t}</Tag>)}
               </div>
             )}
+            {c.approvedTerms.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2 border-b border-line px-5 py-3 text-xs">
+                <span className="font-medium">Non-standard terms approved by Recruiting Ops:</span>
+                {c.approvedTerms.map(({ term, decision }) => (
+                  <span key={term} className="flex items-center gap-1">
+                    <Tag>{term}</Tag>
+                    <span className="text-ink-3">{decision.decision}</span>
+                  </span>
+                ))}
+              </div>
+            )}
             <div className={table.wrap}>
               <table className={table.table}>
                 <thead className={table.thead}>

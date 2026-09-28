@@ -38,6 +38,7 @@ const FIELD_RESOLUTION: Record<FieldResolution, Tone> = {
   Confirmed: "good",
   "Auto-corrected": "good",
   "Populated from letter": "info",
+  "Confirmed by Ops": "good",
   "Needs review": "serious",
 };
 export const FieldResolutionBadge = ({ resolution }: { resolution: FieldResolution }) => (
