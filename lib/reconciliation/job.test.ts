@@ -64,6 +64,28 @@ test("human decisions persist until the conflicting values change", () => {
   assert.equal(s.results[changed.id].result.detected_at, T2);
 });
 
+test("a growing stall count does not reopen a handled approval", () => {
+  const stall = (days: number) =>
+    conflict({
+      id: "stalledHiringManagerStage:C2:Days in stage",
+      rule: "stalledHiringManagerStage",
+      field: "Days in stage",
+      sourceA: { system: "Recruiting pipeline", value: `Hiring Manager Interview for ${days} days` },
+      sourceB: { system: "Recruiting pipeline", value: "Stall threshold 7 days" },
+      ownerRole: "Hiring manager",
+      owner: "Grace",
+      identity: "Hiring Manager Interview past 7 days",
+    });
+  const s1 = mergeState([stall(9)], EMPTY_STATE, T1);
+  const stored = s1.results[stall(9).id];
+  stored.result = { ...stored.result, status: "ignored", resolved_at: T1 };
+  stored.decided_by = "grace";
+  const r = mergeState([stall(10)], s1, T2).results[stall(10).id].result;
+  assert.equal(r.status, "ignored");
+  assert.equal(r.detected_at, T1);
+  assert.equal(r.source_a_value, "Hiring Manager Interview for 10 days");
+});
+
 test("open conflicts that disappear from the sources are closed as resolved", () => {
   const s = mergeState([], mergeState([conflict()], EMPTY_STATE, T1), T2);
   const r = s.results[conflict().id].result;

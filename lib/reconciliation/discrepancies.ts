@@ -42,6 +42,8 @@ export interface Discrepancy {
   /** A named person when routing resolves to one (e.g. the hiring manager). */
   owner: string;
   status: DiscrepancyStatus;
+  /** What defines the conflict for change detection; defaults to the source values. */
+  identity?: string;
 }
 
 interface Draft {
@@ -55,6 +57,7 @@ interface Draft {
   basis: string;
   /** Named hiring manager, used when the rule routes to "Hiring manager". */
   hiringManager?: string;
+  identity?: string;
 }
 
 function finalize({ hiringManager, ...d }: Draft): Discrepancy {
@@ -229,6 +232,7 @@ function stalledInHiringManagerStage(ds: Dataset): Draft[] {
       sourceB: { system: "Recruiting pipeline" as const, value: `Stall threshold ${STALLED_DAYS} days` },
       basis: `${p.role} (${p.level}) is waiting on ${p.hiringManager} to advance or reject.`,
       hiringManager: p.hiringManager,
+      identity: `${p.currentStage} past ${STALLED_DAYS} days`,
     }));
 }
 

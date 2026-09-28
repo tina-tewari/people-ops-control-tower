@@ -6,6 +6,7 @@ import { getControlTower } from "@/lib/controlTower";
 import { unauthorized } from "@/lib/reconciliation/auth";
 import { postSlackDigest, slackDigest } from "@/lib/reconciliation/digest";
 import { runReconciliation } from "@/lib/reconciliation/job";
+import { HUMAN_STATUSES } from "@/lib/reconciliation/store";
 
 async function handle(request: Request) {
   const denied = unauthorized(request);
@@ -14,11 +15,15 @@ async function handle(request: Request) {
   const run = runReconciliation({ persist: true });
   const slackPosted = await postSlackDigest(slackDigest(run));
   const { actionQueue } = getControlTower();
+  const handled = new Set(run.results.filter((r) => HUMAN_STATUSES.has(r.status)).map((r) => r.id));
+  const openQueues = actionQueue
+    .map((q) => ({ ...q, items: q.items.filter((i) => !handled.has(i.id)) }))
+    .filter((q) => q.items.length > 0);
 
   return Response.json({
     ...run,
     slack_posted: slackPosted,
-    notifications: actionQueue.map((q) => ({
+    notifications: openQueues.map((q) => ({
       owner: q.owner,
       channel: q.channel,
       count: q.items.length,

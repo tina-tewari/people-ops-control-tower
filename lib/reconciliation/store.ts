@@ -2,6 +2,7 @@
 // first-seen timestamps, and human decisions (resolved / ignored) survive reruns.
 
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import type { ReconciliationResult, ResultStatus } from "./results";
 
@@ -21,10 +22,12 @@ export interface ReconciliationState {
 
 export const EMPTY_STATE: ReconciliationState = { version: 1, last_run_at: null, results: {} };
 
+/** Vercel functions can only write under the OS temp dir, which does not persist between invocations. */
 export function statePath(): string {
+  const dir = process.env.VERCEL ? tmpdir() : process.cwd();
   return (
     process.env.RECONCILIATION_STATE_PATH ??
-    path.join(process.cwd(), ".reconciliation", `${process.env.DATASET ?? "real"}.json`)
+    path.join(dir, ".reconciliation", `${process.env.DATASET ?? "real"}.json`)
   );
 }
 

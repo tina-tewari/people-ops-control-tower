@@ -43,10 +43,13 @@ npm run reconcile -- --post      # also post the digest to SLACK_WEBHOOK_URL
 ```
 
 `GET /api/reconcile` does the same over HTTP (and posts the digest when `SLACK_WEBHOOK_URL` is set). `vercel.json`
-schedules it daily; set `CRON_SECRET` to require the bearer token on every reconciliation route.
+schedules it daily; set `CRON_SECRET` to require the bearer token on every reconciliation route. The `PATCH`
+endpoint refuses all requests until `CRON_SECRET` is set. On Vercel, state defaults to the function's temp dir, which
+does not persist between invocations; set `RECONCILIATION_STATE_PATH` to durable storage to keep decisions.
 
 Runs are idempotent: result ids are stable (`rule:subject:field`), `detected_at` is kept from the first run that saw
-the conflict, and `resolved` / `ignored` decisions stick until the conflicting values change. Open conflicts that
+the conflict, and `resolved` / `ignored` decisions stick until the conflicting values change (for stalls, the stage, not the
+growing day count). Open conflicts that
 disappear from the sources are closed as `resolved`.
 
 | Endpoint | Returns |

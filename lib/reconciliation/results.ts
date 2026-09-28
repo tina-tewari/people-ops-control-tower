@@ -44,7 +44,7 @@ export interface ReconciliationSummary {
 /** Changes whenever the conflicting values change, so a closed item can reopen. */
 export function fingerprint(d: Discrepancy): string {
   return createHash("sha256")
-    .update(JSON.stringify([d.sourceA, d.sourceB, d.recommended, d.owner]))
+    .update(JSON.stringify([d.identity ?? [d.sourceA, d.sourceB, d.recommended], d.owner]))
     .digest("hex")
     .slice(0, 16);
 }

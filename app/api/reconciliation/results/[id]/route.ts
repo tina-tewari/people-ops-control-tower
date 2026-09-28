@@ -8,7 +8,7 @@ import type { ResultStatus } from "@/lib/reconciliation/results";
 const SETTABLE: ResultStatus[] = ["resolved", "ignored", "needs_review"];
 
 export async function PATCH(request: Request, ctx: RouteContext<"/api/reconciliation/results/[id]">) {
-  const denied = unauthorized(request);
+  const denied = unauthorized(request, { requireSecret: true });
   if (denied) return denied;
 
   const { id } = await ctx.params;
