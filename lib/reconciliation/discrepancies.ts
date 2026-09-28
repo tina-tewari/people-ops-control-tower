@@ -2,9 +2,10 @@
 // playbook rule; the rule decides the system action, resolution type and owner.
 
 import type { Dataset, OfferLogRow, PipelineRow } from "@/lib/types";
-import type { OwnerRole } from "@/config/routing";
+import { ROUTING, type OwnerRole } from "@/config/routing";
 import { formatValue } from "@/lib/format";
-import { ACTIVE_STAGES } from "@/lib/metrics/thresholds";
+import { ACTIVE_STAGES, STALLED_DAYS } from "@/lib/metrics/thresholds";
+import { isStalled } from "@/lib/metrics/recruiting";
 import { compareOffers, type OfferComparison } from "./offers";
 import {
   RULES,
@@ -52,9 +53,11 @@ interface Draft {
   sourceB: SourceValue;
   recommended?: string | null;
   basis: string;
+  /** Named hiring manager, used when the rule routes to "Hiring manager". */
+  hiringManager?: string;
 }
 
-function finalize(d: Draft): Discrepancy {
+function finalize({ hiringManager, ...d }: Draft): Discrepancy {
   const r = RULES[d.rule];
   const resolution = resolutionFor(r.action);
   return {
@@ -65,7 +68,7 @@ function finalize(d: Draft): Discrepancy {
     recommended: d.recommended ?? null,
     resolution,
     ownerRole: r.ownerRole,
-    owner: r.ownerRole,
+    owner: r.ownerRole === "Hiring manager" && hiringManager ? hiringManager : r.ownerRole,
     status: resolution === "Auto-resolvable" ? "Auto-resolved" : "Needs review",
   };
 }
@@ -173,6 +176,59 @@ function stageDispositionMismatches(ds: Dataset): Draft[] {
       sourceA: { system: "Recruiting pipeline" as const, value: `Stage: ${p.currentStage}` },
       sourceB: { system: "Recruiting pipeline" as const, value: `Disposition: ${p.disposition}` },
       basis: "The candidate cannot be in an active stage and closed at the same time.",
+    }));
+}
+
+const STAGE_DATE: { stage: string; key: keyof PipelineRow; label: string }[] = [
+  { stage: "Phone Screen", key: "phoneScreenDate", label: "phone screen" },
+  { stage: "Technical/Assessment", key: "assessmentDate", label: "assessment" },
+  { stage: "Hiring Manager Interview", key: "hmInterviewDate", label: "HM interview" },
+  { stage: "Final Round", key: "finalRoundDate", label: "final round" },
+  { stage: "Offer Extended", key: "offerExtendedDate", label: "offer extended" },
+];
+
+/**
+ * An active stage implies every earlier interview date is recorded and no later
+ * one is. Neither the stage nor the dates outrank the other, so a human decides.
+ */
+function stageDateMismatches(ds: Dataset): Draft[] {
+  const order: string[] = [...ACTIVE_STAGES];
+  return ds.pipeline.flatMap((p): Draft[] => {
+    const at = order.indexOf(p.currentStage);
+    if (at < 0 || p.disposition !== "Active") return [];
+    const missing = STAGE_DATE.filter((s) => order.indexOf(s.stage) <= at && !p[s.key]);
+    const ahead = STAGE_DATE.filter((s) => order.indexOf(s.stage) > at && p[s.key]);
+    if (!missing.length && !ahead.length) return [];
+    const dates = [
+      ...missing.map((s) => `no ${s.label} date`),
+      ...ahead.map((s) => `${s.label} on ${p[s.key]}`),
+    ].join("; ");
+    return [{
+      rule: "stageDateMismatch",
+      subjectId: p.candidateId,
+      subjectName: p.candidateName,
+      field: "Stage vs. interview dates",
+      sourceA: { system: "Recruiting pipeline", value: `Stage: ${p.currentStage}` },
+      sourceB: { system: "Recruiting pipeline", value: `Interview dates: ${dates}` },
+      basis: "Stage and interview dates disagree and no source is authoritative. Confirm where the candidate actually is.",
+    }];
+  });
+}
+
+/** Stalls in hiring-manager stages are the hiring manager's to unblock. */
+function stalledInHiringManagerStage(ds: Dataset): Draft[] {
+  const hmStages = new Set(ROUTING.hiringManagerStages);
+  return ds.pipeline
+    .filter((p) => p.disposition === "Active" && hmStages.has(p.currentStage) && isStalled(p))
+    .map((p) => ({
+      rule: "stalledHiringManagerStage" as const,
+      subjectId: p.candidateId,
+      subjectName: p.candidateName,
+      field: "Days in stage",
+      sourceA: { system: "Recruiting pipeline" as const, value: `${p.currentStage} for ${p.daysInCurrentStage} days` },
+      sourceB: { system: "Recruiting pipeline" as const, value: `Stall threshold ${STALLED_DAYS} days` },
+      basis: `${p.role} (${p.level}) is waiting on ${p.hiringManager} to advance or reject.`,
+      hiringManager: p.hiringManager,
     }));
 }
 
@@ -310,6 +366,8 @@ export function reconcile(ds: Dataset): ReconciliationResult {
     ...missingOfferRecords(ds, new Set(offerByCandidate.keys())),
     ...hiresOutsidePipeline(ds),
     ...stageDispositionMismatches(ds),
+    ...stageDateMismatches(ds),
+    ...stalledInHiringManagerStage(ds),
     ...offerLetterConflicts(offerComparisons),
     ...zeroVariableComp(ds.offers),
     ...untiedFilledSeats(ds),

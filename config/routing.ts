@@ -1,6 +1,8 @@
 // Who owns what, and how often the reconciliation runs. Edit this file to
 // change routing — no logic changes needed.
 
+import type { RuleId } from "@/lib/reconciliation/playbook";
+
 export type OwnerRole = "People Ops" | "Recruiting Ops" | "HRIS" | "Hiring manager";
 
 export const ROUTING = {
@@ -23,8 +25,39 @@ export const ROUTING = {
 
   /** Optional per-department recruiting owner; falls back to "Recruiting Ops". */
   recruiterByDepartment: {} as Record<string, string>,
+
+  /**
+   * Owning team per reconciliation rule. Rules not listed here route to
+   * `fallbackOwner`. "Hiring manager" rules resolve to the candidate's named HM.
+   */
+  ruleOwners: {
+    offerDateCorroborated: "Recruiting Ops",
+    offerDateUncorroborated: "Recruiting Ops",
+    compMissingInLog: "People Ops",
+    termsCorrectedFromLetter: "Recruiting Ops",
+    compConflict: "People Ops",
+    offerTermsOpen: "Recruiting Ops",
+    zeroVariableComp: "People Ops",
+    hiredVsDeclined: "People Ops",
+    hiredVsNegotiating: "People Ops",
+    statusNoDefinitiveSource: "People Ops",
+    missingOfferRecord: "Recruiting Ops",
+    hireOutsidePipeline: "Recruiting Ops",
+    stageDispositionMismatch: "Recruiting Ops",
+    filledSeatUntied: "People Ops",
+    recruitingWithoutOpenSeat: "People Ops",
+    eventIncomplete: "HRIS",
+    stalledHiringManagerStage: "Hiring manager",
+  } as Partial<Record<RuleId, OwnerRole>>,
+
+  /** Owner for any rule without an entry in `ruleOwners`. */
+  fallbackOwner: "People Ops" as OwnerRole,
 };
 
 export function channelFor(role: OwnerRole): string {
   return ROUTING.channels[role];
+}
+
+export function ownerRoleFor(rule: RuleId): OwnerRole {
+  return ROUTING.ruleOwners[rule] ?? ROUTING.fallbackOwner;
 }
