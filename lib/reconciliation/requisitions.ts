@@ -1,14 +1,19 @@
-// Conceptual requisition model. The headcount plan and recruiting pipeline share
-// no req_id, so this demo infers the link on department + level. Every mapping
-// is labeled "Inferred"; production should require req_id upstream.
+// Requisition model. Each headcount line carries a req_id and each candidate
+// points at one. Legacy candidates were linked by a one-time backfill
+// (inferCandidateReqs) and stay labeled "Inferred"; new candidates must be
+// entered against a req_id ("Confirmed"; see lib/data/validate.ts).
 
-import type { Dataset, HeadcountRow, PipelineRow, Priority } from "@/lib/types";
+import type {
+  Dataset,
+  HeadcountRow,
+  MappingConfidence,
+  PipelineRow,
+  Priority,
+  ReqMapping,
+} from "@/lib/types";
+import { daysBetween } from "@/lib/parsers/values";
 
-/**
- * How much to trust an inferred mapping. High: one role and one hiring manager
- * match the line. Medium: one of the two is unique. Low: neither is.
- */
-export type MappingConfidence = "High" | "Medium" | "Low";
+export type { MappingConfidence };
 
 export interface Requisition {
   reqId: string;
@@ -19,7 +24,9 @@ export interface Requisition {
   targetStartDate: string | null;
   priority: Priority;
   status: "Open" | "Filled";
-  mapping: "Inferred";
+  /** Confirmed only when every candidate on the req was entered against it. */
+  mapping: "Confirmed" | "Inferred";
+  /** Line-level: how many roles and hiring managers share this req. */
   confidence: MappingConfidence;
   approvedSeats: number;
   filledSeats: number;
@@ -36,6 +43,10 @@ const deptCode = (dept: string) => {
 };
 
 export const inferredKey = (department: string, level: string) => `${department}|${level}`;
+
+/** req_id issued for a headcount line; the backfill used this format. */
+export const reqIdFor = (h: Pick<HeadcountRow, "reqId" | "department" | "level">) =>
+  h.reqId ?? `REQ-${deptCode(h.department)}-${h.level}`;
 
 /** Distinct hires per department + level: Hired pipeline candidates plus HRIS Hire events. */
 export function tracedHiresByLine(ds: Dataset): Map<string, number> {
@@ -55,7 +66,7 @@ export function untracedFilledSeats(ds: Dataset): { line: HeadcountRow; traced: 
   });
 }
 
-function mostCommon(values: string[]): string[] {
+export function mostCommon(values: string[]): string[] {
   const counts = new Map<string, number>();
   for (const v of values) counts.set(v, (counts.get(v) ?? 0) + 1);
   return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([v]) => v);
@@ -65,7 +76,7 @@ function toRequisition(h: HeadcountRow, candidates: PipelineRow[]): Requisition 
   const roles = mostCommon(candidates.map((c) => c.role));
   const managers = mostCommon(candidates.map((c) => c.hiringManager));
   return {
-    reqId: `REQ-${deptCode(h.department)}-${h.level}`,
+    reqId: reqIdFor(h),
     department: h.department,
     role: roles[0] ?? "Unspecified",
     level: h.level,
@@ -73,7 +84,7 @@ function toRequisition(h: HeadcountRow, candidates: PipelineRow[]): Requisition 
     targetStartDate: h.targetStartDate,
     priority: h.priority,
     status: h.openSeats > 0 ? "Open" : "Filled",
-    mapping: "Inferred",
+    mapping: candidates.length > 0 && candidates.every((c) => c.reqMapping === "Confirmed") ? "Confirmed" : "Inferred",
     confidence:
       roles.length <= 1 && managers.length <= 1 ? "High"
       : roles.length <= 1 || managers.length <= 1 ? "Medium"
@@ -107,6 +118,8 @@ export interface MappingEvidence {
   activeOnAmbiguousLines: number;
   activeOnFilledLines: number;
   untracedFilledSeats: number;
+  /** Candidates per req_mapping (and per confidence for Inferred). */
+  candidateMappings: Record<ReqMapping | `Inferred ${MappingConfidence}` | "Missing", number>;
 }
 
 export interface RequisitionModel {
@@ -116,23 +129,98 @@ export interface RequisitionModel {
   evidence: MappingEvidence;
 }
 
-export function inferRequisitions(ds: Dataset): RequisitionModel {
-  const byKey = new Map<string, PipelineRow[]>();
-  for (const p of ds.pipeline) {
-    const k = inferredKey(p.department, p.level);
-    byKey.set(k, [...(byKey.get(k) ?? []), p]);
-  }
-  const planned = new Set(ds.headcount.map((h) => inferredKey(h.department, h.level)));
-  const requisitions = ds.headcount.map((h) =>
-    toRequisition(h, byKey.get(inferredKey(h.department, h.level)) ?? []),
+/**
+ * The req_id a candidate belongs to: the one on the row, else the headcount line
+ * for its department + level (datasets that predate the backfill).
+ */
+export function candidateReqIds(ds: Pick<Dataset, "headcount" | "pipeline">): Map<string, string | null> {
+  const byLine = new Map(ds.headcount.map((h) => [inferredKey(h.department, h.level), reqIdFor(h)]));
+  return new Map(
+    ds.pipeline.map((p) => [p.candidateId, p.reqId ?? byLine.get(inferredKey(p.department, p.level)) ?? null]),
   );
+}
+
+export function inferRequisitions(ds: Dataset): RequisitionModel {
+  const reqOf = candidateReqIds(ds);
+  const byReq = new Map<string, PipelineRow[]>();
+  for (const p of ds.pipeline) {
+    const id = reqOf.get(p.candidateId);
+    if (id) byReq.set(id, [...(byReq.get(id) ?? []), p]);
+  }
+  const issued = new Set(ds.headcount.map(reqIdFor));
+  const requisitions = ds.headcount.map((h) => toRequisition(h, byReq.get(reqIdFor(h)) ?? []));
   return {
     requisitions,
-    unmapped: ds.pipeline.filter(
-      (p) => p.disposition === "Active" && !planned.has(inferredKey(p.department, p.level)),
-    ),
+    unmapped: ds.pipeline.filter((p) => {
+      const id = reqOf.get(p.candidateId);
+      return p.disposition === "Active" && !(id && issued.has(id));
+    }),
     evidence: mappingEvidence(ds, requisitions),
   };
+}
+
+/** A start this far from the req's target start date still counts as on time. */
+export const TIMING_WINDOW_DAYS = 90;
+
+export interface CandidateReqMatch {
+  reqId: string | null;
+  mapping: Exclude<ReqMapping, "Confirmed">;
+  confidence: MappingConfidence | null;
+  basis: string;
+}
+
+/**
+ * Timing agrees when the candidate applied on or before the req's target start
+ * and, if a start date is known (applied + time_to_start_days), started within
+ * TIMING_WINDOW_DAYS of it.
+ */
+function timingFits(p: PipelineRow, targetStart: string | null): boolean {
+  if (!targetStart || !p.appliedDate || p.appliedDate > targetStart) return false;
+  if (p.applyToStartDays === null) return true;
+  const start = new Date(Date.parse(p.appliedDate) + p.applyToStartDays * 86_400_000).toISOString().slice(0, 10);
+  return Math.abs(daysBetween(targetStart, start)) <= TIMING_WINDOW_DAYS;
+}
+
+/**
+ * One-time req_id backfill for candidates entered before req_id existed. The
+ * headcount plan is only keyed by department + level, so that pair picks the
+ * req; role, hiring manager and target start date then score how well the
+ * candidate fits it. Every result is Inferred (or Unmatched), never Confirmed.
+ */
+export function inferCandidateReqs(ds: Pick<Dataset, "headcount" | "pipeline">): Map<string, CandidateReqMatch> {
+  const lines = new Map(ds.headcount.map((h) => [inferredKey(h.department, h.level), h]));
+  const onLine = new Map<string, PipelineRow[]>();
+  for (const p of ds.pipeline) {
+    const k = inferredKey(p.department, p.level);
+    onLine.set(k, [...(onLine.get(k) ?? []), p]);
+  }
+  const profile = new Map(
+    [...onLine].map(([k, ps]) => [k, {
+      role: mostCommon(ps.map((p) => p.role))[0],
+      manager: mostCommon(ps.map((p) => p.hiringManager))[0],
+    }]),
+  );
+
+  return new Map(ds.pipeline.map((p): [string, CandidateReqMatch] => {
+    const k = inferredKey(p.department, p.level);
+    const line = lines.get(k);
+    if (!line) {
+      return [p.candidateId, { reqId: null, mapping: "Unmatched", confidence: null, basis: "no headcount line for department+level" }];
+    }
+    const { role, manager } = profile.get(k)!;
+    const signals: [string, boolean][] = [
+      ["role", p.role === role],
+      ["hiring_manager", p.hiringManager === manager],
+      ["target_start_date", timingFits(p, line.targetStartDate)],
+    ];
+    const agreed = signals.filter(([, ok]) => ok).map(([f]) => f);
+    return [p.candidateId, {
+      reqId: reqIdFor(line),
+      mapping: "Inferred",
+      confidence: agreed.length === 3 ? "High" : agreed.length === 2 ? "Medium" : "Low",
+      basis: ["department", "level", ...agreed].join("+"),
+    }];
+  }));
 }
 
 function mappingEvidence(ds: Dataset, reqs: Requisition[]): MappingEvidence {
@@ -166,5 +254,17 @@ function mappingEvidence(ds: Dataset, reqs: Requisition[]): MappingEvidence {
     activeOnAmbiguousLines: sumActive(reqs.filter((r) => r.confidence !== "High")),
     activeOnFilledLines: sumActive(reqs.filter((r) => r.openSeats === 0)),
     untracedFilledSeats: untracedFilledSeats(ds).reduce((n, l) => n + l.untraced, 0),
+    candidateMappings: candidateMappingCounts(ds.pipeline),
   };
+}
+
+function candidateMappingCounts(pipeline: PipelineRow[]): MappingEvidence["candidateMappings"] {
+  const counts: MappingEvidence["candidateMappings"] = {
+    Confirmed: 0, Inferred: 0, "Inferred High": 0, "Inferred Medium": 0, "Inferred Low": 0, Unmatched: 0, Missing: 0,
+  };
+  for (const p of pipeline) {
+    counts[p.reqMapping ?? "Missing"]++;
+    if (p.reqMapping === "Inferred" && p.reqConfidence) counts[`Inferred ${p.reqConfidence}`]++;
+  }
+  return counts;
 }

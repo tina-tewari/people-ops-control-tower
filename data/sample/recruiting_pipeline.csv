@@ -1,25 +1,25 @@
-candidate_id,candidate_name,role,department,level,hiring_manager,source,applied_date,phone_screen_date,assessment_date,hm_interview_date,final_round_date,offer_extended_date,offer_close_date,current_stage,days_in_current_stage,total_days_in_process,time_to_offer_days,time_to_close_days,time_to_start_days,disposition,rejection_reason
-S001,Avery Stone,Software Engineer,Engineering,L3,Taylor Reed,Referral,2025-04-20,2025-04-24,2025-05-02,,,,,Technical/Assessment,12,41,,,,Active,
-S002,Blair Chen,Software Engineer,Engineering,L3,Taylor Reed,LinkedIn,2025-05-10,2025-05-14,,,,,,Phone Screen,4,21,,,,Active,
-S003,Cameron Vale,Software Engineer,Engineering,L3,Taylor Reed,Agency,2025-04-01,2025-04-06,2025-04-15,2025-04-24,,,,Hiring Manager Interview,21,60,,,,Active,
-S004,Dakota Price,Software Engineer,Engineering,L3,Taylor Reed,Careers Page,2025-05-20,,,,,,,Applied,11,11,,,,Active,
-S005,Emerson Hart,Software Engineer,Engineering,L3,Taylor Reed,Job Board,2025-04-10,2025-04-14,2025-04-22,2025-04-30,2025-05-12,,,Final Round,19,51,,,,Active,
-S006,Finley Brooks,Senior Software Engineer,Engineering,L4,Morgan Hale,Referral,2025-03-15,2025-03-20,2025-03-29,2025-04-10,,,,Hiring Manager Interview,51,77,,,,Active,
-S007,Gray Lawson,Account Executive,Sales,L2,Casey Lin,LinkedIn,2025-05-12,2025-05-16,,,,,,Phone Screen,15,19,,,,Active,
-S008,Harper Quinn,Account Executive,Sales,L2,Casey Lin,Referral,2025-05-01,2025-05-05,2025-05-12,2025-05-20,,,,Hiring Manager Interview,11,30,,,,Active,
-S009,Indy Walsh,Account Executive,Sales,L2,Casey Lin,Job Board,2025-04-25,2025-04-29,2025-05-06,2025-05-13,2025-05-22,2025-05-27,,Offer Extended,4,36,32,,,Active,
-S010,Jules Novak,Senior AE,Sales,L3,Casey Lin,Agency,2025-05-18,2025-05-23,,,,,,Phone Screen,8,13,,,,Active,
-S011,Kai Mendez,Senior AE,Sales,L3,Casey Lin,Referral,2025-05-25,,,,,,,Applied,6,6,,,,Active,
-S012,Logan Frey,Product Manager,Product,L3,Riley Moss,Careers Page,2025-05-08,2025-05-12,2025-05-19,,,,,Technical/Assessment,12,23,,,,Active,
-S013,Micah Ellis,Product Manager,Product,L3,Riley Moss,University,2025-05-22,2025-05-26,,,,,,Phone Screen,5,9,,,,Active,
-S014,Noa Bennett,CSM,Customer Success,L2,Blake Ward,LinkedIn,2025-05-02,2025-05-07,2025-05-15,,,,,Technical/Assessment,16,29,,,,Active,
-S101,Olive Grant,Senior Software Engineer,Engineering,L4,Morgan Hale,Referral,2025-01-06,2025-01-10,2025-01-18,2025-01-27,2025-02-05,2025-02-10,2025-02-13,Offer Accepted,3,38,35.0,38.0,70.0,Hired,
-S102,Parker Ames,Account Executive,Sales,L2,Casey Lin,LinkedIn,2025-02-01,2025-02-05,2025-02-11,2025-02-18,2025-02-25,2025-03-03,2025-03-06,Offer Accepted,3,33,30.0,33.0,65.0,Hired,
-S103,Quinn Harlow,Marketing Manager,Marketing,L4,Sam Ortiz,Agency,2025-02-10,2025-02-14,2025-02-21,2025-03-01,2025-03-12,2025-03-20,2025-03-25,Offer Accepted,5,43,38.0,43.0,112.0,Hired,
-S104,Rowan Pike,Product Manager,Product,L3,Riley Moss,Referral,2025-03-01,2025-03-04,2025-03-10,2025-03-18,2025-03-26,2025-04-02,2025-04-05,Offer Accepted,3,35,32.0,35.0,65.0,Hired,
-S105,Sage Holloway,CSM,Customer Success,L2,Blake Ward,Job Board,2025-03-05,2025-03-10,2025-03-18,2025-03-26,2025-04-03,2025-04-10,2025-04-14,Offer Accepted,4,40,36.0,40.0,68.0,Hired,
-S106,Tatum Cole,Senior AE,Sales,L3,Casey Lin,Referral,2025-03-12,2025-03-16,2025-03-24,2025-04-01,2025-04-08,2025-04-15,2025-04-21,Offer Accepted,6,40,34.0,40.0,68.0,Hired,
-S201,Uma Reyes,Software Engineer,Engineering,L3,Taylor Reed,Agency,2025-03-01,2025-03-05,,,,,,Rejected,2,6,,,,Rejected,Underqualified
-S202,Vic Sloan,Senior Software Engineer,Engineering,L4,Morgan Hale,LinkedIn,2025-03-10,2025-03-14,,,,,,Phone Screen,3,7,,,,Withdrew,Competing Offer
-S203,Wren Abbott,Marketing Manager,Marketing,L4,Sam Ortiz,Job Board,2025-04-01,2025-04-05,2025-04-12,,,,,Rejected,4,15,,,,Rejected,Salary Mismatch
-S204,Candidate_S204,CSM,Customer Success,L2,Blake Ward,Referral,2025-02-01,2025-02-05,,,,,,Phone Screen,40,45,,,,Active,
+candidate_id,candidate_name,role,department,level,hiring_manager,source,applied_date,phone_screen_date,assessment_date,hm_interview_date,final_round_date,offer_extended_date,offer_close_date,current_stage,days_in_current_stage,total_days_in_process,time_to_offer_days,time_to_close_days,time_to_start_days,disposition,rejection_reason,req_id,req_mapping,req_confidence,req_match_basis
+S001,Avery Stone,Software Engineer,Engineering,L3,Taylor Reed,Referral,2025-04-20,2025-04-24,2025-05-02,,,,,Technical/Assessment,12,41,,,,Active,,REQ-ENG-L3,Inferred,Medium,department+level+role+hiring_manager
+S002,Blair Chen,Software Engineer,Engineering,L3,Taylor Reed,LinkedIn,2025-05-10,2025-05-14,,,,,,Phone Screen,4,21,,,,Active,,REQ-ENG-L3,Inferred,Medium,department+level+role+hiring_manager
+S003,Cameron Vale,Software Engineer,Engineering,L3,Taylor Reed,Agency,2025-04-01,2025-04-06,2025-04-15,2025-04-24,,,,Hiring Manager Interview,21,60,,,,Active,,REQ-ENG-L3,Inferred,Medium,department+level+role+hiring_manager
+S004,Dakota Price,Software Engineer,Engineering,L3,Taylor Reed,Careers Page,2025-05-20,,,,,,,Applied,11,11,,,,Active,,REQ-ENG-L3,Inferred,Medium,department+level+role+hiring_manager
+S005,Emerson Hart,Software Engineer,Engineering,L3,Taylor Reed,Job Board,2025-04-10,2025-04-14,2025-04-22,2025-04-30,2025-05-12,,,Final Round,19,51,,,,Active,,REQ-ENG-L3,Inferred,Medium,department+level+role+hiring_manager
+S006,Finley Brooks,Senior Software Engineer,Engineering,L4,Morgan Hale,Referral,2025-03-15,2025-03-20,2025-03-29,2025-04-10,,,,Hiring Manager Interview,51,77,,,,Active,,REQ-ENG-L4,Inferred,High,department+level+role+hiring_manager+target_start_date
+S007,Gray Lawson,Account Executive,Sales,L2,Casey Lin,LinkedIn,2025-05-12,2025-05-16,,,,,,Phone Screen,15,19,,,,Active,,REQ-SAL-L2,Inferred,High,department+level+role+hiring_manager+target_start_date
+S008,Harper Quinn,Account Executive,Sales,L2,Casey Lin,Referral,2025-05-01,2025-05-05,2025-05-12,2025-05-20,,,,Hiring Manager Interview,11,30,,,,Active,,REQ-SAL-L2,Inferred,High,department+level+role+hiring_manager+target_start_date
+S009,Indy Walsh,Account Executive,Sales,L2,Casey Lin,Job Board,2025-04-25,2025-04-29,2025-05-06,2025-05-13,2025-05-22,2025-05-27,,Offer Extended,4,36,32,,,Active,,REQ-SAL-L2,Inferred,High,department+level+role+hiring_manager+target_start_date
+S010,Jules Novak,Senior AE,Sales,L3,Casey Lin,Agency,2025-05-18,2025-05-23,,,,,,Phone Screen,8,13,,,,Active,,REQ-SAL-L3,Inferred,Medium,department+level+role+hiring_manager
+S011,Kai Mendez,Senior AE,Sales,L3,Casey Lin,Referral,2025-05-25,,,,,,,Applied,6,6,,,,Active,,REQ-SAL-L3,Inferred,Medium,department+level+role+hiring_manager
+S012,Logan Frey,Product Manager,Product,L3,Riley Moss,Careers Page,2025-05-08,2025-05-12,2025-05-19,,,,,Technical/Assessment,12,23,,,,Active,,REQ-PRO-L3,Inferred,High,department+level+role+hiring_manager+target_start_date
+S013,Micah Ellis,Product Manager,Product,L3,Riley Moss,University,2025-05-22,2025-05-26,,,,,,Phone Screen,5,9,,,,Active,,REQ-PRO-L3,Inferred,High,department+level+role+hiring_manager+target_start_date
+S014,Noa Bennett,CSM,Customer Success,L2,Blake Ward,LinkedIn,2025-05-02,2025-05-07,2025-05-15,,,,,Technical/Assessment,16,29,,,,Active,,REQ-CS-L2,Inferred,Medium,department+level+role+hiring_manager
+S101,Olive Grant,Senior Software Engineer,Engineering,L4,Morgan Hale,Referral,2025-01-06,2025-01-10,2025-01-18,2025-01-27,2025-02-05,2025-02-10,2025-02-13,Offer Accepted,3,38,35.0,38.0,70.0,Hired,,REQ-ENG-L4,Inferred,High,department+level+role+hiring_manager+target_start_date
+S102,Parker Ames,Account Executive,Sales,L2,Casey Lin,LinkedIn,2025-02-01,2025-02-05,2025-02-11,2025-02-18,2025-02-25,2025-03-03,2025-03-06,Offer Accepted,3,33,30.0,33.0,65.0,Hired,,REQ-SAL-L2,Inferred,High,department+level+role+hiring_manager+target_start_date
+S103,Quinn Harlow,Marketing Manager,Marketing,L4,Sam Ortiz,Agency,2025-02-10,2025-02-14,2025-02-21,2025-03-01,2025-03-12,2025-03-20,2025-03-25,Offer Accepted,5,43,38.0,43.0,112.0,Hired,,REQ-MAR-L4,Inferred,High,department+level+role+hiring_manager+target_start_date
+S104,Rowan Pike,Product Manager,Product,L3,Riley Moss,Referral,2025-03-01,2025-03-04,2025-03-10,2025-03-18,2025-03-26,2025-04-02,2025-04-05,Offer Accepted,3,35,32.0,35.0,65.0,Hired,,REQ-PRO-L3,Inferred,High,department+level+role+hiring_manager+target_start_date
+S105,Sage Holloway,CSM,Customer Success,L2,Blake Ward,Job Board,2025-03-05,2025-03-10,2025-03-18,2025-03-26,2025-04-03,2025-04-10,2025-04-14,Offer Accepted,4,40,36.0,40.0,68.0,Hired,,REQ-CS-L2,Inferred,High,department+level+role+hiring_manager+target_start_date
+S106,Tatum Cole,Senior AE,Sales,L3,Casey Lin,Referral,2025-03-12,2025-03-16,2025-03-24,2025-04-01,2025-04-08,2025-04-15,2025-04-21,Offer Accepted,6,40,34.0,40.0,68.0,Hired,,REQ-SAL-L3,Inferred,High,department+level+role+hiring_manager+target_start_date
+S201,Uma Reyes,Software Engineer,Engineering,L3,Taylor Reed,Agency,2025-03-01,2025-03-05,,,,,,Rejected,2,6,,,,Rejected,Underqualified,REQ-ENG-L3,Inferred,High,department+level+role+hiring_manager+target_start_date
+S202,Vic Sloan,Senior Software Engineer,Engineering,L4,Morgan Hale,LinkedIn,2025-03-10,2025-03-14,,,,,,Phone Screen,3,7,,,,Withdrew,Competing Offer,REQ-ENG-L4,Inferred,High,department+level+role+hiring_manager+target_start_date
+S203,Wren Abbott,Marketing Manager,Marketing,L4,Sam Ortiz,Job Board,2025-04-01,2025-04-05,2025-04-12,,,,,Rejected,4,15,,,,Rejected,Salary Mismatch,REQ-MAR-L4,Inferred,High,department+level+role+hiring_manager+target_start_date
+S204,Candidate_S204,CSM,Customer Success,L2,Blake Ward,Referral,2025-02-01,2025-02-05,,,,,,Phone Screen,40,45,,,,Active,,REQ-CS-L2,Inferred,High,department+level+role+hiring_manager+target_start_date

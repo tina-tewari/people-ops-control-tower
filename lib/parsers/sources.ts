@@ -3,11 +3,13 @@
 import type {
   Disposition,
   HeadcountRow,
+  MappingConfidence,
   OfferLogRow,
   OfferStatus,
   PeopleEventRow,
   PipelineRow,
   Priority,
+  ReqMapping,
 } from "@/lib/types";
 import { parseCsv } from "./csv";
 import { bool, isoDate, num, str } from "./values";
@@ -16,6 +18,10 @@ export function parsePipeline(text: string): PipelineRow[] {
   return parseCsv(text).map((r) => ({
     candidateId: r.candidate_id,
     candidateName: r.candidate_name,
+    reqId: str(r.req_id),
+    reqMapping: str(r.req_mapping) as ReqMapping | null,
+    reqConfidence: str(r.req_confidence) as MappingConfidence | null,
+    reqMatchBasis: str(r.req_match_basis),
     role: r.role,
     department: r.department,
     level: r.level,
@@ -41,6 +47,7 @@ export function parsePipeline(text: string): PipelineRow[] {
 
 export function parseHeadcount(text: string): HeadcountRow[] {
   return parseCsv(text).map((r) => ({
+    reqId: str(r.req_id),
     department: r.department,
     level: r.level,
     approvedHeadcount: num(r.approved_headcount) ?? 0,

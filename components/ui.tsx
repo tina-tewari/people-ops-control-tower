@@ -163,7 +163,7 @@ export function Tag({ children, title }: { children: ReactNode; title?: string }
 }
 
 export function InferredTag() {
-  return <Tag title="Linked on department + level; no shared req_id exists upstream.">Inferred</Tag>;
+  return <Tag title="req_id backfilled by inference (department + level, scored on role, hiring manager and target start date); not confirmed by a recruiter.">Inferred</Tag>;
 }
 
 export function Callout({ tone = "info", title, children }: { tone?: Tone; title: string; children: ReactNode }) {

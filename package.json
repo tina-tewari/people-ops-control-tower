@@ -9,6 +9,8 @@
     "lint": "eslint",
     "reconcile": "tsx --tsconfig tsconfig.json scripts/reconcile.ts",
     "reconcile:offers": "tsx scripts/reconcile-offers.ts",
+    "backfill:req-ids": "tsx --tsconfig tsconfig.json scripts/backfill-req-ids.ts",
+    "validate:data": "tsx --tsconfig tsconfig.json scripts/validate-data.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "tsx --test lib/**/*.test.ts"
   },

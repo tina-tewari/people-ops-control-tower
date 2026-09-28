@@ -16,7 +16,7 @@ import {
   type SystemAction,
 } from "./playbook";
 import { resolveByHierarchy, type SourceSystem } from "./sourceOfTruth";
-import { inferredKey, untracedFilledSeats } from "./requisitions";
+import { candidateReqIds, reqIdFor, untracedFilledSeats } from "./requisitions";
 
 export type DiscrepancyStatus = "Auto-resolved" | "Needs review";
 
@@ -319,14 +319,15 @@ function untiedFilledSeats(ds: Dataset): Draft[] {
 
 /** Candidates are being recruited against a line whose seats are all filled. */
 function recruitingWithoutOpenSeat(ds: Dataset): Draft[] {
+  const reqOf = candidateReqIds(ds);
   const active = new Map<string, number>();
   for (const p of ds.pipeline) {
-    if (p.disposition !== "Active") continue;
-    const k = inferredKey(p.department, p.level);
-    active.set(k, (active.get(k) ?? 0) + 1);
+    const id = reqOf.get(p.candidateId);
+    if (p.disposition !== "Active" || !id) continue;
+    active.set(id, (active.get(id) ?? 0) + 1);
   }
   return ds.headcount.flatMap((h) => {
-    const n = active.get(inferredKey(h.department, h.level)) ?? 0;
+    const n = active.get(reqIdFor(h)) ?? 0;
     if (h.openSeats > 0 || n === 0) return [];
     return [{
       rule: "recruitingWithoutOpenSeat" as const,
@@ -335,7 +336,7 @@ function recruitingWithoutOpenSeat(ds: Dataset): Draft[] {
       field: "Open seats",
       sourceA: { system: "Headcount plan" as const, value: `0 open (${h.filledSeats}/${h.approvedHeadcount} filled)` },
       sourceB: { system: "Recruiting pipeline" as const, value: `${n} active candidate${n === 1 ? "" : "s"}` },
-      basis: "Recruiting for a line with no approved opening. Either the plan is stale or these candidates belong to another seat (no req_id to tell).",
+      basis: "Recruiting for a line with no approved opening. Either the plan is stale or these candidates belong to another seat (their req_id is inferred, not confirmed).",
     }];
   });
 }

@@ -1,6 +1,7 @@
 import { getControlTower } from "@/lib/controlTower";
 import { formatDate } from "@/lib/format";
 import { METRIC_DEFINITIONS } from "@/lib/metrics/definitions";
+import { REQ_BACKFILL_DATE, REQUIRED_CANDIDATE_FIELDS, REQUIRED_HEADCOUNT_FIELDS } from "@/lib/data/validate";
 import type { MappingConfidence } from "@/lib/reconciliation/requisitions";
 import { PriorityText } from "@/components/badges";
 import { Callout, Card, InferredTag, Kpi, PageHeader, Pill, Tag, table, type Tone } from "@/components/ui";
@@ -19,10 +20,10 @@ const REQ_SCHEMA = [
 ];
 
 const ROLLOUT = [
-  ["Issue req_ids", "Generate one req_id per approved seat group in the headcount plan (the inferred IDs below are a starting point)."],
+  ["Issue req_ids", "Done: every headcount line in the plan now carries a req_id."],
   ["Require it in the ATS", "Block creating a candidate without an open req_id; the role, level and hiring manager come from the req."],
   ["Carry it downstream", "Offer log rows and HRIS hire events store the same req_id, so offer → hire → filled seat is a join, not a guess."],
-  ["Backfill open candidates", "Recruiters assign a req_id to the active candidates on ambiguous lines. A one-time queue, sized below."],
+  ["Backfill legacy candidates", "Done once: every existing candidate got an Inferred req_id with a confidence score. Recruiters confirm the Low-confidence ones."],
 ];
 
 // Sequential single-hue ramp (light → dark) for candidate counts.
@@ -49,7 +50,7 @@ export default function DataModelPage() {
     <>
       <PageHeader
         title="Data Model Gap"
-        description="The headcount plan cannot be cleanly reconciled to recruiting. There is no requisition ID connecting a candidate to a specific approved seat, and the fields we can join on (department + level) do not identify one."
+        description="The headcount plan and recruiting pipeline now share a req_id. Legacy candidates were linked by a one-time inferred backfill (department + level, scored on role, hiring manager and target start date); every candidate added from here on must be entered against a req_id."
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -68,7 +69,7 @@ export default function DataModelPage() {
         <Kpi
           label="Active candidates on ambiguous lines"
           value={`${ev.activeOnAmbiguousLines} / ${ev.activeCandidates}`}
-          hint="Backfill queue once req_id exists"
+          hint="Inferred req_id; recruiter should confirm"
           status={ev.activeOnAmbiguousLines ? "warning" : "good"}
         />
         <Kpi
@@ -81,11 +82,13 @@ export default function DataModelPage() {
       </div>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
-        <Callout tone="warning" title="What this demo does">
-          Links headcount lines to candidates on <strong>department + level</strong> and labels every mapping{" "}
-          <InferredTag />, with a confidence level: <strong>High</strong> when one role and one hiring manager match,{" "}
-          <strong>Low</strong> when several of each do. Coverage, filled-seat tracing and headcount risk all inherit this
-          uncertainty.
+        <Callout tone="warning" title={`One-time backfill (${REQ_BACKFILL_DATE})`}>
+          Every legacy candidate carries a <code className="rounded bg-surface-2 px-1">req_id</code> picked on{" "}
+          <strong>department + level</strong> and labeled <InferredTag />. Its confidence counts how many of role,
+          hiring manager and target start date agree with the requisition: <strong>High</strong> {ev.candidateMappings["Inferred High"]},{" "}
+          <strong>Medium</strong> {ev.candidateMappings["Inferred Medium"]}, <strong>Low</strong> {ev.candidateMappings["Inferred Low"]}
+          {ev.candidateMappings.Unmatched > 0 && <>, <strong>Unmatched</strong> {ev.candidateMappings.Unmatched}</>}. Inferred
+          links are a best guess, not a definitive mapping.
         </Callout>
         <Callout tone="info" title="What production should do">
           Make <code className="rounded bg-surface-2 px-1">req_id</code> the spine of the data model: issued when headcount
@@ -193,10 +196,27 @@ export default function DataModelPage() {
         </Card>
       </div>
 
+      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+        <Card
+          title="Adding a candidate: mandatory fields"
+          subtitle="recruiting_pipeline.csv. Checked by npm run validate:data."
+          flush
+        >
+          <FieldTable rows={REQUIRED_CANDIDATE_FIELDS} />
+        </Card>
+        <Card
+          title="Adding a headcount line: mandatory fields"
+          subtitle="headcount_plan.csv. One line is one requisition."
+          flush
+        >
+          <FieldTable rows={REQUIRED_HEADCOUNT_FIELDS} />
+        </Card>
+      </div>
+
       <Card
         className="mt-6"
-        title="Inferred requisitions"
-        subtitle="Generated from the headcount plan. Role and hiring manager are the most common values among matched candidates."
+        title="Requisitions"
+        subtitle="One per headcount line. Role and hiring manager are the most common values among the req's candidates."
         flush
       >
         <div className={table.wrap}>
@@ -245,7 +265,7 @@ export default function DataModelPage() {
                   <td className={table.tdNum}>{r.activeCandidates.length}</td>
                   <td className={table.td}>
                     <span className="flex flex-col items-start gap-1">
-                      <InferredTag />
+                      {r.mapping === "Inferred" ? <InferredTag /> : <Pill tone="good">Confirmed</Pill>}
                       <Pill tone={CONFIDENCE_TONE[r.confidence]}>{r.confidence} confidence</Pill>
                     </span>
                   </td>
@@ -308,5 +328,20 @@ export default function DataModelPage() {
         </Card>
       )}
     </>
+  );
+}
+
+function FieldTable({ rows }: { rows: { column: string; rule: string }[] }) {
+  return (
+    <table className={table.table}>
+      <tbody>
+        {rows.map((f) => (
+          <tr key={f.column} className={table.tr}>
+            <td className={`${table.td} font-mono text-xs`}>{f.column}</td>
+            <td className={`${table.td} text-ink-2`}>{f.rule}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }

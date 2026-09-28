@@ -45,3 +45,11 @@ export function parseCsv(text: string): Record<string, string>[] {
     Object.fromEntries(keys.map((k, i) => [k, (cells[i] ?? "").trim()])),
   );
 }
+
+const quote = (v: string) => (/[",\r\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
+
+/** Inverse of parseCsv: header row plus one line per record, "\n"-terminated. */
+export function toCsv(header: string[], records: Record<string, string>[]): string {
+  const lines = [header, ...records.map((r) => header.map((k) => r[k] ?? ""))];
+  return lines.map((cells) => cells.map(quote).join(",")).join("\n") + "\n";
+}

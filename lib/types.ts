@@ -5,9 +5,29 @@ export type ISODate = string; // YYYY-MM-DD
 
 export type Disposition = "Active" | "Hired" | "Rejected" | "Withdrew";
 
+/**
+ * How a candidate is tied to a requisition. Confirmed: entered by a recruiter
+ * against an open req_id (required for every new candidate). Inferred: one-time
+ * backfill, matched on department + level and scored on role, hiring manager and
+ * target start date. Unmatched: backfill found no headcount line.
+ */
+export type ReqMapping = "Confirmed" | "Inferred" | "Unmatched";
+
+/**
+ * How much to trust an inferred mapping. High: role, hiring manager and timing
+ * all agree with the requisition. Medium: two of the three. Low: one or none.
+ */
+export type MappingConfidence = "High" | "Medium" | "Low";
+
 export interface PipelineRow {
   candidateId: string;
   candidateName: string;
+  reqId: string | null;
+  reqMapping: ReqMapping | null;
+  /** Set on Inferred mappings only. */
+  reqConfidence: MappingConfidence | null;
+  /** Fields that agreed with the requisition, e.g. "department+level+role". */
+  reqMatchBasis: string | null;
   role: string;
   department: string;
   level: string;
@@ -36,6 +56,7 @@ export interface PipelineRow {
 export type Priority = "High" | "Medium" | "Low";
 
 export interface HeadcountRow {
+  reqId: string | null;
   department: string;
   level: string;
   approvedHeadcount: number;
