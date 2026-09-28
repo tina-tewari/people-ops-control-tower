@@ -4,11 +4,11 @@
   "summary": {
     "offers": 52,
     "Verified": 1,
-    "Resolved": 4,
-    "Flagged": 3,
+    "Resolved": 5,
+    "Flagged": 2,
     "No letter": 44,
     "orphanLetters": 0,
-    "openQuestions": 4
+    "openQuestions": 2
   },
   "offers": [
     {
@@ -45,24 +45,28 @@
           "log": "—",
           "letter": "Performance Bonus",
           "resolution": "Populated from letter",
-          "reconciled": "Performance Bonus"
+          "reconciled": "Performance Bonus",
+          "decision": null
         },
         {
           "field": "Variable plan detail",
           "log": "—",
           "letter": "Up to 15% of base salary tied to individual and company OKRs, paid annually; OTE $155,250",
           "resolution": "Populated from letter",
-          "reconciled": "Up to 15% of base salary tied to individual and company OKRs, paid annually; OTE $155,250"
+          "reconciled": "Up to 15% of base salary tied to individual and company OKRs, paid annually; OTE $155,250",
+          "decision": null
         },
         {
           "field": "OTE",
           "log": "—",
           "letter": "$155,250",
           "resolution": "Populated from letter",
-          "reconciled": "$155,250"
+          "reconciled": "$155,250",
+          "decision": null
         }
       ],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O4992",
@@ -70,7 +74,7 @@
       "candidateName": "Priya Sharma",
       "offerStatus": "Accepted",
       "letterFile": "offer_letter_priya_sharma.txt",
-      "verification": "Flagged",
+      "verification": "Resolved",
       "normalized": {
         "candidateId": "C0002",
         "candidateName": "Priya Sharma",
@@ -84,7 +88,7 @@
         "bonusTargetPct": 20,
         "bonusTargetUsd": 19000,
         "commissionPlan": "Commission",
-        "commissionDetail": null,
+        "commissionDetail": "10% of closed ARR, paid quarterly; uncapped; OTE $142,500",
         "oteUsd": 142500,
         "equityGrantUsd": 0,
         "signingBonusUsd": 5000,
@@ -99,12 +103,17 @@
           "field": "Variable plan detail",
           "log": "10% of closed ARR, paid quarterly; OTE $142,500",
           "letter": "10% of closed ARR, paid quarterly; uncapped; OTE $142,500",
-          "resolution": "Needs review",
-          "reconciled": null
+          "resolution": "Confirmed by Ops",
+          "reconciled": "10% of closed ARR, paid quarterly; uncapped; OTE $142,500",
+          "decision": "Commission is uncapped; tracked in HubSpot by deals closed by end of quarter."
         }
       ],
-      "letterOnlyTerms": [
-        "Commission: uncapped"
+      "letterOnlyTerms": [],
+      "approvedTerms": [
+        {
+          "term": "Commission: uncapped",
+          "decision": "Commission is uncapped; tracked in HubSpot by deals closed by end of quarter."
+        }
       ]
     },
     {
@@ -141,24 +150,28 @@
           "log": "—",
           "letter": "Performance Bonus",
           "resolution": "Populated from letter",
-          "reconciled": "Performance Bonus"
+          "reconciled": "Performance Bonus",
+          "decision": null
         },
         {
           "field": "Variable plan detail",
           "log": "—",
           "letter": "Up to 15% of base salary tied to product adoption and roadmap delivery OKRs; OTE $143,750",
           "resolution": "Populated from letter",
-          "reconciled": "Up to 15% of base salary tied to product adoption and roadmap delivery OKRs; OTE $143,750"
+          "reconciled": "Up to 15% of base salary tied to product adoption and roadmap delivery OKRs; OTE $143,750",
+          "decision": null
         },
         {
           "field": "OTE",
           "log": "—",
           "letter": "$143,750",
           "resolution": "Populated from letter",
-          "reconciled": "$143,750"
+          "reconciled": "$143,750",
+          "decision": null
         }
       ],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O4994",
@@ -194,24 +207,28 @@
           "log": "—",
           "letter": "Pipeline Bonus",
           "resolution": "Populated from letter",
-          "reconciled": "Pipeline Bonus"
+          "reconciled": "Pipeline Bonus",
+          "decision": null
         },
         {
           "field": "Variable plan detail",
           "log": "—",
           "letter": "Up to $12,000 annually based on qualified pipeline generated; paid semi-annually; OTE $117,000",
           "resolution": "Populated from letter",
-          "reconciled": "Up to $12,000 annually based on qualified pipeline generated; paid semi-annually; OTE $117,000"
+          "reconciled": "Up to $12,000 annually based on qualified pipeline generated; paid semi-annually; OTE $117,000",
+          "decision": null
         },
         {
           "field": "OTE",
           "log": "—",
           "letter": "$117,000",
           "resolution": "Populated from letter",
-          "reconciled": "$117,000"
+          "reconciled": "$117,000",
+          "decision": null
         }
       ],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O4995",
@@ -247,10 +264,12 @@
           "log": "5% of expansion ARR on managed accounts; OTE $103,500",
           "letter": "5% of net expansion ARR on managed accounts, paid quarterly; OTE $103,500",
           "resolution": "Needs review",
-          "reconciled": null
+          "reconciled": null,
+          "decision": null
         }
       ],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O4996",
@@ -286,24 +305,28 @@
           "log": "—",
           "letter": "Hiring Bonus",
           "resolution": "Populated from letter",
-          "reconciled": "Hiring Bonus"
+          "reconciled": "Hiring Bonus",
+          "decision": null
         },
         {
           "field": "Variable plan detail",
           "log": "—",
           "letter": "$500 per successful hire above quarterly target of 8 placements; OTE $93,500",
           "resolution": "Populated from letter",
-          "reconciled": "$500 per successful hire above quarterly target of 8 placements; OTE $93,500"
+          "reconciled": "$500 per successful hire above quarterly target of 8 placements; OTE $93,500",
+          "decision": null
         },
         {
           "field": "OTE",
           "log": "—",
           "letter": "$93,500",
           "resolution": "Populated from letter",
-          "reconciled": "$93,500"
+          "reconciled": "$93,500",
+          "decision": null
         }
       ],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O4997",
@@ -341,26 +364,30 @@
           "log": "—",
           "letter": "Performance Bonus",
           "resolution": "Populated from letter",
-          "reconciled": "Performance Bonus"
+          "reconciled": "Performance Bonus",
+          "decision": null
         },
         {
           "field": "Variable plan detail",
           "log": "—",
           "letter": "Up to 20% of base salary tied to engineering org OKRs and individual impact; OTE $198,000",
           "resolution": "Populated from letter",
-          "reconciled": "Up to 20% of base salary tied to engineering org OKRs and individual impact; OTE $198,000"
+          "reconciled": "Up to 20% of base salary tied to engineering org OKRs and individual impact; OTE $198,000",
+          "decision": null
         },
         {
           "field": "OTE",
           "log": "—",
           "letter": "$198,000",
           "resolution": "Populated from letter",
-          "reconciled": "$198,000"
+          "reconciled": "$198,000",
+          "decision": null
         }
       ],
       "letterOnlyTerms": [
         "Vesting: accelerated vesting on change of control"
-      ]
+      ],
+      "approvedTerms": []
     },
     {
       "offerId": "O4998",
@@ -391,7 +418,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5008",
@@ -422,7 +450,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5009",
@@ -453,7 +482,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5010",
@@ -484,7 +514,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5011",
@@ -515,7 +546,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5012",
@@ -546,7 +578,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5013",
@@ -577,7 +610,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5014",
@@ -608,7 +642,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5015",
@@ -639,7 +674,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5016",
@@ -670,7 +706,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5017",
@@ -701,7 +738,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5018",
@@ -732,7 +770,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5019",
@@ -763,7 +802,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5020",
@@ -794,7 +834,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5021",
@@ -825,7 +866,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5022",
@@ -856,7 +898,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5023",
@@ -887,7 +930,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5024",
@@ -918,7 +962,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5025",
@@ -949,7 +994,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5026",
@@ -980,7 +1026,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5027",
@@ -1011,7 +1058,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5028",
@@ -1042,7 +1090,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5029",
@@ -1073,7 +1122,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5030",
@@ -1104,7 +1154,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5031",
@@ -1135,7 +1186,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5032",
@@ -1166,7 +1218,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5033",
@@ -1197,7 +1250,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5034",
@@ -1228,7 +1282,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5035",
@@ -1259,7 +1314,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5036",
@@ -1290,7 +1346,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5037",
@@ -1321,7 +1378,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5038",
@@ -1352,7 +1410,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5039",
@@ -1383,7 +1442,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5040",
@@ -1414,7 +1474,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5041",
@@ -1445,7 +1506,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5042",
@@ -1476,7 +1538,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5043",
@@ -1507,7 +1570,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5044",
@@ -1538,7 +1602,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5045",
@@ -1569,7 +1634,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5046",
@@ -1600,7 +1666,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5047",
@@ -1631,7 +1698,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5048",
@@ -1662,7 +1730,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5049",
@@ -1693,7 +1762,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5050",
@@ -1724,7 +1794,8 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     },
     {
       "offerId": "O5051",
@@ -1755,27 +1826,12 @@
         "specialTerms": []
       },
       "differences": [],
-      "letterOnlyTerms": []
+      "letterOnlyTerms": [],
+      "approvedTerms": []
     }
   ],
   "orphanLetters": [],
   "openQuestions": [
-    {
-      "offerId": "O4992",
-      "candidateId": "C0002",
-      "candidateName": "Priya Sharma",
-      "topic": "Variable plan detail",
-      "question": "Variable plan detail: offer log has \"10% of closed ARR, paid quarterly; OTE $142,500\", offer letter has \"10% of closed ARR, paid quarterly; uncapped; OTE $142,500\". Offer log and offer letter both state a comp term, with different values. Which is correct?",
-      "owner": "People Ops"
-    },
-    {
-      "offerId": "O4992",
-      "candidateId": "C0002",
-      "candidateName": "Priya Sharma",
-      "topic": "Non-standard term",
-      "question": "Letter includes a non-standard term the offer log can't capture: \"Commission: uncapped\". Was it approved, and where should it be tracked?",
-      "owner": "Recruiting Ops"
-    },
     {
       "offerId": "O4995",
       "candidateId": "C0005",

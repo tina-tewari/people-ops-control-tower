@@ -38,8 +38,10 @@ interface OfferSnapshot {
     letter: string;
     resolution: string;
     reconciled: string | null;
+    decision: string | null;
   }[];
   letterOnlyTerms: string[];
+  approvedTerms: { term: string; decision: string }[];
 }
 
 interface Snapshot {
@@ -80,8 +82,10 @@ function buildSnapshot(): Snapshot {
         letter: formatValue(f.letter, f.format),
         resolution: f.resolution,
         reconciled: f.resolution === "Needs review" ? null : formatValue(f.reconciled, f.format),
+        decision: f.decision?.decision ?? null,
       })),
     letterOnlyTerms: c.letterOnlyTerms,
+    approvedTerms: c.approvedTerms.map(({ term, decision }) => ({ term, decision: decision.decision })),
   }));
 
   const orphanLetters = ds.letters
@@ -166,6 +170,13 @@ function diff(prev: Snapshot | null, next: Snapshot): string[] {
     for (const t of p.letterOnlyTerms.filter((t) => !o.letterOnlyTerms.includes(t))) {
       changes.push(`${who}: non-standard term cleared "${t}".`);
     }
+    for (const d of o.differences.filter((d) => d.decision)) {
+      const was = p.differences.find((x) => x.field === d.field);
+      if (was?.decision !== d.decision) changes.push(`${who}: ${d.field} confirmed by Recruiting Ops — ${d.decision}`);
+    }
+    for (const a of o.approvedTerms.filter((a) => !(p.approvedTerms ?? []).some((x) => x.term === a.term))) {
+      changes.push(`${who}: non-standard term "${a.term}" approved by Recruiting Ops — ${a.decision}`);
+    }
   }
   for (const p of prev.offers) {
     if (!after.has(p.offerId)) changes.push(`Offer ${p.candidateName} (${p.candidateId}, ${p.offerId}) removed from offer log.`);
@@ -190,7 +201,11 @@ function summaryLine(s: Snapshot["summary"]): string {
 function report(s: Snapshot): string {
   const rows = s.offers
     .filter((o) => o.letterFile)
-    .map((o) => `| ${o.candidateName} | ${o.candidateId} | ${o.offerStatus} | ${o.verification} | ${o.differences.map((d) => `${d.field}: ${d.resolution}`).join("; ") || "—"} | ${o.letterOnlyTerms.join("; ") || "—"} |`);
+    .map((o) => `| ${o.candidateName} | ${o.candidateId} | ${o.offerStatus} | ${o.verification} | ${o.differences.map((d) => `${d.field}: ${d.resolution}`).join("; ") || "—"} | ${[...o.letterOnlyTerms, ...o.approvedTerms.map((a) => `${a.term} (approved)`)].join("; ") || "—"} |`);
+  const decisions = s.offers.flatMap((o) => [
+    ...o.differences.filter((d) => d.decision).map((d) => `- **${o.candidateName}** (${o.candidateId}) — ${d.field}: ${d.decision}`),
+    ...o.approvedTerms.map((a) => `- **${o.candidateName}** (${o.candidateId}) — "${a.term}": ${a.decision}`),
+  ]);
   return [
     `# Offer reconciliation — ${s.dataset}`,
     "",
@@ -203,6 +218,10 @@ function report(s: Snapshot): string {
     "| Candidate | ID | Offer status | Verification | Differences vs. offer log | Non-standard terms |",
     "| --- | --- | --- | --- | --- | --- |",
     ...rows,
+    "",
+    "## Recruiting Ops decisions applied",
+    "",
+    ...(decisions.length ? decisions : ["None."]),
     "",
     `## Open questions for ${ROUTING.offerReviewChannel}`,
     "",
