@@ -1,14 +1,24 @@
 import { getControlTower } from "@/lib/controlTower";
 import { FIELD_POLICIES } from "@/lib/reconciliation/sourceOfTruth";
 import { PLAYBOOK_ORDER, RULES, resolutionFor } from "@/lib/reconciliation/playbook";
+import { runReconciliation } from "@/lib/reconciliation/job";
+import type { ResultStatus } from "@/lib/reconciliation/results";
 import { ActionBadge, ResolutionBadge } from "@/components/badges";
 import { Card, FilterBar, Kpi, PageHeader, Pill, table } from "@/components/ui";
+
+const STATUS_LABEL: Record<ResultStatus, string> = {
+  auto_resolved: "Auto-resolved",
+  needs_review: "Needs review",
+  resolved: "Resolved",
+  ignored: "Ignored",
+};
 
 const VIEWS = { all: "All", review: "B · Human review", auto: "A · Auto-resolvable" } as const;
 
 export default async function ReconciliationPage({ searchParams }: PageProps<"/reconciliation">) {
   const { view = "all" } = (await searchParams) as { view?: keyof typeof VIEWS };
   const { discrepancies } = getControlTower();
+  const statusById = new Map(runReconciliation().results.map((r) => [r.id, r.status]));
 
   const review = discrepancies.filter((d) => d.resolution === "Human review");
   const auto = discrepancies.filter((d) => d.resolution === "Auto-resolvable");
@@ -151,7 +161,10 @@ export default async function ReconciliationPage({ searchParams }: PageProps<"/r
                   <td className={table.td}><ActionBadge action={d.action} /></td>
                   <td className={`${table.td} whitespace-nowrap`}>{d.owner}</td>
                   <td className={table.td}>
-                    <Pill tone={d.status === "Auto-resolved" ? "good" : "serious"}>{d.status}</Pill>
+                    {(() => {
+                      const status = statusById.get(d.id) ?? "needs_review";
+                      return <Pill tone={status === "needs_review" ? "serious" : "good"}>{STATUS_LABEL[status]}</Pill>;
+                    })()}
                   </td>
                 </tr>
               ))}

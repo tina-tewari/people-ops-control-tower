@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "reconcile": "tsx --tsconfig tsconfig.json scripts/reconcile.ts",
+    "reconcile:offers": "tsx scripts/reconcile-offers.ts",
     "typecheck": "next typegen && tsc --noEmit",
-    "reconcile:offers": "tsx scripts/reconcile-offers.ts"
+    "test": "tsx --test lib/**/*.test.ts"
   },
   "dependencies": {
     "next": "16.3.6",
