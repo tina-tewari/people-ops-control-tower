@@ -26,7 +26,7 @@ export default function ActionsPage() {
         <Callout title="How the run is triggered">
           <code className="rounded bg-surface-2 px-1">GET /api/reconcile</code> reruns detection and returns this queue
           as JSON. Vercel Cron calls it on the schedule in <code className="rounded bg-surface-2 px-1">vercel.json</code>;
-          an agent like Devin can call it daily or weekly and post each owner&apos;s items to their channel.
+          a weekly Devin automation also reconciles offer letters and asks open questions in #recruiting-ops.
         </Callout>
         <Callout title="Who owns what">
           Routing lives in <code className="rounded bg-surface-2 px-1">config/routing.ts</code>. Stalls in{" "}

@@ -1,4 +1,4 @@
-// Scheduled entry point (Vercel Cron, see vercel.json). Runs the reconciliation
+// Weekly scheduled entry point (Vercel Cron, see vercel.json). Runs the reconciliation
 // job, persists status history, and posts the Slack digest if a webhook is set.
 // Protected by CRON_SECRET when that env var is set.
 

@@ -1,5 +1,5 @@
 // Human status changes: PATCH { "status": "resolved" | "ignored" | "needs_review", "by": "name" }.
-// Decisions persist across daily runs until the conflicting values change.
+// Decisions persist across weekly runs until the conflicting values change.
 
 import { unauthorized } from "@/lib/reconciliation/auth";
 import { ResultNotFoundError, setResultStatus } from "@/lib/reconciliation/job";

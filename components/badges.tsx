@@ -1,6 +1,6 @@
 import type { RiskStatus } from "@/lib/metrics/headcount";
 import type { SystemAction, ResolutionType } from "@/lib/reconciliation/playbook";
-import type { FieldResolution, FieldState } from "@/lib/reconciliation/offers";
+import type { FieldResolution, FieldState, OfferVerification } from "@/lib/reconciliation/offers";
 import { Pill, type Tone } from "./ui";
 
 const RISK_TONE: Record<RiskStatus, Tone> = { Healthy: "good", "At Risk": "warning", Critical: "critical" };
@@ -42,6 +42,16 @@ const FIELD_RESOLUTION: Record<FieldResolution, Tone> = {
 };
 export const FieldResolutionBadge = ({ resolution }: { resolution: FieldResolution }) => (
   <Pill tone={FIELD_RESOLUTION[resolution]}>{resolution}</Pill>
+);
+
+const VERIFICATION_TONE: Record<OfferVerification, Tone> = {
+  Verified: "good",
+  Resolved: "info",
+  Flagged: "serious",
+  "No letter": "neutral",
+};
+export const VerificationBadge = ({ verification }: { verification: OfferVerification }) => (
+  <Pill tone={VERIFICATION_TONE[verification]}>{verification}</Pill>
 );
 
 export const PriorityText = ({ priority }: { priority: string }) => (

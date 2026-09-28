@@ -1,4 +1,4 @@
-// CLI for the daily reconciliation job.
+// CLI for the weekly reconciliation job.
 //   npm run reconcile                 # run, persist state, print JSON report
 //   npm run reconcile -- --digest     # run, persist state, print Slack digest
 //   npm run reconcile -- --dry-run    # don't persist state
