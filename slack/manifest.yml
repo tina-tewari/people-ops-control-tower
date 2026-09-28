@@ -1,0 +1,25 @@
+# Slack app manifest for /add-candidate. Replace YOUR-DEPLOYMENT with the app's
+# host, then create the app at https://api.slack.com/apps?new_app=1 ("From a manifest").
+display_information:
+  name: People Ops Control Tower
+  description: Add candidates to the recruiting pipeline against a req_id.
+features:
+  bot_user:
+    display_name: People Ops Control Tower
+    always_online: false
+  slash_commands:
+    - command: /add-candidate
+      url: https://YOUR-DEPLOYMENT/api/slack/commands
+      description: Add a candidate to the recruiting pipeline
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - commands
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: https://YOUR-DEPLOYMENT/api/slack/interactions
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

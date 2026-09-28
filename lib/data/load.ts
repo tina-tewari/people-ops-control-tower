@@ -5,6 +5,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { cache } from "react";
 import type { Dataset, ISODate } from "@/lib/types";
+import { parseCsv } from "@/lib/parsers/csv";
 import { parseOfferLetter } from "@/lib/parsers/offerLetter";
 import {
   parseHeadcount,
@@ -17,6 +18,11 @@ const DATASET = process.env.DATASET ?? "real";
 
 function read(dir: string, file: string): string {
   return readFileSync(path.join(dir, file), "utf8");
+}
+
+/** Raw records (source column names) of one CSV in the active dataset. */
+export function readSourceCsv(file: string): Record<string, string>[] {
+  return parseCsv(read(path.join(process.cwd(), "data", DATASET), file));
 }
 
 export const getDataset = cache((): Dataset => {

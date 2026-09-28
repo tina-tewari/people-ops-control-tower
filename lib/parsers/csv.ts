@@ -48,8 +48,11 @@ export function parseCsv(text: string): Record<string, string>[] {
 
 const quote = (v: string) => (/[",\r\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
 
+/** One CSV line (no terminator) for a record, in header order. */
+export const toCsvRow = (header: string[], record: Record<string, string>) =>
+  header.map((k) => quote(record[k] ?? "")).join(",");
+
 /** Inverse of parseCsv: header row plus one line per record, "\n"-terminated. */
 export function toCsv(header: string[], records: Record<string, string>[]): string {
-  const lines = [header, ...records.map((r) => header.map((k) => r[k] ?? ""))];
-  return lines.map((cells) => cells.map(quote).join(",")).join("\n") + "\n";
+  return [header.map(quote).join(","), ...records.map((r) => toCsvRow(header, r))].join("\n") + "\n";
 }

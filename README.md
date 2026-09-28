@@ -30,6 +30,7 @@ runs against the small placeholder set in `data/sample/`, which exercises every 
 | `lib/reconciliation/job.ts` | Scheduled job: detect → merge with stored status history → persist; HM approvals |
 | `lib/reconciliation/store.ts` | JSON state file (`.reconciliation/<DATASET>.json`, or `RECONCILIATION_STATE_PATH`) |
 | `lib/reconciliation/digest.ts` | Slack digest (hiring-manager approvals + team queues) |
+| `lib/slack/` | `/add-candidate` Slack intake: request signing, modal, PR via GitHub API |
 | `lib/metrics/` | Headcount risk, recruiting bottlenecks, overview KPIs, thresholds |
 | `config/routing.ts` | Owners per rule (fallback People Ops), channels, schedule, hiring-manager stages |
 | `config/offerStandards.ts` | Standard offer-letter template; anything else is flagged as a non-standard term |
@@ -78,6 +79,28 @@ check them with:
 ```bash
 npm run validate:data              # DATASET=sample for the sample set; exits non-zero on any issue
 ```
+
+### Adding a candidate from Slack
+
+`/add-candidate` opens a form with the fields above. The requisition is a dropdown of `req_id`s with open seats, and
+department and level are filled in from it. The submission is checked against the same rules as `npm run validate:data`
+(problems show inline in the form), then a PR is opened that appends one `Confirmed` row to
+`data/$DATASET/recruiting_pipeline.csv`. The submitter gets the PR link in Slack. The row lands when the PR is merged.
+
+Setup:
+
+1. Create a Slack app from `slack/manifest.yml` (replace `YOUR-DEPLOYMENT` with the app's host) and install it.
+2. Set these on the deployment:
+
+| Variable | Value |
+|---|---|
+| `SLACK_SIGNING_SECRET` | Slack app → Basic Information → Signing Secret |
+| `SLACK_BOT_TOKEN` | Slack app → OAuth & Permissions → Bot User OAuth Token (`xoxb-…`) |
+| `GITHUB_TOKEN` | Fine-grained token on this repo with Contents and Pull requests: read and write |
+| `GITHUB_REPO` | Optional, default `tina-tewari/people-ops-control-tower` |
+| `GITHUB_BASE_BRANCH` | Optional, default `main` |
+
+Anyone in the workspace can submit; review of the PR is the approval step.
 
 ## Scheduled run
 
