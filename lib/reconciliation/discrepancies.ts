@@ -206,6 +206,24 @@ function offerLetterConflicts(comparisons: OfferComparison[]): Draft[] {
   );
 }
 
+/** Letter terms outside the standard template have no offer-log column to land in. */
+function nonStandardOfferTerms(comparisons: OfferComparison[]): Draft[] {
+  return comparisons.flatMap((c) =>
+    c.letterOnlyTerms.map((term) => {
+      const [label, ...rest] = term.split(": ");
+      return {
+        rule: "nonStandardOfferTerm" as const,
+        subjectId: c.candidateId,
+        subjectName: c.candidateName,
+        field: label,
+        sourceA: { system: "Offer log" as const, value: "Not captured" },
+        sourceB: { system: "Offer letter" as const, value: rest.join(": ") || term },
+        basis: "Deviates from the standard offer template (config/offerStandards.ts); confirm it was approved and where it should be tracked.",
+      };
+    }),
+  );
+}
+
 /** A variable-comp plan with OTE equal to base implies $0 variable pay. */
 function zeroVariableComp(offers: OfferLogRow[]): Draft[] {
   return offers
@@ -311,6 +329,7 @@ export function reconcile(ds: Dataset): ReconciliationResult {
     ...hiresOutsidePipeline(ds),
     ...stageDispositionMismatches(ds),
     ...offerLetterConflicts(offerComparisons),
+    ...nonStandardOfferTerms(offerComparisons),
     ...zeroVariableComp(ds.offers),
     ...untiedFilledSeats(ds),
     ...recruitingWithoutOpenSeat(ds),

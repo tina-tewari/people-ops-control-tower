@@ -1,5 +1,5 @@
 // Scheduled reconciliation run. Triggered by Vercel Cron (see vercel.json) or by
-// an agent such as Devin on a daily/weekly schedule. Returns the run report:
+// an agent such as Devin on the weekly schedule. Returns the run report:
 // what was auto-resolved and the per-owner queue of items needing a human.
 
 import { getControlTower } from "@/lib/controlTower";

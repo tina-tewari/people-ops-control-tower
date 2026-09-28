@@ -30,6 +30,7 @@ export type RuleId =
   | "termsCorrectedFromLetter"
   | "compConflict"
   | "offerTermsOpen"
+  | "nonStandardOfferTerm"
   | "zeroVariableComp"
   | "hiredVsDeclined"
   | "hiredVsNegotiating"
@@ -64,6 +65,7 @@ export const RULES: Record<RuleId, Rule> = {
   recruitingWithoutOpenSeat: rule("recruitingWithoutOpenSeat", "Active candidates on a headcount line with no open seats", "Flag for Ops review", "Headcount", "People Ops"),
   offerDateUncorroborated: rule("offerDateUncorroborated", "Offer date differs and no second source corroborates either value", "Ping owner", "Offer dates", "Recruiting Ops"),
   offerTermsOpen: rule("offerTermsOpen", "Offer terms differ while the offer is still open", "Ping owner", "Offer terms", "Recruiting Ops"),
+  nonStandardOfferTerm: rule("nonStandardOfferTerm", "Offer letter contains a non-standard term the offer log cannot capture", "Flag for Ops review", "Offer terms", "Recruiting Ops"),
   statusNoDefinitiveSource: rule("statusNoDefinitiveSource", "Offer log says Accepted but pipeline does not say Hired", "Ping owner", "Candidate status", "People Ops"),
   missingOfferRecord: rule("missingOfferRecord", "Pipeline shows an extended offer with no offer-log record", "Ping owner", "Candidate status", "Recruiting Ops"),
   hireOutsidePipeline: rule("hireOutsidePipeline", "HRIS shows a Hire but the pipeline record is still open or closed out", "Ping owner", "Candidate status", "Recruiting Ops"),
@@ -89,6 +91,7 @@ export const PLAYBOOK_ORDER: RuleId[] = [
   "recruitingWithoutOpenSeat",
   "offerDateUncorroborated",
   "offerTermsOpen",
+  "nonStandardOfferTerm",
   "statusNoDefinitiveSource",
   "missingOfferRecord",
   "hireOutsidePipeline",

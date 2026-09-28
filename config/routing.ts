@@ -4,8 +4,11 @@
 export type OwnerRole = "People Ops" | "Recruiting Ops" | "HRIS" | "Hiring manager";
 
 export const ROUTING = {
-  /** Scheduled run (also mirrored in vercel.json). Daily 13:00 UTC ≈ 8am Central. */
-  schedule: { cron: "0 13 * * *", label: "Daily at 13:00 UTC" },
+  /** Scheduled run (also mirrored in vercel.json). Mondays 13:00 UTC ≈ 8am Central. */
+  schedule: { cron: "0 13 * * 1", label: "Weekly on Mondays at 13:00 UTC" },
+
+  /** Where the weekly offer-letter reconciliation asks about anything it cannot resolve. */
+  offerReviewChannel: "#recruiting-ops",
 
   /** Where each owning team receives its queue. */
   channels: {

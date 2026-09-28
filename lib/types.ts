@@ -98,12 +98,14 @@ export interface OfferLetter {
   candidateId: string | null;
   candidateName: string | null;
   letterDate: ISODate | null;
+  hiringManager: string | null;
   role: string | null;
   department: string | null;
   level: string | null;
   location: string | null;
   startDate: ISODate | null;
   baseSalaryUsd: number | null;
+  basePayFrequency: string | null;
   bonusTargetPct: number | null;
   bonusTargetUsd: number | null;
   commissionPlan: string | null;
@@ -112,6 +114,11 @@ export interface OfferLetter {
   equityGrantUsd: number | null;
   vestingSchedule: string | null;
   signingBonusUsd: number | null;
+  signingBonusRepaymentMonths: number | null;
+  benefits: string[];
+  employmentTerms: string[];
+  acceptanceWindowBusinessDays: number | null;
+  /** Terms that deviate from the standard template (see config/offerStandards.ts). */
   specialTerms: string[];
 }
 

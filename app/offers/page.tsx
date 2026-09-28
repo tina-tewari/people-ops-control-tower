@@ -1,7 +1,7 @@
 import { getControlTower } from "@/lib/controlTower";
 import { OFFER_FIELDS } from "@/lib/reconciliation/offers";
 import { formatValue } from "@/lib/format";
-import { FieldResolutionBadge, FieldStateBadge } from "@/components/badges";
+import { FieldResolutionBadge, FieldStateBadge, VerificationBadge } from "@/components/badges";
 import { Callout, Card, FilterBar, Kpi, PageHeader, Pill, Tag, table } from "@/components/ui";
 
 export default async function OffersPage({ searchParams }: PageProps<"/offers">) {
@@ -13,6 +13,7 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
   const missing = fields.filter((f) => f.state === "missing_in_log").length;
   const conflicts = fields.filter((f) => f.state === "conflict" || f.state === "missing_in_letter").length;
   const letterOnly = withLetter.reduce((n, c) => n + c.letterOnlyTerms.length, 0);
+  const verified = withLetter.filter((c) => c.verification !== "Flagged").length;
   const cards = withLetter.filter(
     (c) => show === "all" || c.fields.some((f) => f.state !== "match") || c.letterOnlyTerms.length,
   );
@@ -25,7 +26,7 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Kpi label="Offer letters matched" value={`${withLetter.length} / ${offerComparisons.length}`} hint="offers with a letter on file" />
+        <Kpi label="Letters verified or resolved" value={`${verified} / ${withLetter.length}`} hint={`${withLetter.length} of ${offerComparisons.length} offers have a letter on file`} status={verified === withLetter.length ? "good" : "warning"} />
         <Kpi label="Fields missing in offer log" value={missing} hint="Structured-data gaps" status={missing ? "warning" : "good"} />
         <Kpi label="Conflicting values" value={conflicts} hint="Escalated, never overwritten" status={conflicts ? "critical" : "good"} />
         <Kpi label="Letter-only special terms" value={letterOnly} status={letterOnly ? "info" : "good"} />
@@ -63,15 +64,18 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
             }
             subtitle={<>Letter: {c.letterFile}</>}
             action={
-              <Pill tone={c.offerStatus === "Accepted" ? "good" : c.offerStatus === "Declined" ? "critical" : "warning"}>
-                {c.offerStatus}
-              </Pill>
+              <span className="flex items-center gap-2">
+                <VerificationBadge verification={c.verification} />
+                <Pill tone={c.offerStatus === "Accepted" ? "good" : c.offerStatus === "Declined" ? "critical" : "warning"}>
+                  {c.offerStatus}
+                </Pill>
+              </span>
             }
             flush
           >
             {c.letterOnlyTerms.length > 0 && (
               <div className="flex flex-wrap items-center gap-2 border-b border-line px-5 py-3 text-xs">
-                <span className="font-medium">Only in offer letter:</span>
+                <span className="font-medium">Non-standard terms only in offer letter:</span>
                 {c.letterOnlyTerms.map((t) => <Tag key={t}>{t}</Tag>)}
               </div>
             )}
@@ -119,8 +123,9 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
                 {OFFER_FIELDS.filter((f) => f.key !== "commissionDetail").map((f) => (
                   <th key={f.key} className={f.format === "usd" || f.format === "pct" ? table.thNum : table.th}>{f.label}</th>
                 ))}
+                <th className={table.th}>Vesting</th>
                 <th className={table.th}>Special terms</th>
-                <th className={table.th}>Source</th>
+                <th className={table.th}>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -132,8 +137,9 @@ export default async function OffersPage({ searchParams }: PageProps<"/offers">)
                       {formatValue(c.normalized[f.key], f.format)}
                     </td>
                   ))}
+                  <td className={`${table.td} whitespace-nowrap text-xs`}>{c.normalized.vestingSchedule ?? "—"}</td>
                   <td className={`${table.td} text-xs`}>{c.normalized.specialTerms.join("; ") || "—"}</td>
-                  <td className={`${table.td} whitespace-nowrap text-xs text-ink-3`}>{c.letterFile ? "Log + letter" : "Log only"}</td>
+                  <td className={table.td}><VerificationBadge verification={c.verification} /></td>
                 </tr>
               ))}
             </tbody>

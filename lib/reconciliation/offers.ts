@@ -7,7 +7,9 @@ export interface NormalizedOffer {
   candidateId: string;
   candidateName: string;
   role: string | null;
+  department: string | null;
   level: string | null;
+  hiringManager: string | null;
   location: string | null;
   startDate: string | null;
   baseSalaryUsd: number | null;
@@ -18,12 +20,15 @@ export interface NormalizedOffer {
   oteUsd: number | null;
   equityGrantUsd: number | null;
   signingBonusUsd: number | null;
+  /** Letter-only terms: the offer log has no columns for these. */
+  vestingSchedule: string | null;
+  signingBonusRepaymentMonths: number | null;
   specialTerms: string[];
 }
 
 type ComparableField = Exclude<
   keyof NormalizedOffer,
-  "candidateId" | "candidateName" | "specialTerms"
+  "candidateId" | "candidateName" | "specialTerms" | "vestingSchedule" | "signingBonusRepaymentMonths"
 >;
 
 export const OFFER_FIELDS: {
@@ -33,7 +38,9 @@ export const OFFER_FIELDS: {
   format: "text" | "usd" | "pct" | "date";
 }[] = [
   { key: "role", label: "Role", kind: "terms", format: "text" },
+  { key: "department", label: "Department", kind: "terms", format: "text" },
   { key: "level", label: "Level", kind: "terms", format: "text" },
+  { key: "hiringManager", label: "Hiring manager", kind: "terms", format: "text" },
   { key: "location", label: "Location", kind: "terms", format: "text" },
   { key: "startDate", label: "Start date", kind: "terms", format: "date" },
   { key: "baseSalaryUsd", label: "Base salary", kind: "compensation", format: "usd" },
@@ -69,6 +76,15 @@ export interface FieldComparison {
   reconciled: string | number | null;
 }
 
+/**
+ * Per-offer outcome of letter vs. log reconciliation:
+ * - Verified: every field matches and the letter has no non-standard terms.
+ * - Resolved: differences were auto-corrected / populated from the signed letter.
+ * - Flagged: something needs a human (comp conflict, open offer, non-standard term).
+ * - No letter: nothing to reconcile against.
+ */
+export type OfferVerification = "Verified" | "Resolved" | "Flagged" | "No letter";
+
 export interface OfferComparison {
   offerId: string;
   candidateId: string;
@@ -78,7 +94,14 @@ export interface OfferComparison {
   fields: FieldComparison[];
   /** Special terms in the letter that the structured log does not capture. */
   letterOnlyTerms: string[];
+  verification: OfferVerification;
   normalized: NormalizedOffer;
+}
+
+export function verificationOf(fields: FieldComparison[], letterOnlyTerms: string[]): OfferVerification {
+  if (fields.some((f) => f.resolution === "Needs review") || letterOnlyTerms.length) return "Flagged";
+  if (fields.some((f) => f.resolution !== "Confirmed")) return "Resolved";
+  return "Verified";
 }
 
 export function fromOfferLog(o: OfferLogRow): NormalizedOffer {
@@ -86,7 +109,9 @@ export function fromOfferLog(o: OfferLogRow): NormalizedOffer {
     candidateId: o.candidateId,
     candidateName: o.candidateName,
     role: o.role,
+    department: o.department,
     level: o.level,
+    hiringManager: o.hiringManager,
     location: o.location,
     startDate: o.startDate,
     baseSalaryUsd: o.baseSalaryUsd,
@@ -97,6 +122,8 @@ export function fromOfferLog(o: OfferLogRow): NormalizedOffer {
     oteUsd: o.oteUsd,
     equityGrantUsd: o.equityGrantUsd,
     signingBonusUsd: o.signingBonusUsd,
+    vestingSchedule: null,
+    signingBonusRepaymentMonths: null,
     specialTerms: [],
   };
 }
@@ -106,7 +133,9 @@ export function fromOfferLetter(l: OfferLetter): NormalizedOffer {
     candidateId: l.candidateId ?? "",
     candidateName: l.candidateName ?? "",
     role: l.role,
+    department: l.department,
     level: l.level,
+    hiringManager: l.hiringManager,
     location: l.location,
     startDate: l.startDate,
     baseSalaryUsd: l.baseSalaryUsd,
@@ -117,6 +146,8 @@ export function fromOfferLetter(l: OfferLetter): NormalizedOffer {
     oteUsd: l.oteUsd,
     equityGrantUsd: l.equityGrantUsd,
     signingBonusUsd: l.signingBonusUsd,
+    vestingSchedule: l.vestingSchedule,
+    signingBonusRepaymentMonths: l.signingBonusRepaymentMonths,
     specialTerms: l.specialTerms,
   };
 }
@@ -154,6 +185,7 @@ export function compareOffers(
         letterFile: null,
         fields: [],
         letterOnlyTerms: [],
+        verification: "No letter",
         normalized: logOffer,
       };
     }
@@ -196,9 +228,12 @@ export function compareOffers(
       letterFile: letter.fileName,
       fields,
       letterOnlyTerms,
+      verification: verificationOf(fields, letterOnlyTerms),
       normalized: {
         ...logOffer,
         ...Object.fromEntries(fields.map((f) => [f.key, f.reconciled])),
+        vestingSchedule: letter.vestingSchedule,
+        signingBonusRepaymentMonths: letter.signingBonusRepaymentMonths,
         specialTerms: letter.specialTerms,
       },
     };
